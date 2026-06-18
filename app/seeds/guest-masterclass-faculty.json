@@ -1,0 +1,42 @@
+[
+  {
+    "id": "M-001",
+    "name": "Samuel Afolabi",
+    "email": "",
+    "org": "MyAgent / Nigeria founder ecosystem",
+    "role": "Guest Masterclass",
+    "status": "Invited",
+    "capacity": 0,
+    "notes": "Week 1 masterclass: Building From Local Pain. One-off guest faculty; no ongoing founder assignment. Follow-up goes to facilitators or regular mentors."
+  },
+  {
+    "id": "M-002",
+    "name": "Gbemi Adunbarin",
+    "email": "",
+    "org": "Vegeel / Baltimore, Maryland",
+    "role": "Guest Masterclass",
+    "status": "Invited",
+    "capacity": 0,
+    "notes": "Week 2 masterclass: Commerce, AI, and Trust. One-off guest faculty; no ongoing founder assignment. Follow-up goes to facilitators or regular mentors."
+  },
+  {
+    "id": "M-003",
+    "name": "Dr. Abiola Olamoyegun",
+    "email": "",
+    "org": "PHEAA / Cybersecurity and IT Assurance",
+    "role": "Guest Masterclass",
+    "status": "Invited",
+    "capacity": 0,
+    "notes": "Week 3 masterclass/clinic: Security, Risk, and Credibility for Early Products. One-off guest faculty; no ongoing founder assignment. Follow-up goes to facilitators or regular mentors."
+  },
+  {
+    "id": "M-004",
+    "name": "Prof. Carlos Azevedo",
+    "email": "",
+    "org": "Catolica Lisbon / Yunus Social Innovation Centre",
+    "role": "Guest Masterclass",
+    "status": "Invited",
+    "capacity": 0,
+    "notes": "Week 4 masterclass: Impact, Social Innovation, and the Venture Story. One-off guest faculty; no ongoing founder assignment. Follow-up goes to facilitators or regular mentors."
+  }
+]
