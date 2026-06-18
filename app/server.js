@@ -497,12 +497,18 @@ function serveStatic(req, res, url) {
   });
 }
 
-const server = http.createServer(function (req, res) {
+function appHandler(req, res) {
   const url = req.url.split('?')[0];
   if (url.startsWith('/api/')) {
     handleApi(req, res, req.url).catch(function (e) { send(res, 500, { error: String(e) }); });
   } else {
     serveStatic(req, res, url);
   }
-});
-server.listen(PORT, '127.0.0.1', function () { console.log('Origin40 admin app → http://localhost:' + PORT); });
+}
+
+module.exports = appHandler;
+
+if (require.main === module) {
+  const server = http.createServer(appHandler);
+  server.listen(PORT, '127.0.0.1', function () { console.log('Origin40 admin app → http://localhost:' + PORT); });
+}
