@@ -1,0 +1,11 @@
+{
+  "name": "origin40-admin",
+  "version": "1.0.0",
+  "description": "Origin40 local admin app — back-office control panel (zero dependencies).",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": { "node": ">=18" }
+}

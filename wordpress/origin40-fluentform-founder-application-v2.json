@@ -1,0 +1,1454 @@
+[
+  {
+    "title": "Origin40 Founder Application",
+    "status": "published",
+    "has_payment": 0,
+    "type": "form",
+    "form_fields": {
+      "fields": {
+        "section_break_1": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_eligibility_identity"
+          },
+          "settings": {
+            "label": "Eligibility, Identity, and Contact",
+            "description": "Tell us who you are and how to reach you."
+          },
+          "index": 0
+        },
+        "full_name": {
+          "element": "input_text",
+          "attributes": {
+            "name": "full_name"
+          },
+          "settings": {
+            "label": "Full name",
+            "placeholder": "Your full legal name",
+            "required": true,
+            "admin_field_label": "Full Name",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 1
+        },
+        "email": {
+          "element": "input_email",
+          "attributes": {
+            "name": "email"
+          },
+          "settings": {
+            "label": "Email address",
+            "placeholder": "you@example.com",
+            "required": true,
+            "admin_field_label": "Email",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 2
+        },
+        "whatsapp_number": {
+          "element": "input_text",
+          "attributes": {
+            "name": "whatsapp_number"
+          },
+          "settings": {
+            "label": "WhatsApp number",
+            "placeholder": "+234...",
+            "required": true,
+            "admin_field_label": "WhatsApp Number",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 3
+        },
+        "country": {
+          "element": "input_text",
+          "attributes": {
+            "name": "country"
+          },
+          "settings": {
+            "label": "Country of residence",
+            "placeholder": "Nigeria",
+            "required": true,
+            "admin_field_label": "Country",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 4
+        },
+        "city_state": {
+          "element": "input_text",
+          "attributes": {
+            "name": "city_state"
+          },
+          "settings": {
+            "label": "City / state",
+            "placeholder": "Lagos",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 5
+        },
+        "time_zone": {
+          "element": "select",
+          "attributes": {
+            "name": "time_zone"
+          },
+          "settings": {
+            "label": "Time zone",
+            "required": true,
+            "placeholder": "Select your time zone",
+            "advanced_options": [
+              {
+                "label": "WAT / UTC+1",
+                "value": "WAT UTC+1"
+              },
+              {
+                "label": "GMT / UTC+0",
+                "value": "GMT UTC+0"
+              },
+              {
+                "label": "EAT / UTC+3",
+                "value": "EAT UTC+3"
+              },
+              {
+                "label": "Other",
+                "value": "Other"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 6
+        },
+        "public_profile_url": {
+          "element": "input_url",
+          "attributes": {
+            "name": "public_profile_url"
+          },
+          "settings": {
+            "label": "LinkedIn, portfolio, GitHub, or public profile",
+            "placeholder": "https://..."
+          },
+          "index": 7
+        },
+        "founder_type": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "founder_type",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Are you applying as a solo founder or as a team?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Solo founder",
+                "value": "Solo founder"
+              },
+              {
+                "label": "Co-founder team",
+                "value": "Co-founder team"
+              },
+              {
+                "label": "Project team",
+                "value": "Project team"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 8
+        },
+        "team_size": {
+          "element": "input_number",
+          "attributes": {
+            "name": "team_size"
+          },
+          "settings": {
+            "label": "Team size",
+            "placeholder": "1",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 9
+        },
+        "primary_founder_role": {
+          "element": "select",
+          "attributes": {
+            "name": "primary_founder_role"
+          },
+          "settings": {
+            "label": "Primary founder role",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Business / CEO",
+                "value": "Business / CEO"
+              },
+              {
+                "label": "Product",
+                "value": "Product"
+              },
+              {
+                "label": "Technical / Engineering",
+                "value": "Technical / Engineering"
+              },
+              {
+                "label": "Design / UX",
+                "value": "Design / UX"
+              },
+              {
+                "label": "Growth / Sales",
+                "value": "Growth / Sales"
+              },
+              {
+                "label": "Operations",
+                "value": "Operations"
+              },
+              {
+                "label": "Other",
+                "value": "Other"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 10
+        },
+        "age_confirmation": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "age_confirmation",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Confirm you are 18 or older",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes, I am 18 or older",
+                "value": "Yes"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 11
+        },
+        "section_break_2": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_startup_snapshot"
+          },
+          "settings": {
+            "label": "Startup / Project Snapshot",
+            "description": "Help us understand what you are building."
+          },
+          "index": 12
+        },
+        "startup_name": {
+          "element": "input_text",
+          "attributes": {
+            "name": "startup_name"
+          },
+          "settings": {
+            "label": "Startup, business, or project name",
+            "placeholder": "Origin40 Labs",
+            "required": true,
+            "admin_field_label": "Startup Name",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 13
+        },
+        "one_line_pitch": {
+          "element": "input_text",
+          "attributes": {
+            "name": "one_line_pitch"
+          },
+          "settings": {
+            "label": "One-line pitch",
+            "placeholder": "We help X achieve Y by doing Z.",
+            "required": true,
+            "admin_field_label": "One Line Pitch",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 14
+        },
+        "sector": {
+          "element": "select",
+          "attributes": {
+            "name": "sector"
+          },
+          "settings": {
+            "label": "Sector / industry",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "AI / Automation",
+                "value": "AI / Automation"
+              },
+              {
+                "label": "Fintech",
+                "value": "Fintech"
+              },
+              {
+                "label": "Healthtech",
+                "value": "Healthtech"
+              },
+              {
+                "label": "Edtech",
+                "value": "Edtech"
+              },
+              {
+                "label": "Commerce / Retail",
+                "value": "Commerce / Retail"
+              },
+              {
+                "label": "Logistics / Mobility",
+                "value": "Logistics / Mobility"
+              },
+              {
+                "label": "Agriculture / Food",
+                "value": "Agriculture / Food"
+              },
+              {
+                "label": "Climate / Energy",
+                "value": "Climate / Energy"
+              },
+              {
+                "label": "Creative / Media",
+                "value": "Creative / Media"
+              },
+              {
+                "label": "Enterprise / SaaS",
+                "value": "Enterprise / SaaS"
+              },
+              {
+                "label": "Other",
+                "value": "Other"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 15
+        },
+        "current_stage": {
+          "element": "select",
+          "attributes": {
+            "name": "current_stage"
+          },
+          "settings": {
+            "label": "Current stage",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Idea only",
+                "value": "Idea only"
+              },
+              {
+                "label": "Customer discovery",
+                "value": "Customer discovery"
+              },
+              {
+                "label": "Prototype / wireframe",
+                "value": "Prototype / wireframe"
+              },
+              {
+                "label": "MVP in progress",
+                "value": "MVP in progress"
+              },
+              {
+                "label": "Live product",
+                "value": "Live product"
+              },
+              {
+                "label": "Revenue / pilots",
+                "value": "Revenue / pilots"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 16
+        },
+        "demo_or_deck_url": {
+          "element": "input_url",
+          "attributes": {
+            "name": "demo_or_deck_url"
+          },
+          "settings": {
+            "label": "Website, landing page, demo, pitch deck, or prototype link",
+            "placeholder": "https://..."
+          },
+          "index": 17
+        },
+        "what_are_you_building": {
+          "element": "textarea",
+          "attributes": {
+            "name": "what_are_you_building"
+          },
+          "settings": {
+            "label": "What exactly are you building?",
+            "placeholder": "Describe the product, service, platform, or tool.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 18
+        },
+        "target_customer": {
+          "element": "textarea",
+          "attributes": {
+            "name": "target_customer"
+          },
+          "settings": {
+            "label": "Who is the primary customer?",
+            "placeholder": "Be specific: role, segment, geography, budget, behavior.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 19
+        },
+        "problem_statement": {
+          "element": "textarea",
+          "attributes": {
+            "name": "problem_statement"
+          },
+          "settings": {
+            "label": "What painful problem are you solving?",
+            "placeholder": "Explain the pain, frequency, cost, and current workaround.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 20
+        },
+        "problem_urgency": {
+          "element": "textarea",
+          "attributes": {
+            "name": "problem_urgency"
+          },
+          "settings": {
+            "label": "Why is this problem urgent now?",
+            "placeholder": "What changed in the market, technology, regulation, cost, or customer behavior?",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 21
+        },
+        "section_break_3": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_validation_traction"
+          },
+          "settings": {
+            "label": "Validation and Traction",
+            "description": "Show us evidence, even if it is early."
+          },
+          "index": 22
+        },
+        "problem_evidence": {
+          "element": "textarea",
+          "attributes": {
+            "name": "problem_evidence"
+          },
+          "settings": {
+            "label": "What evidence shows this problem is real?",
+            "placeholder": "Customer interviews, data, waitlist, sales, pilots, community signal, domain experience.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 23
+        },
+        "customer_conversations": {
+          "element": "select",
+          "attributes": {
+            "name": "customer_conversations"
+          },
+          "settings": {
+            "label": "How many customer/user conversations have you had?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1-5",
+                "value": "1-5"
+              },
+              {
+                "label": "6-15",
+                "value": "6-15"
+              },
+              {
+                "label": "16-30",
+                "value": "16-30"
+              },
+              {
+                "label": "30+",
+                "value": "30+"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 24
+        },
+        "current_traction": {
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "current_traction",
+            "type": "checkbox"
+          },
+          "settings": {
+            "label": "What traction do you currently have?",
+            "advanced_options": [
+              {
+                "label": "Customer interviews",
+                "value": "Customer interviews"
+              },
+              {
+                "label": "Waitlist / signups",
+                "value": "Waitlist / signups"
+              },
+              {
+                "label": "Prototype tested",
+                "value": "Prototype tested"
+              },
+              {
+                "label": "Active users",
+                "value": "Active users"
+              },
+              {
+                "label": "Paying customers",
+                "value": "Paying customers"
+              },
+              {
+                "label": "Revenue",
+                "value": "Revenue"
+              },
+              {
+                "label": "Pilot / LOI / partnership",
+                "value": "Pilot / LOI / partnership"
+              },
+              {
+                "label": "None yet",
+                "value": "None yet"
+              }
+            ]
+          },
+          "index": 25
+        },
+        "traction_proof_url": {
+          "element": "input_url",
+          "attributes": {
+            "name": "traction_proof_url"
+          },
+          "settings": {
+            "label": "Add proof of traction if available",
+            "placeholder": "https://..."
+          },
+          "index": 26
+        },
+        "customer_learnings": {
+          "element": "textarea",
+          "attributes": {
+            "name": "customer_learnings"
+          },
+          "settings": {
+            "label": "What have you learned from customers so far?",
+            "placeholder": "Share 2-3 specific insights that changed how you think about the product.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 27
+        },
+        "competitors_alternatives": {
+          "element": "textarea",
+          "attributes": {
+            "name": "competitors_alternatives"
+          },
+          "settings": {
+            "label": "Who are the main alternatives or competitors?",
+            "placeholder": "Include direct competitors, spreadsheets/manual work, agencies, WhatsApp groups, doing nothing, etc.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 28
+        },
+        "why_you_win": {
+          "element": "textarea",
+          "attributes": {
+            "name": "why_you_win"
+          },
+          "settings": {
+            "label": "Why will your solution win?",
+            "placeholder": "Explain your edge: speed, distribution, insight, technology, community, cost, brand, team.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 29
+        },
+        "section_break_4": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_build_readiness"
+          },
+          "settings": {
+            "label": "Build Readiness",
+            "description": "Origin40 is build-focused. We need to know what can ship."
+          },
+          "index": 30
+        },
+        "product_state": {
+          "element": "select",
+          "attributes": {
+            "name": "product_state"
+          },
+          "settings": {
+            "label": "What exists today?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Nothing yet",
+                "value": "Nothing yet"
+              },
+              {
+                "label": "Research / notes",
+                "value": "Research / notes"
+              },
+              {
+                "label": "Wireframe / design",
+                "value": "Wireframe / design"
+              },
+              {
+                "label": "Clickable prototype",
+                "value": "Clickable prototype"
+              },
+              {
+                "label": "No-code MVP",
+                "value": "No-code MVP"
+              },
+              {
+                "label": "Code MVP",
+                "value": "Code MVP"
+              },
+              {
+                "label": "Live product",
+                "value": "Live product"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 31
+        },
+        "tools_stack": {
+          "element": "textarea",
+          "attributes": {
+            "name": "tools_stack"
+          },
+          "settings": {
+            "label": "What tools or stack are you using or planning to use?",
+            "placeholder": "No-code tools, AI tools, frontend/backend stack, payment tools, analytics, etc.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 32
+        },
+        "four_week_build_goal": {
+          "element": "textarea",
+          "attributes": {
+            "name": "four_week_build_goal"
+          },
+          "settings": {
+            "label": "What can you realistically build in 4 weeks?",
+            "placeholder": "Define a specific scope that can be shipped or demoed.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 33
+        },
+        "demo_day_outcome": {
+          "element": "textarea",
+          "attributes": {
+            "name": "demo_day_outcome"
+          },
+          "settings": {
+            "label": "What will you demo on Demo Day?",
+            "placeholder": "Describe the product moment investors, mentors, or customers will see.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 34
+        },
+        "technical_risk": {
+          "element": "textarea",
+          "attributes": {
+            "name": "technical_risk"
+          },
+          "settings": {
+            "label": "What is the biggest technical/product risk?",
+            "placeholder": "Example: data access, integrations, AI accuracy, payment flows, hardware, compliance, adoption.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 35
+        },
+        "builder_owner": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "builder_owner",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Who will build the product?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "I will build it",
+                "value": "I will build it"
+              },
+              {
+                "label": "My co-founder / team will build it",
+                "value": "My co-founder / team will build it"
+              },
+              {
+                "label": "An external developer/agency will build it",
+                "value": "External developer/agency"
+              },
+              {
+                "label": "I need help finding build capacity",
+                "value": "Need build capacity"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 36
+        },
+        "laptop_internet_ready": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "laptop_internet_ready",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Do you have a laptop and reliable internet for build sessions?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "Partly",
+                "value": "Partly"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 37
+        },
+        "section_break_5": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_business_finance_law"
+          },
+          "settings": {
+            "label": "Business, Finance, and Law",
+            "description": "A strong founder understands the operating reality around the product."
+          },
+          "index": 38
+        },
+        "business_model": {
+          "element": "textarea",
+          "attributes": {
+            "name": "business_model"
+          },
+          "settings": {
+            "label": "What is your business model?",
+            "placeholder": "Who pays, how often, and why will they keep paying?",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 39
+        },
+        "pricing": {
+          "element": "input_text",
+          "attributes": {
+            "name": "pricing"
+          },
+          "settings": {
+            "label": "Current or planned pricing",
+            "placeholder": "Example: NGN 10,000/month, 5% transaction fee, enterprise license."
+          },
+          "index": 40
+        },
+        "monthly_revenue": {
+          "element": "input_text",
+          "attributes": {
+            "name": "monthly_revenue"
+          },
+          "settings": {
+            "label": "Current monthly revenue",
+            "placeholder": "Use 0 if pre-revenue."
+          },
+          "index": 41
+        },
+        "monthly_spend": {
+          "element": "input_text",
+          "attributes": {
+            "name": "monthly_spend"
+          },
+          "settings": {
+            "label": "Current monthly spend",
+            "placeholder": "Hosting, tools, salaries, marketing, operations."
+          },
+          "index": 42
+        },
+        "six_month_capital_need": {
+          "element": "input_text",
+          "attributes": {
+            "name": "six_month_capital_need"
+          },
+          "settings": {
+            "label": "How much capital or support do you need in the next 6 months?",
+            "placeholder": "Amount and what it will unlock."
+          },
+          "index": 43
+        },
+        "business_registered": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "business_registered",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Is the business registered?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "In progress",
+                "value": "In progress"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 44
+        },
+        "founder_agreements": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "founder_agreements",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Do you have founder agreements or equity splits documented?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "Not yet",
+                "value": "Not yet"
+              },
+              {
+                "label": "Not applicable",
+                "value": "Not applicable"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 45
+        },
+        "ip_ownership": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "ip_ownership",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Do you own or control the intellectual property?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "Partly / needs cleanup",
+                "value": "Partly / needs cleanup"
+              },
+              {
+                "label": "No / unsure",
+                "value": "No / unsure"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 46
+        },
+        "legal_compliance_concerns": {
+          "element": "textarea",
+          "attributes": {
+            "name": "legal_compliance_concerns"
+          },
+          "settings": {
+            "label": "Any legal, regulatory, data, or compliance concerns?",
+            "placeholder": "Examples: NDPR/GDPR, financial regulation, health data, contracts, licenses, IP, employment."
+          },
+          "index": 47
+        },
+        "section_break_6": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_commitment_fit"
+          },
+          "settings": {
+            "label": "Commitment and Program Fit",
+            "description": "The schedule is tight. We need founders who can execute."
+          },
+          "index": 48
+        },
+        "onsite_availability": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "onsite_availability",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Can you attend onsite build days every Monday and Friday for 4 weeks?",
+            "required": true,
+            "admin_field_label": "Onsite Availability",
+            "advanced_options": [
+              {
+                "label": "Yes, I can attend all Monday and Friday sessions",
+                "value": "Yes all sessions"
+              },
+              {
+                "label": "Mostly, but I may miss one session",
+                "value": "Mostly"
+              },
+              {
+                "label": "No / unsure",
+                "value": "No / unsure"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 49
+        },
+        "weekly_commitment": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "weekly_commitment",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Can you commit at least 10-15 hours weekly outside sessions?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "Maybe",
+                "value": "Maybe"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 50
+        },
+        "discord_ready": {
+          "element": "input_radio",
+          "attributes": {
+            "name": "discord_ready",
+            "type": "radio"
+          },
+          "settings": {
+            "label": "Can you use Discord as the official Origin40 communication hub?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Yes, I already use Discord",
+                "value": "Yes already use Discord"
+              },
+              {
+                "label": "Yes, I can create/use an account",
+                "value": "Yes can create account"
+              },
+              {
+                "label": "No / I need help",
+                "value": "No / need help"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 51
+        },
+        "mentor_needs": {
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "mentor_needs",
+            "type": "checkbox"
+          },
+          "settings": {
+            "label": "Which mentor areas do you need most?",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "Business model / strategy",
+                "value": "Business"
+              },
+              {
+                "label": "Law / compliance / IP",
+                "value": "Law"
+              },
+              {
+                "label": "Finance / fundraising",
+                "value": "Finance"
+              },
+              {
+                "label": "Tech / product / AI",
+                "value": "Tech"
+              },
+              {
+                "label": "Sales / growth / marketing",
+                "value": "Growth"
+              },
+              {
+                "label": "Pitch / storytelling",
+                "value": "Pitch"
+              },
+              {
+                "label": "Operations / hiring",
+                "value": "Operations"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 52
+        },
+        "biggest_blocker": {
+          "element": "textarea",
+          "attributes": {
+            "name": "biggest_blocker"
+          },
+          "settings": {
+            "label": "What is your biggest blocker right now?",
+            "placeholder": "Be honest: product, customers, money, co-founder, legal, confidence, focus, distribution, etc.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 53
+        },
+        "why_origin40": {
+          "element": "textarea",
+          "attributes": {
+            "name": "why_origin40"
+          },
+          "settings": {
+            "label": "Why should Origin40 select you?",
+            "placeholder": "Tell us why you are ready for an intense build-focused incubator now.",
+            "required": true,
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 54
+        },
+        "support_needs": {
+          "element": "textarea",
+          "attributes": {
+            "name": "support_needs"
+          },
+          "settings": {
+            "label": "What support or accessibility needs should we know about?",
+            "placeholder": "Optional: mobility, learning needs, schedule constraints, childcare, assistive needs, language support."
+          },
+          "index": 55
+        },
+        "section_break_7": {
+          "element": "section_break",
+          "attributes": {
+            "name": "section_consent_submission"
+          },
+          "settings": {
+            "label": "Consent and Submission",
+            "description": "Please confirm before submitting."
+          },
+          "index": 56
+        },
+        "data_review_consent": {
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "data_review_consent",
+            "type": "checkbox"
+          },
+          "settings": {
+            "label": "Data and application review consent",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "I agree that Origin40 may review, store, score, and contact me about this application.",
+                "value": "Agreed"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 57
+        },
+        "media_testimonial_consent": {
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "media_testimonial_consent",
+            "type": "checkbox"
+          },
+          "settings": {
+            "label": "Media/testimonial consent",
+            "advanced_options": [
+              {
+                "label": "If selected, I agree that Origin40 may photograph, record, or quote me for program reporting and promotion.",
+                "value": "Agreed"
+              }
+            ]
+          },
+          "index": 58
+        },
+        "accuracy_confirmation": {
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "accuracy_confirmation",
+            "type": "checkbox"
+          },
+          "settings": {
+            "label": "Accuracy confirmation",
+            "required": true,
+            "advanced_options": [
+              {
+                "label": "I confirm that the information submitted is accurate to the best of my knowledge.",
+                "value": "Confirmed"
+              }
+            ],
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required"
+              }
+            }
+          },
+          "index": 59
+        },
+        "source": {
+          "element": "input_hidden",
+          "attributes": {
+            "name": "source",
+            "type": "hidden",
+            "value": "origin40_wordpress"
+          },
+          "settings": {
+            "label": "Source"
+          },
+          "index": 60
+        },
+        "utm_source": {
+          "element": "input_hidden",
+          "attributes": {
+            "name": "utm_source",
+            "type": "hidden"
+          },
+          "settings": {
+            "label": "UTM Source"
+          },
+          "index": 61
+        },
+        "utm_medium": {
+          "element": "input_hidden",
+          "attributes": {
+            "name": "utm_medium",
+            "type": "hidden"
+          },
+          "settings": {
+            "label": "UTM Medium"
+          },
+          "index": 62
+        },
+        "utm_campaign": {
+          "element": "input_hidden",
+          "attributes": {
+            "name": "utm_campaign",
+            "type": "hidden"
+          },
+          "settings": {
+            "label": "UTM Campaign"
+          },
+          "index": 63
+        },
+        "application_status": {
+          "element": "input_hidden",
+          "attributes": {
+            "name": "application_status",
+            "type": "hidden",
+            "value": "Submitted"
+          },
+          "settings": {
+            "label": "Application Status",
+            "admin_field_label": "Application Status"
+          },
+          "index": 64
+        }
+      },
+      "submitButton": {
+        "element": "button",
+        "attributes": {
+          "type": "submit"
+        },
+        "settings": {
+          "button_text": "Submit Origin40 Application",
+          "align": "left"
+        }
+      }
+    },
+    "metas": [
+      {
+        "meta_key": "formSettings",
+        "value": {
+          "confirmation": {
+            "type": "message",
+            "messageToShow": "Thank you for applying to Origin40. We have received your application and will contact shortlisted founders by email, WhatsApp, or Discord onboarding instructions."
+          },
+          "restrictions": {
+            "denyEmptySubmission": {
+              "enabled": true
+            }
+          },
+          "layout": {
+            "labelPlacement": "top",
+            "asteriskPlacement": "asterisk-right"
+          }
+        }
+      },
+      {
+        "meta_key": "notifications",
+        "value": []
+      }
+    ]
+  }
+]

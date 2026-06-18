@@ -1,0 +1,2472 @@
+[
+  {
+    "title": "Origin40 Founder Application - Final Lean Version",
+    "status": "published",
+    "has_payment": 0,
+    "type": "form",
+    "form_fields": {
+      "fields": [
+        {
+          "index": 0,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_eligibility_and_contact",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Eligibility and Contact",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "This program is open to early founders, including people still at idea stage."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832158.6415793082888004"
+        },
+        {
+          "index": 1,
+          "element": "input_text",
+          "attributes": {
+            "name": "full_name",
+            "type": "text",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Your full name"
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Full name",
+            "admin_field_label": "Full Name",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832159.7077929461739477"
+        },
+        {
+          "index": 2,
+          "element": "input_email",
+          "attributes": {
+            "name": "email",
+            "type": "email",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "you@example.com"
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Email address",
+            "admin_field_label": "Email",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              },
+              "email": {
+                "value": true,
+                "message": "This field must contain a valid email",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Email Address",
+            "icon_class": "ff-edit-email",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832160.15870800320135003"
+        },
+        {
+          "index": 3,
+          "element": "input_text",
+          "attributes": {
+            "name": "whatsapp_number",
+            "type": "text",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "+234..."
+          },
+          "settings": {
+            "container_class": "",
+            "label": "WhatsApp number",
+            "admin_field_label": "WhatsApp Number",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832161.6143531803226351"
+        },
+        {
+          "index": 4,
+          "element": "input_text",
+          "attributes": {
+            "name": "country",
+            "type": "text",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Nigeria"
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Country of residence",
+            "admin_field_label": "Country",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832162.2806035215956886"
+        },
+        {
+          "index": 5,
+          "element": "input_text",
+          "attributes": {
+            "name": "city_state",
+            "type": "text",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Lagos"
+          },
+          "settings": {
+            "container_class": "",
+            "label": "City / state",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832163.30537087691349696"
+        },
+        {
+          "index": 6,
+          "element": "input_url",
+          "attributes": {
+            "name": "public_profile_url",
+            "type": "url",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "https://..."
+          },
+          "settings": {
+            "container_class": "",
+            "label": "LinkedIn, portfolio, GitHub, or public profile",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "URL",
+            "icon_class": "ff-edit-url",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832164.647473653883434"
+        },
+        {
+          "index": 7,
+          "element": "input_radio",
+          "attributes": {
+            "name": "founder_type",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Are you applying as a solo founder or as a team?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Solo founder",
+                "value": "Solo founder"
+              },
+              {
+                "label": "Co-founder team",
+                "value": "Co-founder team"
+              },
+              {
+                "label": "Project team",
+                "value": "Project team"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832165.8399184033779493"
+        },
+        {
+          "index": 8,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_idea_or_startup_snapshot",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Idea or Startup Snapshot",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "No traction is required. We want to understand what you are trying to build and why."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832166.57960878622036"
+        },
+        {
+          "index": 9,
+          "element": "input_text",
+          "attributes": {
+            "name": "startup_name",
+            "type": "text",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Use a working name if you are still at idea stage"
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Startup, business, or project name",
+            "admin_field_label": "Startup Name",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832167.8425549961763681"
+        },
+        {
+          "index": 10,
+          "element": "input_text",
+          "attributes": {
+            "name": "one_line_pitch",
+            "type": "text",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "We help X achieve Y by doing Z."
+          },
+          "settings": {
+            "container_class": "",
+            "label": "One-line pitch",
+            "admin_field_label": "One Line Pitch",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Simple Text",
+            "icon_class": "ff-edit-text",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832168.37491859317032805"
+        },
+        {
+          "index": 11,
+          "element": "select",
+          "attributes": {
+            "name": "current_stage",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Current stage",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Idea only",
+                "value": "Idea only"
+              },
+              {
+                "label": "Customer discovery",
+                "value": "Customer discovery"
+              },
+              {
+                "label": "Prototype / wireframe",
+                "value": "Prototype / wireframe"
+              },
+              {
+                "label": "MVP in progress",
+                "value": "MVP in progress"
+              },
+              {
+                "label": "Live product",
+                "value": "Live product"
+              },
+              {
+                "label": "Revenue / pilots",
+                "value": "Revenue / pilots"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Select",
+            "icon_class": "ff-edit-dropdown",
+            "template": "select"
+          },
+          "uniqElKey": "el_1781627832169.7954379636404642"
+        },
+        {
+          "index": 12,
+          "element": "select",
+          "attributes": {
+            "name": "sector",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Sector / industry",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "AI / Automation",
+                "value": "AI / Automation"
+              },
+              {
+                "label": "Fintech",
+                "value": "Fintech"
+              },
+              {
+                "label": "Healthtech",
+                "value": "Healthtech"
+              },
+              {
+                "label": "Edtech",
+                "value": "Edtech"
+              },
+              {
+                "label": "Commerce / Retail",
+                "value": "Commerce / Retail"
+              },
+              {
+                "label": "Logistics / Mobility",
+                "value": "Logistics / Mobility"
+              },
+              {
+                "label": "Agriculture / Food",
+                "value": "Agriculture / Food"
+              },
+              {
+                "label": "Climate / Energy",
+                "value": "Climate / Energy"
+              },
+              {
+                "label": "Creative / Media",
+                "value": "Creative / Media"
+              },
+              {
+                "label": "Enterprise / SaaS",
+                "value": "Enterprise / SaaS"
+              },
+              {
+                "label": "Other",
+                "value": "Other"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Select",
+            "icon_class": "ff-edit-dropdown",
+            "template": "select"
+          },
+          "uniqElKey": "el_1781627832170.6284510142742816"
+        },
+        {
+          "index": 13,
+          "element": "textarea",
+          "attributes": {
+            "name": "what_are_you_building",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Describe the product, service, platform, tool, or business idea.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What are you building or hoping to build?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832171.15514150865163845"
+        },
+        {
+          "index": 14,
+          "element": "textarea",
+          "attributes": {
+            "name": "target_customer",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Be specific about the user or customer, even if this is still your assumption.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Who is it for?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832172.3802645085601214"
+        },
+        {
+          "index": 15,
+          "element": "textarea",
+          "attributes": {
+            "name": "problem_statement",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Explain the pain, gap, cost, frustration, or opportunity.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What problem are you solving, and why does it matter?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832173.5178711127906136"
+        },
+        {
+          "index": 16,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_early_validation",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Early Validation",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "Tell us what you know so far. Informal evidence is welcome."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832174.5930594737164683"
+        },
+        {
+          "index": 17,
+          "element": "textarea",
+          "attributes": {
+            "name": "problem_evidence",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Examples: personal experience, customer conversations, waitlist, community signal, work experience, market observation.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What makes you believe this problem is real?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832175.8557376602259087"
+        },
+        {
+          "index": 18,
+          "element": "select",
+          "attributes": {
+            "name": "customer_conversations",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "How many potential users/customers have you spoken to?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "0 yet",
+                "value": "0 yet"
+              },
+              {
+                "label": "1-5",
+                "value": "1-5"
+              },
+              {
+                "label": "6-15",
+                "value": "6-15"
+              },
+              {
+                "label": "16-30",
+                "value": "16-30"
+              },
+              {
+                "label": "30+",
+                "value": "30+"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Select",
+            "icon_class": "ff-edit-dropdown",
+            "template": "select"
+          },
+          "uniqElKey": "el_1781627832176.8129975334224759"
+        },
+        {
+          "index": 19,
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "current_traction",
+            "type": "checkbox",
+            "value": [],
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What do you have so far? Select all that apply.",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Idea / notes",
+                "value": "Idea / notes"
+              },
+              {
+                "label": "Customer interviews",
+                "value": "Customer interviews"
+              },
+              {
+                "label": "Waitlist / signups",
+                "value": "Waitlist / signups"
+              },
+              {
+                "label": "Design / wireframe",
+                "value": "Design / wireframe"
+              },
+              {
+                "label": "Prototype tested",
+                "value": "Prototype tested"
+              },
+              {
+                "label": "Active users",
+                "value": "Active users"
+              },
+              {
+                "label": "Paying customers",
+                "value": "Paying customers"
+              },
+              {
+                "label": "Pilot / partnership",
+                "value": "Pilot / partnership"
+              },
+              {
+                "label": "None yet",
+                "value": "None yet"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Check Box",
+            "icon_class": "ff-edit-checkbox-1",
+            "template": "inputCheckable"
+          },
+          "uniqElKey": "el_1781627832177.18764617816593043"
+        },
+        {
+          "index": 20,
+          "element": "input_url",
+          "attributes": {
+            "name": "demo_or_deck_url",
+            "type": "url",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "https://..."
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Optional link: demo, deck, prototype, landing page, or notes",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "URL",
+            "icon_class": "ff-edit-url",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832178.3494845299841113"
+        },
+        {
+          "index": 21,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_build_sprint_readiness",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Build Sprint Readiness",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "Origin40 is build-focused. We want to know what can move in 4 weeks."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832179.713861212021428"
+        },
+        {
+          "index": 22,
+          "element": "select",
+          "attributes": {
+            "name": "product_state",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What exists today?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Nothing yet",
+                "value": "Nothing yet"
+              },
+              {
+                "label": "Research / notes",
+                "value": "Research / notes"
+              },
+              {
+                "label": "Wireframe / design",
+                "value": "Wireframe / design"
+              },
+              {
+                "label": "Clickable prototype",
+                "value": "Clickable prototype"
+              },
+              {
+                "label": "No-code MVP",
+                "value": "No-code MVP"
+              },
+              {
+                "label": "Code MVP",
+                "value": "Code MVP"
+              },
+              {
+                "label": "Live product",
+                "value": "Live product"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Select",
+            "icon_class": "ff-edit-dropdown",
+            "template": "select"
+          },
+          "uniqElKey": "el_1781627832180.36041709200883343"
+        },
+        {
+          "index": 23,
+          "element": "textarea",
+          "attributes": {
+            "name": "four_week_build_goal",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Define a small but meaningful milestone.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What can you realistically build or validate in 4 weeks?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832181.9625070228311865"
+        },
+        {
+          "index": 24,
+          "element": "textarea",
+          "attributes": {
+            "name": "demo_day_outcome",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "A prototype, customer evidence, landing page, MVP flow, pilot result, or clear launch plan.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What would you like to show on Demo Day?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832182.9998251599432197"
+        },
+        {
+          "index": 25,
+          "element": "input_radio",
+          "attributes": {
+            "name": "builder_owner",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Who will build or drive the build?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "I will build it",
+                "value": "I will build it"
+              },
+              {
+                "label": "My co-founder / team will build it",
+                "value": "My co-founder / team will build it"
+              },
+              {
+                "label": "An external developer/agency will build it",
+                "value": "An external developer/agency will build it"
+              },
+              {
+                "label": "I need help finding build capacity",
+                "value": "I need help finding build capacity"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832183.6886889607989778"
+        },
+        {
+          "index": 26,
+          "element": "input_radio",
+          "attributes": {
+            "name": "laptop_internet_ready",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Do you have a laptop and reliable internet for build sessions?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "Partly",
+                "value": "Partly"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832184.12462238239463752"
+        },
+        {
+          "index": 27,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_business_basics",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Business Basics",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "Lightweight business, finance, and legal checks for early founders."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832185.35168337341218536"
+        },
+        {
+          "index": 28,
+          "element": "textarea",
+          "attributes": {
+            "name": "business_model",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Who could pay, how might pricing work, or what value can be captured? It is okay if this is still a hypothesis.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "How might this become a business?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832186.22176831827760657"
+        },
+        {
+          "index": 29,
+          "element": "textarea",
+          "attributes": {
+            "name": "competitors_alternatives",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Competitors, manual work, spreadsheets, WhatsApp groups, agencies, doing nothing, etc.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What alternatives do people use today?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832187.16341224829277867"
+        },
+        {
+          "index": 30,
+          "element": "select",
+          "attributes": {
+            "name": "revenue_status",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Revenue status",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Pre-revenue",
+                "value": "Pre-revenue"
+              },
+              {
+                "label": "Testing pricing",
+                "value": "Testing pricing"
+              },
+              {
+                "label": "Has first revenue",
+                "value": "Has first revenue"
+              },
+              {
+                "label": "Has recurring revenue",
+                "value": "Has recurring revenue"
+              },
+              {
+                "label": "Not sure yet",
+                "value": "Not sure yet"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Select",
+            "icon_class": "ff-edit-dropdown",
+            "template": "select"
+          },
+          "uniqElKey": "el_1781627832188.3458863839562588"
+        },
+        {
+          "index": 31,
+          "element": "input_radio",
+          "attributes": {
+            "name": "business_registered",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Is the business registered?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "In progress",
+                "value": "In progress"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              },
+              {
+                "label": "Not sure yet",
+                "value": "Not sure yet"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832189.7422928583687218"
+        },
+        {
+          "index": 32,
+          "element": "textarea",
+          "attributes": {
+            "name": "legal_compliance_concerns",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Optional. Examples: registration, NDPR/data, payments, contracts, licenses, co-founder agreement, IP ownership.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Any legal, data, IP, finance, or compliance concern we should know about?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832190.9199034040582069"
+        },
+        {
+          "index": 33,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_commitment_and_program_fit",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Commitment and Program Fit",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "The program is intense, onsite twice a week, and coordinated through Discord."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832191.6669348477230058"
+        },
+        {
+          "index": 34,
+          "element": "input_radio",
+          "attributes": {
+            "name": "onsite_availability",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Can you attend onsite build days in Lagos (Badagry) every Monday and Friday for 4 weeks?",
+            "admin_field_label": "Lagos (Badagry) Onsite Availability",
+            "label_placement": "",
+            "help_message": "Origin40 onsite build days happen in Lagos (Badagry). Please only select yes if you can physically attend.",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Yes, I can attend all Monday and Friday sessions in Lagos (Badagry)",
+                "value": "Yes all Lagos Badagry sessions"
+              },
+              {
+                "label": "Mostly, but I may miss one Lagos (Badagry) session",
+                "value": "Mostly Lagos Badagry"
+              },
+              {
+                "label": "No / unsure",
+                "value": "No / unsure"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832192.7390326247330764"
+        },
+        {
+          "index": 35,
+          "element": "input_radio",
+          "attributes": {
+            "name": "weekly_commitment",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Can you commit at least 10-15 hours weekly outside sessions?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "Maybe",
+                "value": "Maybe"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832193.8677258238572881"
+        },
+        {
+          "index": 36,
+          "element": "input_radio",
+          "attributes": {
+            "name": "discord_ready",
+            "type": "radio",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Can you use Discord as the official Origin40 communication hub?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Yes, I already use Discord",
+                "value": "Yes, I already use Discord"
+              },
+              {
+                "label": "Yes, I can create/use an account",
+                "value": "Yes, I can create/use an account"
+              },
+              {
+                "label": "No / I need help",
+                "value": "No / I need help"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Radio Button",
+            "icon_class": "ff-edit-radio",
+            "template": "inputRadio"
+          },
+          "uniqElKey": "el_1781627832194.15525725701578608"
+        },
+        {
+          "index": 37,
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "mentor_needs",
+            "type": "checkbox",
+            "value": [],
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Which mentor areas do you need most? Select up to 3.",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "Business model / strategy",
+                "value": "Business"
+              },
+              {
+                "label": "Law / compliance / IP",
+                "value": "Law"
+              },
+              {
+                "label": "Finance / fundraising",
+                "value": "Finance"
+              },
+              {
+                "label": "Tech / product / AI",
+                "value": "Tech"
+              },
+              {
+                "label": "Sales / growth / marketing",
+                "value": "Growth"
+              },
+              {
+                "label": "Pitch / storytelling",
+                "value": "Pitch"
+              },
+              {
+                "label": "Operations / hiring",
+                "value": "Operations"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Check Box",
+            "icon_class": "ff-edit-checkbox-1",
+            "template": "inputCheckable"
+          },
+          "uniqElKey": "el_1781627832195.18217216024480676"
+        },
+        {
+          "index": 38,
+          "element": "textarea",
+          "attributes": {
+            "name": "biggest_blocker",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Product, customers, money, co-founder, legal, focus, skills, confidence, distribution, etc.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "What is your biggest blocker right now?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832196.2746423852274179"
+        },
+        {
+          "index": 39,
+          "element": "textarea",
+          "attributes": {
+            "name": "why_origin40",
+            "value": "",
+            "id": "",
+            "class": "",
+            "placeholder": "Tell us why this 4-week build sprint matters for you.",
+            "rows": 4,
+            "cols": 2
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Why do you want to join Origin40 now?",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Text Area",
+            "icon_class": "ff-edit-textarea",
+            "template": "inputTextarea"
+          },
+          "uniqElKey": "el_1781627832197.8962796393871194"
+        },
+        {
+          "index": 40,
+          "element": "section_break",
+          "attributes": {
+            "name": "section_consent_and_submission",
+            "value": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Consent and Submission",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "description": "Final confirmation before submission."
+          },
+          "editor_options": {
+            "title": "Section Break",
+            "icon_class": "ff-edit-section_break",
+            "template": "sectionBreak"
+          },
+          "uniqElKey": "el_1781627832198.0014761254943734814"
+        },
+        {
+          "index": 41,
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "data_review_consent",
+            "type": "checkbox",
+            "value": [],
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Data and application review consent",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "I agree that Origin40 may review, store, score, and contact me about this application.",
+                "value": "Agreed"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Check Box",
+            "icon_class": "ff-edit-checkbox-1",
+            "template": "inputCheckable"
+          },
+          "uniqElKey": "el_1781627832199.3477776926405317"
+        },
+        {
+          "index": 42,
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "accuracy_confirmation",
+            "type": "checkbox",
+            "value": [],
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Accuracy confirmation",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": true,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "I confirm that the information submitted is accurate to the best of my knowledge.",
+                "value": "Confirmed"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Check Box",
+            "icon_class": "ff-edit-checkbox-1",
+            "template": "inputCheckable"
+          },
+          "uniqElKey": "el_1781627832200.29327560330324853"
+        },
+        {
+          "index": 43,
+          "element": "input_checkbox",
+          "attributes": {
+            "name": "media_testimonial_consent",
+            "type": "checkbox",
+            "value": [],
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Media/testimonial consent",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            },
+            "advanced_options": [
+              {
+                "label": "If selected, I agree that Origin40 may photograph, record, or quote me for program reporting and promotion.",
+                "value": "Agreed"
+              }
+            ]
+          },
+          "editor_options": {
+            "title": "Check Box",
+            "icon_class": "ff-edit-checkbox-1",
+            "template": "inputCheckable"
+          },
+          "uniqElKey": "el_1781627832201.5204795110871985"
+        },
+        {
+          "index": 44,
+          "element": "input_hidden",
+          "attributes": {
+            "name": "source",
+            "type": "hidden",
+            "value": "origin40_wordpress",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Source",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Hidden Field",
+            "icon_class": "ff-edit-hidden",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832202.6994424449020952"
+        },
+        {
+          "index": 45,
+          "element": "input_hidden",
+          "attributes": {
+            "name": "utm_source",
+            "type": "hidden",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "UTM Source",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Hidden Field",
+            "icon_class": "ff-edit-hidden",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832203.04719975318197511"
+        },
+        {
+          "index": 46,
+          "element": "input_hidden",
+          "attributes": {
+            "name": "utm_medium",
+            "type": "hidden",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "UTM Medium",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Hidden Field",
+            "icon_class": "ff-edit-hidden",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832204.5429953579332605"
+        },
+        {
+          "index": 47,
+          "element": "input_hidden",
+          "attributes": {
+            "name": "utm_campaign",
+            "type": "hidden",
+            "value": "",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "UTM Campaign",
+            "admin_field_label": "",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Hidden Field",
+            "icon_class": "ff-edit-hidden",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832205.8490438900449038"
+        },
+        {
+          "index": 48,
+          "element": "input_hidden",
+          "attributes": {
+            "name": "application_status",
+            "type": "hidden",
+            "value": "Submitted",
+            "id": "",
+            "class": ""
+          },
+          "settings": {
+            "container_class": "",
+            "label": "Application Status",
+            "admin_field_label": "Application Status",
+            "label_placement": "",
+            "help_message": "",
+            "validation_rules": {
+              "required": {
+                "value": false,
+                "message": "This field is required",
+                "global": true
+              }
+            },
+            "conditional_logics": {
+              "type": "any",
+              "status": false,
+              "conditions": [
+                {
+                  "field": "",
+                  "value": "",
+                  "operator": ""
+                }
+              ]
+            }
+          },
+          "editor_options": {
+            "title": "Hidden Field",
+            "icon_class": "ff-edit-hidden",
+            "template": "inputText"
+          },
+          "uniqElKey": "el_1781627832206.40534296148673576"
+        }
+      ],
+      "submitButton": {
+        "uniqElKey": "el_1524065200616",
+        "element": "button",
+        "attributes": {
+          "type": "submit",
+          "class": ""
+        },
+        "settings": {
+          "align": "left",
+          "button_style": "default",
+          "container_class": "",
+          "help_message": "",
+          "background_color": "#1a7efb",
+          "button_size": "md",
+          "color": "#ffffff",
+          "button_ui": {
+            "type": "default",
+            "text": "Submit Origin40 Application",
+            "img_url": ""
+          }
+        },
+        "editor_options": {
+          "title": "Submit Button"
+        }
+      }
+    },
+    "formSettings": {
+      "confirmation": {
+        "redirectTo": "samePage",
+        "messageToShow": "Thank you for applying to Origin40. We have received your application and will contact shortlisted founders by email, WhatsApp, or Discord onboarding instructions.",
+        "samePageFormBehavior": "hide_form",
+        "customPage": null,
+        "customUrl": null
+      },
+      "restrictions": {
+        "denyEmptySubmission": {
+          "enabled": true,
+          "message": "Please complete the required fields before submitting."
+        }
+      },
+      "layout": {
+        "labelPlacement": "top",
+        "helpMessagePlacement": "with_label",
+        "errorMessagePlacement": "inline",
+        "asteriskPlacement": "asterisk-right"
+      }
+    },
+    "notifications": []
+  }
+]

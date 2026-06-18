@@ -1,0 +1,143 @@
+/*
+  Origin40 Fluent Forms styling
+  Paste into Fluent Forms > Settings & Integrations > Custom CSS,
+  or WordPress > Appearance > Customize > Additional CSS.
+*/
+
+.fluentform,
+.ff-default {
+  --o40-ink: #111827;
+  --o40-muted: #5b6472;
+  --o40-line: #d9dee7;
+  --o40-soft: #f6f8fb;
+  --o40-brand: #0f766e;
+  --o40-brand-dark: #0b4f4a;
+  --o40-focus: rgba(15, 118, 110, 0.2);
+  color: var(--o40-ink);
+}
+
+.fluentform .ff-el-group {
+  margin-bottom: 18px;
+}
+
+.fluentform .ff-el-section-break {
+  margin: 32px 0 18px;
+  padding: 22px 24px;
+  border: 1px solid var(--o40-line);
+  border-left: 5px solid var(--o40-brand);
+  background: var(--o40-soft);
+  border-radius: 8px;
+}
+
+.fluentform .ff-el-section-break .ff-el-section-title,
+.fluentform .ff-section_break_title {
+  margin: 0 0 6px;
+  color: var(--o40-ink);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 750;
+}
+
+.fluentform .ff-section_break_desk,
+.fluentform .ff-el-help-message {
+  color: var(--o40-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.fluentform label.ff-el-form-check-label,
+.fluentform .ff-el-input--label label {
+  color: var(--o40-ink);
+  font-weight: 650;
+}
+
+.fluentform input[type="text"],
+.fluentform input[type="email"],
+.fluentform input[type="url"],
+.fluentform input[type="number"],
+.fluentform select,
+.fluentform textarea {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--o40-line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--o40-ink);
+  font-size: 15px;
+  line-height: 1.45;
+  box-shadow: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fluentform textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.fluentform input:focus,
+.fluentform select:focus,
+.fluentform textarea:focus {
+  border-color: var(--o40-brand);
+  box-shadow: 0 0 0 4px var(--o40-focus);
+  outline: none;
+}
+
+.fluentform .ff-el-form-check {
+  margin: 8px 0;
+}
+
+.fluentform .ff-el-form-check label {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  color: var(--o40-ink);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.fluentform .ff-el-is-error input,
+.fluentform .ff-el-is-error select,
+.fluentform .ff-el-is-error textarea {
+  border-color: #dc2626;
+}
+
+.fluentform .error,
+.fluentform .ff-el-is-error .text-danger {
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.fluentform .ff-btn-submit,
+.fluentform button[type="submit"] {
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--o40-brand);
+  color: #ffffff;
+  font-weight: 750;
+  font-size: 15px;
+  letter-spacing: 0;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.18);
+}
+
+.fluentform .ff-btn-submit:hover,
+.fluentform button[type="submit"]:hover {
+  background: var(--o40-brand-dark);
+}
+
+.fluentform .ff-el-progress-bar {
+  background: var(--o40-brand);
+}
+
+@media (max-width: 640px) {
+  .fluentform .ff-el-section-break {
+    padding: 18px;
+  }
+
+  .fluentform .ff-el-section-break .ff-el-section-title,
+  .fluentform .ff-section_break_title {
+    font-size: 19px;
+  }
+}
+

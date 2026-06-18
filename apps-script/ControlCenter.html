@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+  :root{ --ink:#0B132B; --green:#1C7C54; --soft:#E8F3EE; --line:#D7DCE1; --muted:#5F5E5A; --bg:#F4F6F8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:'Helvetica Neue',Arial,sans-serif; color:var(--ink); background:var(--bg); }
+  header{ background:var(--ink); color:#fff; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; position:sticky; top:0; z-index:5; }
+  header .brand h1{ font-size:16px; margin:0; font-weight:600; }
+  header .brand p{ font-size:11px; margin:2px 0 0; color:#9FE1CB; }
+  #search{ border:none; border-radius:8px; padding:8px 12px; width:240px; font-size:13px; outline:none; }
+  main{ padding:16px 20px 28px; }
+  .cat{ font-size:12px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin:18px 0 8px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+  .tile{ background:#fff; border:1px solid var(--line); border-top:3px solid var(--green); border-radius:0 0 10px 10px; padding:12px; cursor:pointer; text-decoration:none; color:inherit; display:block; transition:transform .06s, box-shadow .12s; }
+  .tile:hover{ transform:translateY(-1px); box-shadow:0 2px 8px rgba(11,19,43,.10); border-color:var(--green); }
+  .tile.link{ border-top-color:#185FA5; }
+  .tile.disabled{ border-top-color:var(--line); cursor:default; opacity:.6; }
+  .tile.disabled:hover{ transform:none; box-shadow:none; border-color:var(--line); }
+  .tile i{ font-size:22px; color:var(--green); }
+  .tile.link i{ color:#185FA5; }
+  .tile .t{ font-size:13px; font-weight:600; margin:8px 0 2px; }
+  .tile .s{ font-size:11px; color:var(--muted); }
+  footer{ text-align:center; font-size:10px; color:#888; padding:10px 20px 20px; }
+  .empty{ text-align:center; color:var(--muted); font-size:13px; padding:30px; display:none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>Origin40 — Control Center</h1>
+    <p>Build the Product. Launch the Venture. · everything in one place</p>
+  </div>
+  <input id="search" type="text" placeholder="Search the control panel…" oninput="filter(this.value)">
+</header>
+<main id="board"></main>
+<div class="empty" id="empty">No matches.</div>
+<footer>Powered by Beere Softwares · Equip Africa Initiative · Dooke Innovation Center · Anfani — in honor of David Oke Opeyemi at 40</footer>
+
+<script>
+  var DATA = <?!= JSON.stringify(data) ?>;
+
+  function tileEl(t){
+    var hasLink = t.hasOwnProperty('url');
+    var a = document.createElement(hasLink && t.url ? 'a' : 'div');
+    a.className = 'tile' + (hasLink ? ' link' : '') + (hasLink && !t.url ? ' disabled' : '');
+    a.setAttribute('data-q', (t.title + ' ' + (t.sub||'')).toLowerCase());
+    var sub = hasLink && !t.url ? 'add link in ControlCenter.gs' : (t.sub || '');
+    a.innerHTML = '<i class="ti ' + t.icon + '"></i><div class="t">' + t.title + '</div><div class="s">' + sub + '</div>';
+    if (hasLink) {
+      if (t.url) { a.href = t.url; a.target = '_blank'; a.rel = 'noopener'; }
+    } else {
+      a.onclick = function(){ goto(t.sheet); };
+    }
+    return a;
+  }
+
+  function render(){
+    var board = document.getElementById('board');
+    board.innerHTML = '';
+    DATA.sections.forEach(function(sec){
+      var h = document.createElement('div'); h.className = 'cat'; h.textContent = sec.cat;
+      h.setAttribute('data-cat','1');
+      board.appendChild(h);
+      var g = document.createElement('div'); g.className = 'grid';
+      sec.tiles.forEach(function(t){ g.appendChild(tileEl(t)); });
+      board.appendChild(g);
+    });
+  }
+
+  function goto(sheet){
+    google.script.run.withSuccessHandler(function(){ google.script.host.close(); }).ccGoto(sheet);
+  }
+
+  function filter(q){
+    q = (q||'').trim().toLowerCase();
+    var any = false;
+    document.querySelectorAll('.tile').forEach(function(el){
+      var show = !q || el.getAttribute('data-q').indexOf(q) > -1;
+      el.style.display = show ? '' : 'none';
+      if (show) any = true;
+    });
+    document.querySelectorAll('.grid').forEach(function(g){
+      var visible = Array.prototype.some.call(g.children, function(c){ return c.style.display !== 'none'; });
+      g.style.display = visible ? '' : 'none';
+      if (g.previousElementSibling && g.previousElementSibling.getAttribute('data-cat'))
+        g.previousElementSibling.style.display = visible ? '' : 'none';
+    });
+    document.getElementById('empty').style.display = any ? 'none' : 'block';
+  }
+
+  render();
+</script>
+</body>
+</html>
