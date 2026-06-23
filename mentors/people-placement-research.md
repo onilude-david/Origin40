@@ -1,33 +1,34 @@
 # Origin40 People Placement Research
 
 **Purpose:** classify confirmed and proposed people into the right operational category: Program
-Team, Founder Mentor, or Guest Faculty.
+Leads, Founder Mentors, or Featured Speakers.
 
 ## Placement Rules
 
 | Category | Meaning | cPanel location |
 |---|---|---|
-| Program Team | Runs the program, live rooms, reviews, Discord check-ins, build support, and founder operations | Program Team |
-| Founder Mentor | Can be matched to founders for repeated support, office hours, review, or follow-up | Founder Mentors |
-| Guest Faculty | Takes a one-off 1-2 hour masterclass/keynote/clinic and leaves follow-up to the program team | Guest Faculty |
+| Program Leads | Runs the program, live rooms, reviews, Discord check-ins, build support, and founder operations | Program Leads |
+| Founder Mentors | Can be matched to founders for repeated support, office hours, review, or follow-up | Founder Mentors |
+| Featured Speakers | Takes a one-off 1-2 hour masterclass/keynote/clinic and leaves follow-up to the program leads | Featured Speakers |
 
 ## Final Placement
 
 | Person | Placement | Role / track | Status | Reason |
 |---|---|---|---|---|
-| David Onilude | Program Team | Lead Facilitator / Program Lead | Confirmed | Public profile fits digital literacy, software/product building, Beere Software, Tech Now Global, and program leadership. |
-| Kazeem Quadri | Program Team | Co-Facilitator / Build Lead | Confirmed | Public profile fits software engineering, full-stack systems, Beere Software, Tech Now Global, and build support. |
-| Bukola Aladesulu | Guest Faculty | Opportunity readiness / founder communication | Confirmed | Public profile fits youth development, opportunities, career systems, employability, storytelling, and founder communication support. Not assigned to program operations. |
-| Moh Sheriff | Guest Faculty | Confidence, mindset, personal growth, content, entrepreneurship | Confirmed | Bio provided by program owner. Best placed as one-off guest faculty for Overconfidence 101 and founder confidence. Not assigned to program operations. |
-| Victory Ashaka | Guest Faculty | Founder storytelling / Demo Day delivery | Confirmed | Public profile fits youth leadership, spoken word, climate/social impact, community momentum, and founder storytelling. Not assigned to program operations. |
+| David Onilude | Program Leads | Lead Facilitator / Program Lead | Confirmed | Public profile fits digital literacy, software/product building, Beere Software, Tech Now Global, and program leadership. |
+| Kazeem Quadri | Program Leads | Co-Facilitator / Build Lead | Confirmed | Public profile fits software engineering, full-stack systems, Beere Software, Tech Now Global, and build support. |
+| Bukola Aladesulu | Founder Mentor | Opportunity readiness / founder communication | Confirmed | Public profile fits youth development, opportunities, career systems, employability, storytelling, and founder communication support. Program owner confirmed Bukola belongs in the mentor pool. |
+| Moh Sheriff | Founder Mentor | Confidence, mindset, personal growth, content, entrepreneurship | Confirmed | Bio provided by program owner. Best placed as a founder mentor for Overconfidence 101, confidence, content, personal growth, and public-facing courage. |
+| Victory Ashaka | Founder Mentor | Founder storytelling / Demo Day delivery | Confirmed | Public profile fits youth leadership, spoken word, climate/social impact, community momentum, and founder storytelling. Program owner confirmed Victory belongs in the mentor pool. |
 | Damilola Obaro | Founder Mentor | Legal/Operations | Confirmed | Bio and public law-firm profile fit startup law, corporate/commercial law, compliance, IP, data privacy, contracts, and fundraising readiness. |
 | Stanley Anigbogu | Founder Mentor | Technical/Product/Impact | Confirmed | Public profiles fit LightEd, clean energy, technical innovation, circular design, community adoption, and impact product support. |
 | Gift Best | Founder Mentor | Business, exact category pending | Confirmed | Confirmed internally by program owner; public profile not confidently matched yet, so keep as regular Business mentor until bio is supplied. |
-| David Oke Opeyemi | Guest Faculty | Legacy keynote, trade, policy, youth development | Confirmed | Confirmed by program owner as honoree/celebrant; public profile fits trade governance, international development, policy, and youth development. |
-| Samuel Afolabi | Guest Faculty | Founder execution / local market building | Invited | Public profile likely fits MyAgent/founder-market fit; identity should be confirmed before publishing external bio. |
-| Gbemi Adunbarin | Guest Faculty | E-commerce, AI commerce, product trust | Invited | Public event/social references fit Vegeel, commerce, AI, and trust. Confirm preferred bio before publishing. |
-| Dr. Abiola Olamoyegun | Guest Faculty | Cybersecurity, IT assurance, governance, risk | Invited | Public profiles list PHEAA IT/security leadership and cybersecurity speaker placement. |
-| Prof. Carlos Azevedo | Guest Faculty | Social innovation, impact, venture story | Invited | Public institutional profile fits Yunus Social Innovation Center, Católica Lisbon, social innovation, and impact strategy. |
+| Erioluwa Adeyinka | Founder Mentor | Education / social impact / operations | Confirmed | Bio provided by program owner. Fits education founders, social-impact ventures, development-sector partnerships, NGO/government collaboration, and operational execution. |
+| David Oke Opeyemi | Featured Speakers | Legacy keynote, trade, policy, youth development | Confirmed | Confirmed by program owner as honoree/celebrant; public profile fits trade governance, international development, policy, and youth development. |
+| Samuel Afolabi | Featured Speakers | Founder execution / local market building | Invited | Public profile likely fits MyAgent/founder-market fit; identity should be confirmed before publishing external bio. |
+| Gbemi Adunbarin | Featured Speakers | E-commerce, AI commerce, product trust | Invited | Public event/social references fit Vegeel, commerce, AI, and trust. Confirm preferred bio before publishing. |
+| Dr. Abiola Olamoyegun | Featured Speakers | Cybersecurity, IT assurance, governance, risk | Invited | Public profiles list PHEAA IT/security leadership and cybersecurity speaker placement. |
+| Prof. Carlos Azevedo | Featured Speakers | Social innovation, impact, venture story | Invited | Public institutional profile fits Yunus Social Innovation Center, Católica Lisbon, social innovation, and impact strategy. |
 
 ## Source Notes
 

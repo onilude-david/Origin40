@@ -8,7 +8,7 @@
 **End date:** Friday, July 31, 2026  
 **Date rule:** Week 1 Monday is July 6, 2026. Week 4 Friday is July 31, 2026.
 
-This schedule is designed to keep the program moving even when guest faculty names are not fully confirmed. Any slot with an unnamed person should be filled from the role listed in the owner column. If the named guest is unavailable, the facilitator runs the fallback workshop using the same founder output.
+This schedule is designed to keep the program moving even when featured speaker names are not fully confirmed. Any slot with an unnamed person should be filled from the role listed in the owner column. If the named speaker is unavailable, the program leads run the fallback workshop using the same founder output.
 
 ## Fixed Operating Rhythm
 
@@ -46,7 +46,7 @@ This schedule is designed to keep the program moving even when guest faculty nam
 | Friday, July 10, 2026 | 5 | Friday | 09:00-09:45 | Standup and build review | David Onilude | Demo focus set |
 | Friday, July 10, 2026 | 5 | Friday | 10:00-12:30 | Final edits to Problem-Validation Brief | David Onilude, Kazeem Quadri, Origin40 Core Team | Submission ready |
 | Friday, July 10, 2026 | 5 | Friday | 13:30-15:00 | Demo gate: problem, customer, and evidence review | Review panel | Week 1 score |
-| Friday, July 10, 2026 | 5 | Friday | 15:00-16:00 | Mentor/facilitator feedback and next actions | Program team | Week 2 priorities |
+| Friday, July 10, 2026 | 5 | Friday | 15:00-16:00 | Mentor/program lead feedback and next actions | Program leads | Week 2 priorities |
 | Friday, July 10, 2026 | 5 | Friday | 16:00-16:30 | Risk flags and support desk updates | David Onilude | Support tickets assigned |
 
 ## Week 2 - Design And Build The MVP
@@ -71,7 +71,7 @@ This schedule is designed to keep the program moving even when guest faculty nam
 | Friday, July 17, 2026 | 10 | Friday | 09:00-09:45 | Standup and build review | David Onilude | Demo focus set |
 | Friday, July 17, 2026 | 10 | Friday | 10:00-12:30 | MVP core flow repair and demo preparation | David Onilude, Kazeem Quadri, Origin40 Core Team | MVP/prototype v1 |
 | Friday, July 17, 2026 | 10 | Friday | 13:30-15:00 | Demo gate: core flow works review | Review panel | Week 2 score |
-| Friday, July 17, 2026 | 10 | Friday | 15:00-16:00 | Technical/product feedback and next actions | Program team | Week 3 test priorities |
+| Friday, July 17, 2026 | 10 | Friday | 15:00-16:00 | Technical/product feedback and next actions | Program leads | Week 3 test priorities |
 | Friday, July 17, 2026 | 10 | Friday | 16:00-16:30 | Risk flags and support desk updates | David Onilude | Support tickets assigned |
 
 ## Week 3 - Test And Validate
@@ -98,7 +98,7 @@ This schedule is designed to keep the program moving even when guest faculty nam
 | Friday, July 24, 2026 | 15 | Friday | 09:00-09:45 | Standup and build review | David Onilude | Demo focus set |
 | Friday, July 24, 2026 | 15 | Friday | 10:00-12:30 | Final validation report and demo preparation | David Onilude, Kazeem Quadri, Origin40 Core Team | Validation Report ready |
 | Friday, July 24, 2026 | 15 | Friday | 13:30-15:00 | Demo gate: evidence from real users review | Review panel | Week 3 score |
-| Friday, July 24, 2026 | 15 | Friday | 15:00-16:00 | Traction, risk, and iteration feedback | Program team | Week 4 priorities |
+| Friday, July 24, 2026 | 15 | Friday | 15:00-16:00 | Traction, risk, and iteration feedback | Program leads | Week 4 priorities |
 | Friday, July 24, 2026 | 15 | Friday | 16:00-16:30 | Risk flags and support desk updates | David Onilude | Support tickets assigned |
 
 ## Week 4 - Pitch And Launch
@@ -125,12 +125,12 @@ This schedule is designed to keep the program moving even when guest faculty nam
 | Friday, July 31, 2026 | 20 | Friday | 09:00-09:45 | Final standup and demo readiness check | David Onilude | Demo order confirmed |
 | Friday, July 31, 2026 | 20 | Friday | 10:00-12:30 | Last-mile fixes and final submission | David Onilude, Kazeem Quadri, Origin40 Core Team | Final package ready |
 | Friday, July 31, 2026 | 20 | Friday | 13:30-15:30 | Final demo / pre-Demo Day review | Review panel | Demo Day readiness score |
-| Friday, July 31, 2026 | 20 | Friday | 15:30-16:15 | Launch, funding, partner, and mentor next actions | Program team | 30-day roadmap confirmed |
+| Friday, July 31, 2026 | 20 | Friday | 15:30-16:15 | Launch, funding, partner, and mentor next actions | Program leads | 30-day roadmap confirmed |
 | Friday, July 31, 2026 | 20 | Friday | 16:15-16:45 | Cohort close, alumni onboarding, and next-step assignments | David Onilude | Alumni support started |
 
 ## Confirmed And Needed People
 
-### Confirmed Program Team
+### Confirmed Program Leads
 
 | Person | Program role | Calendar ownership |
 |---|---|---|
@@ -138,7 +138,7 @@ This schedule is designed to keep the program moving even when guest faculty nam
 | Kazeem Quadri | Co-Facilitator / Build Lead | Build sprints, MVP/product flow, pitch support |
 | Origin40 Core Team | Operations bench | Discord standups, support desk, founder follow-up, submissions |
 
-### Guest Faculty, Founder Mentor, And Specialist Slots
+### Featured Speaker, Founder Mentor, And Specialist Slots
 
 | Role / slot | Current assignment | If not available |
 |---|---|---|
@@ -150,9 +150,9 @@ This schedule is designed to keep the program moving even when guest faculty nam
 | Week 2 guest masterclass | Gbemi Adunbarin | Product, AI, commerce, or trust guest needed |
 | Week 3 guest masterclass | Dr. Abiola Olamoyegun | Security, data, risk, or credibility guest needed |
 | Week 4 guest masterclass | Prof. Carlos Azevedo | Impact, story, or venture narrative guest needed |
-| Week 3 guest faculty talk | Bukola Aladesulu | Opportunity readiness / founder communication guest needed |
-| Week 4 guest faculty talk | Victory Ashaka | Founder storytelling / Demo Day delivery guest needed |
-| Week 1 guest faculty talk | Moh Sheriff | Confidence, mindset, and personal growth |
+| Week 3 founder mentor session | Bukola Aladesulu | Opportunity readiness / founder communication |
+| Week 4 founder mentor session | Victory Ashaka | Founder storytelling / Demo Day delivery |
+| Week 1 founder mentor session | Moh Sheriff | Confidence, mindset, and personal growth |
 | Finance clinic | Person needed | Startup finance / pricing / unit economics mentor |
 | Growth clinic | Person needed | Growth, sales, or customer acquisition mentor |
 | Pitch clinic | Person needed | Pitch coach, investor, or accelerator operator |

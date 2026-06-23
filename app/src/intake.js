@@ -18,7 +18,7 @@ const FIELD_ALIASES = {
   startup: ['startup', 'startup_name', 'startup name', 'idea', 'idea_name', 'idea name', 'business', 'business_name', 'business name', 'project', 'project name', 'company', 'company name', 'venture'],
   pitch: ['pitch', 'one_line_pitch', 'one line pitch', 'one-liner', 'tagline', 'description', 'summary', 'about', 'describe your idea', 'startup description', 'business description'],
   timestamp: ['timestamp', 'submitted at', 'submission date', 'date submitted', 'created_at', 'created at', 'date'],
-  status: ['status', 'application status', 'applicant status'],
+  status: ['application status', 'applicant status', 'status'],
   problem: ['problem', 'problem clarity', 'problem_score', 'problem score'],
   founder: ['founder', 'founder seriousness', 'founder_score', 'founder score'],
   product: ['product', 'product potential', 'product_score', 'product score'],

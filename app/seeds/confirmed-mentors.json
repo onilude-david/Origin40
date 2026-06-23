@@ -37,5 +37,57 @@
     "sourceConfidence": "Internal confirmation from program owner; public profile not confidently matched yet.",
     "sourceUrl": "",
     "notes": "Confirmed regular mentor. Keep under Business until Gift's bio, organization, and strongest support category are provided."
+  },
+  {
+    "id": "M-004",
+    "name": "Bukola Aladesulu",
+    "email": "",
+    "org": "Youth Development and Career Systems",
+    "role": "Business",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Founder communication, opportunity readiness, positioning, employability, storytelling",
+    "sourceConfidence": "Public profile found; confirmed by program owner as founder mentor.",
+    "sourceUrl": "https://www.coachli.co/bukolaaladesulu",
+    "notes": "Confirmed founder mentor. Supports founders on opportunity readiness, communication, confidence, positioning, and story clarity. Scheduled session: Opportunity Readiness: Founder Communication, Confidence, and Positioning."
+  },
+  {
+    "id": "M-005",
+    "name": "Victory Ashaka",
+    "email": "",
+    "org": "Youth Leadership and Creative Advocacy",
+    "role": "Pitch",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Founder storytelling, pitch delivery, public speaking, presence, social impact communication",
+    "sourceConfidence": "Public profile found; confirmed by program owner as founder mentor.",
+    "sourceUrl": "https://victoryashaka.com/",
+    "notes": "Confirmed founder mentor. Supports founders on storytelling, pitch presence, conviction, and demo-day delivery. Scheduled session: Telling The Founder Story: Presence, Conviction, and Demo Day Delivery."
+  },
+  {
+    "id": "M-006",
+    "name": "Moh Sheriff",
+    "email": "",
+    "org": "Amor Fati / Hoodies'n'Stuffs",
+    "role": "Growth",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Founder confidence, mindset, personal brand, content, audience building, entrepreneurship",
+    "sourceConfidence": "Bio provided by program owner; confirmed by program owner as founder mentor.",
+    "sourceUrl": "",
+    "notes": "Born Sheriff Muhammad. Nigerian keynote speaker, content creator, entrepreneur, founder of Amor Fati and Hoodies'n'Stuffs, host of Crazy Enough with Sheriff Muhammad, and creator of Overconfidence 101. Confirmed founder mentor. Supports founders on confidence, mindset, showing up, personal growth, content, and public-facing courage."
+  },
+  {
+    "id": "M-007",
+    "name": "Erioluwa Adeyinka",
+    "email": "",
+    "org": "Education and development practice",
+    "role": "Business",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Education, social entrepreneurship, development projects, operations, NGO/government partnerships, impact execution",
+    "sourceConfidence": "Bio provided by program owner; confirmed by program owner as mentor.",
+    "sourceUrl": "",
+    "notes": "Confirmed founder mentor. Educator, social entrepreneur, and development practitioner with operational experience across education and development projects with social businesses, NGOs, and government in Nigeria and globally. Best placed for education founders, social-impact ventures, operations, ecosystem partnerships, and development-sector credibility."
   }
 ]

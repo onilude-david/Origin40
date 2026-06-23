@@ -40,7 +40,7 @@ a { color: inherit; }
 
 .shell {
   display: grid;
-  grid-template-columns: 254px minmax(0, 1fr);
+  grid-template-columns: 276px minmax(0, 1fr);
   min-height: 100vh;
 }
 
@@ -50,8 +50,8 @@ a { color: inherit; }
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  padding: 22px 16px;
+  gap: 18px;
+  padding: 22px 17px;
   background: var(--nav);
   color: #edf4f1;
   min-width: 0;
@@ -61,7 +61,7 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 2px 4px 12px;
+  padding: 2px 4px 14px;
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
@@ -92,29 +92,61 @@ a { color: inherit; }
 
 nav {
   display: grid;
-  gap: 5px;
+  gap: 17px;
   min-width: 0;
+  padding-right: 2px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.18) transparent;
+}
+
+nav::-webkit-scrollbar {
+  width: 7px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.16);
+  border-radius: 999px;
+}
+
+.nav-section {
+  display: grid;
+  gap: 5px;
+}
+
+.nav-label {
+  padding: 0 11px 3px;
+  color: #6f8982;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
 nav a {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 40px;
+  min-height: 38px;
   padding: 0 11px;
   color: #c7d2cf;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 650;
   transition: background .18s var(--ease), color .18s var(--ease), transform .18s var(--ease);
 }
 
 nav a i {
   color: #8ba59e;
-  font-size: 19px;
+  font-size: 18px;
   width: 22px;
   text-align: center;
+}
+
+nav a small {
+  display: none;
 }
 
 nav a:hover {
@@ -136,7 +168,7 @@ nav a.active i {
   margin-top: auto;
   display: grid;
   gap: 4px;
-  padding: 13px;
+  padding: 12px;
   border: 1px solid rgba(255,255,255,.12);
   border-radius: 8px;
   background: rgba(255,255,255,.05);
@@ -531,7 +563,13 @@ h2.page {
 }
 
 .calendar-hero .sub {
-  margin-bottom: 0;
+  margin-bottom: 12px;
+}
+
+.calendar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .calendar-datebox {
@@ -877,6 +915,53 @@ tr.clickable:hover { background: #fbf8f0; }
   font-weight: 750;
 }
 
+.admissions-gates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: -2px 0 16px;
+}
+
+.admissions-gates div {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.admissions-gates b {
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.admissions-gates em {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.gate-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--muted);
+}
+
+.gate-dot.ok { background: var(--green); }
+.gate-dot.warn { background: #b7791f; }
+.gate-dot.bad { background: #c2410c; }
+
 .filterbar {
   display: flex;
   gap: 8px;
@@ -959,6 +1044,40 @@ tr.clickable:hover { background: #fbf8f0; }
   color: var(--muted);
   font-size: 11px;
   font-weight: 800;
+}
+
+.move-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  max-width: 160px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.1;
+  white-space: normal;
+}
+
+.move-pill.ok {
+  border-color: rgba(30, 111, 80, .22);
+  background: var(--green-soft);
+  color: var(--green-2);
+}
+
+.move-pill.warn {
+  border-color: rgba(183, 121, 31, .25);
+  background: #fff7ed;
+  color: #92400e;
+}
+
+.move-pill.bad {
+  border-color: rgba(194, 65, 12, .24);
+  background: #fff1e8;
+  color: #9a3412;
 }
 
 .badge {
@@ -1328,6 +1447,88 @@ button.danger {
   font-weight: 850;
   text-transform: uppercase;
   letter-spacing: .07em;
+}
+
+.review-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.review-panel-head h4 {
+  margin-bottom: 3px;
+}
+
+.admission-reason {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.check-list {
+  display: grid;
+  gap: 8px;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.check-item b {
+  display: block;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.check-item small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.check-item em {
+  color: var(--muted);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.admission-flag {
+  margin-top: 10px;
+  padding: 9px 10px;
+  border: 1px solid rgba(183, 121, 31, .25);
+  border-radius: 8px;
+  background: #fff7ed;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.check-item.pass .admission-flag {
+  color: var(--green-2);
+}
+
+.check-item.fail .admission-flag {
+  color: #9a3412;
 }
 
 .mini-label {
@@ -1761,6 +1962,14 @@ button.danger {
     padding-bottom: 3px;
   }
 
+  .nav-section {
+    display: contents;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
   nav a {
     flex: 0 0 auto;
   }
@@ -1831,6 +2040,22 @@ button.danger {
     font-size: 10px;
     line-height: 1.1;
     text-align: center;
+  }
+
+  nav a span {
+    display: none;
+  }
+
+  nav a small {
+    display: block;
+    max-width: 54px;
+    overflow: hidden;
+    color: inherit;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.05;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   nav a i {
@@ -1913,6 +2138,15 @@ button.danger {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .admissions-gates {
+    grid-template-columns: 1fr;
+  }
+
+  .review-panel-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
   .review-grid,
   .raw-box {
     grid-template-columns: 1fr;
@@ -1983,7 +2217,7 @@ button.danger {
     flex-basis: 58px;
   }
 
-  nav a span {
+  nav a small {
     max-width: 54px;
     overflow: hidden;
     text-overflow: ellipsis;

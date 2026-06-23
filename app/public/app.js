@@ -5,17 +5,17 @@ var META = null;
 var app = document.getElementById('app');
 
 var ROUTES = [
-  { id: 'control', label: 'Control Center', icon: 'ti-apps' },
-  { id: 'dashboard', label: 'Dashboard', icon: 'ti-layout-dashboard' },
-  { id: 'calendar', label: 'Calendar', icon: 'ti-calendar-time' },
-  { id: 'applicants', label: 'Applications', icon: 'ti-file-text' },
-  { id: 'founders', label: 'Founders', icon: 'ti-rocket' },
-  { id: 'mentors', label: 'Founder Mentors', icon: 'ti-users' },
-  { id: 'guest-mentors', label: 'Guest Faculty', icon: 'ti-microphone-2' },
-  { id: 'facilitators', label: 'Program Team', icon: 'ti-school' },
-  { id: 'partners', label: 'Partners', icon: 'ti-building-store' },
-  { id: 'documents', label: 'Documents', icon: 'ti-folders' },
-  { id: 'settings', label: 'Settings', icon: 'ti-settings' }
+  { id: 'control', label: 'Control Center', short: 'Control', icon: 'ti-apps', group: 'Command' },
+  { id: 'dashboard', label: 'Dashboard', short: 'Dash', icon: 'ti-layout-dashboard', group: 'Command' },
+  { id: 'calendar', label: 'Calendar', short: 'Calendar', icon: 'ti-calendar-time', group: 'Command' },
+  { id: 'applicants', label: 'Applications', short: 'Apps', icon: 'ti-file-text', group: 'Admissions' },
+  { id: 'founders', label: 'Founders', short: 'Founders', icon: 'ti-rocket', group: 'Admissions' },
+  { id: 'mentors', label: 'Founder Mentors', short: 'Mentors', icon: 'ti-users', group: 'People' },
+  { id: 'guest-mentors', label: 'Featured Speakers', short: 'Speakers', icon: 'ti-microphone-2', group: 'People' },
+  { id: 'facilitators', label: 'Program Leads', short: 'Leads', icon: 'ti-school', group: 'People' },
+  { id: 'partners', label: 'Partners', short: 'Partners', icon: 'ti-building-store', group: 'Growth' },
+  { id: 'documents', label: 'Documents', short: 'Docs', icon: 'ti-folders', group: 'Growth' },
+  { id: 'settings', label: 'Settings', short: 'Settings', icon: 'ti-settings', group: 'System' }
 ];
 
 /* ---------- api ---------- */
@@ -42,7 +42,7 @@ function applicantRank(a) {
   return 'Needs scoring';
 }
 function applicantStats(list) {
-  var out = { total: list.length, pending: 0, shortlisted: 0, selected: 0, rejected: 0, avg: 0 };
+  var out = { total: list.length, pending: 0, shortlisted: 0, selected: 0, rejected: 0, avg: 0, move: 0, clarify: 0, rejectSuggested: 0 };
   var scored = 0, score = 0;
   list.forEach(function (a) {
     var st = normStatus(a.status);
@@ -51,6 +51,10 @@ function applicantStats(list) {
     if (st === 'Selected') out.selected++;
     if (st === 'Rejected') out.rejected++;
     if (a.total > 0) { scored++; score += Number(a.total) || 0; }
+    var move = a.admissions && a.admissions.recommendedMove;
+    if (move === 'Select' || move === 'Shortlist') out.move++;
+    if (move === 'Hold / Clarify' || move === 'Needs Review') out.clarify++;
+    if (move && move.indexOf('Reject') === 0) out.rejectSuggested++;
   });
   out.avg = scored ? Math.round(score / scored) : 0;
   out.seatsLeft = Math.max(0, 40 - out.selected);
@@ -66,14 +70,33 @@ function rawPreview(raw) {
   }).join('');
 }
 
+function moveClass(move) {
+  move = String(move || '');
+  if (move === 'Select' || move === 'Shortlist') return 'ok';
+  if (move.indexOf('Reject') === 0) return 'bad';
+  if (move === 'Hold / Clarify') return 'warn';
+  return 'neutral';
+}
+
+function admissionMove(a) {
+  return (a.admissions && a.admissions.recommendedMove) || 'Needs Review';
+}
+
 /* ---------- nav + router ---------- */
 function renderNav() {
   var cur = location.hash.replace('#/', '') || 'control';
   var current = ROUTES.find(function (r) { return r.id === cur; }) || ROUTES[0];
   var title = document.getElementById('routeTitle');
   if (title) title.textContent = current.label;
-  document.getElementById('nav').innerHTML = ROUTES.map(function (r) {
-    return '<a href="#/' + r.id + '" title="' + esc(r.label) + '" aria-label="' + esc(r.label) + '" class="' + (r.id === cur ? 'active' : '') + '"><i class="ti ' + r.icon + '"></i><span>' + r.label + '</span></a>';
+  var groups = [];
+  ROUTES.forEach(function (r) {
+    if (groups.indexOf(r.group) === -1) groups.push(r.group);
+  });
+  document.getElementById('nav').innerHTML = groups.map(function (group) {
+    var links = ROUTES.filter(function (r) { return r.group === group; }).map(function (r) {
+      return '<a href="#/' + r.id + '" title="' + esc(r.label) + '" aria-label="' + esc(r.label) + '" class="' + (r.id === cur ? 'active' : '') + '"><i class="ti ' + r.icon + '"></i><span>' + esc(r.label) + '</span><small>' + esc(r.short || r.label) + '</small></a>';
+    }).join('');
+    return '<div class="nav-section"><div class="nav-label">' + esc(group) + '</div>' + links + '</div>';
   }).join('');
 }
 
@@ -108,8 +131,8 @@ function viewControl() {
         { icon: 'ti-file-text', t: 'Applications', s: k['Applications received'] + ' received', go: 'applicants' },
         { icon: 'ti-rocket', t: 'Founders', s: 'progress tracker', go: 'founders' },
         { icon: 'ti-users', t: 'Founder Mentors', s: k['Founder mentors'] + ' confirmed', go: 'mentors' },
-        { icon: 'ti-microphone-2', t: 'Guest Faculty', s: (k['Guest faculty'] || 0) + ' masterclass faculty', go: 'guest-mentors' },
-        { icon: 'ti-school', t: 'Program Team', s: k['Program team ready'] + ' ready', go: 'facilitators' }
+        { icon: 'ti-microphone-2', t: 'Featured Speakers', s: (k['Featured speakers'] || 0) + ' speakers', go: 'guest-mentors' },
+        { icon: 'ti-school', t: 'Program Leads', s: k['Program leads ready'] + ' ready', go: 'facilitators' }
       ]},
       { cat: 'Growth', tiles: [
         { icon: 'ti-building-store', t: 'Partners & Sponsors', s: k['Funds committed'] + ' committed', go: 'partners' }
@@ -209,7 +232,9 @@ function viewCalendar() {
     var html =
       '<div class="calendar-hero">' +
         '<div><div class="eyebrow">Standard program calendar</div><h2 class="page">' + esc(s.title) + '</h2>' +
-        '<p class="sub">' + esc(s.dateStatus) + ' · ' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p></div>' +
+        '<p class="sub">' + esc(s.dateStatus) + ' · ' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p>' +
+        '<div class="calendar-actions"><a class="button-link primary" href="/api/schedule/ics"><i class="ti ti-calendar-plus"></i> Download ICS</a>' +
+        '<a class="button-link" href="/api/schedule/csv"><i class="ti ti-table-export"></i> Download CSV</a></div></div>' +
         '<div class="calendar-datebox"><span>Start</span><b>Jul 6</b><em>Monday, 2026</em></div>' +
         '<div class="calendar-datebox"><span>Finish</span><b>Jul 31</b><em>Friday, 2026</em></div>' +
       '</div>' +
@@ -277,6 +302,11 @@ function viewApplicants() {
         '<div><b>' + st.seatsLeft + '</b><span>Seats left</span></div>' +
         '<div><b>' + st.avg + '</b><span>Avg score</span></div>' +
       '</div>' +
+      '<div class="admissions-gates">' +
+        '<div><span class="gate-dot ok"></span><b>' + st.move + '</b><em>Ready to move forward</em></div>' +
+        '<div><span class="gate-dot warn"></span><b>' + st.clarify + '</b><em>Needs review / clarify</em></div>' +
+        '<div><span class="gate-dot bad"></span><b>' + st.rejectSuggested + '</b><em>Reject or fix required</em></div>' +
+      '</div>' +
       '<div class="filterbar" id="appFilters">' +
         ['All'].concat(META.lists.applicantStatus).map(function (s) {
           return '<button class="filter-chip' + (window.__appFilter === s ? ' active' : '') + '" onclick="setApplicantFilter(\'' + esc(s) + '\')">' + esc(s) + '</button>';
@@ -304,27 +334,47 @@ function renderApplicantTable(q) {
     return passSearch && passFilter;
   }).sort(function (x, y) { return (y.total || 0) - (x.total || 0); });
   var html = '<div class="table-tools"><span>' + rows.length + ' shown</span><span>' + (window.__appFilter || 'All') + '</span></div>';
-  html += '<table><thead><tr><th>Applicant</th><th>Startup / pitch</th><th>Country</th><th>Score</th><th>Decision</th><th>Status</th></tr></thead><tbody>';
+  html += '<table><thead><tr><th>Applicant</th><th>Startup / pitch</th><th>Country</th><th>Score</th><th>Gate</th><th>Decision</th><th>Status</th></tr></thead><tbody>';
   html += rows.map(function (a) {
+    var move = admissionMove(a);
     return '<tr class="clickable" onclick="openApplicant(\'' + a.id + '\')">' +
       '<td><div class="person-cell"><b>' + esc(a.name || 'Unnamed applicant') + '</b><span>' + esc(a.id || '') + ' · ' + esc(a.email || a.phone || 'no contact') + '</span></div></td>' +
       '<td><div class="pitch-cell"><b>' + esc(a.startup || 'No startup name') + '</b><span>' + esc(a.pitch || 'No pitch captured yet') + '</span></div></td>' +
       '<td>' + esc(a.country || '—') + '</td>' +
       '<td><div class="score-pill"><b>' + (a.total || 0) + '</b><span>/100</span></div></td>' +
+      '<td><span class="move-pill ' + moveClass(move) + '">' + esc(move) + '</span></td>' +
       '<td><div class="decision-cell"><b>' + esc(a.recommendation || '—') + '</b><span>' + esc(applicantRank(a)) + '</span></div></td>' +
       '<td>' + statusBadge(a.status) + '</td></tr>';
   }).join('');
-  if (!rows.length) html += '<tr><td colspan="6"><div class="empty-state table-empty"><b>No matching applications</b><span>Change the status filter, search something broader, import a Fluent Forms CSV from Settings, or add an applicant manually.</span></div></td></tr>';
+  if (!rows.length) html += '<tr><td colspan="7"><div class="empty-state table-empty"><b>No matching applications</b><span>Change the status filter, search something broader, import a Fluent Forms CSV from Settings, or add an applicant manually.</span></div></td></tr>';
   html += '</tbody></table>';
   document.getElementById('atable').innerHTML = html;
 }
+
+function renderAdmissionsChecks(a) {
+  var ad = a.admissions || { checks: [], recommendedMove: 'Needs Review', reason: 'No admissions assessment yet.' };
+  var checks = ad.checks || [];
+  return '<section class="review-panel admissions-check-panel"><div class="review-panel-head"><h4>Admissions checks</h4>' +
+    '<span class="move-pill ' + moveClass(ad.recommendedMove) + '">' + esc(ad.recommendedMove) + '</span></div>' +
+    '<p class="admission-reason">' + esc(ad.reason || '') + '</p>' +
+    '<div class="check-list">' + checks.map(function (c) {
+      return '<div class="check-item ' + (c.pass ? 'pass' : 'fail') + '">' +
+        '<i class="ti ' + (c.pass ? 'ti-check' : 'ti-alert-triangle') + '"></i>' +
+        '<span><b>' + esc(c.label) + '</b><small>' + esc(c.detail || '') + '</small></span>' +
+        '<em>' + esc(c.severity || '') + '</em>' +
+      '</div>';
+    }).join('') + '</div>' +
+    (ad.legalFlag ? '<div class="admission-flag"><b>Legal/risk note:</b> ' + esc(ad.legalNote) + '</div>' : '') +
+    '</section>';
+}
+
 function openApplicant(id) {
   var a = id ? window.__apps.find(function (x) { return x.id === id; }) : { name: '', email: '', phone: '', country: '', startup: '', pitch: '', scores: {}, manualOverride: false, reviewer: '', notes: '', status: 'Submitted' };
   var sc = a.scores || {};
   var scoreInputs = META.framework.map(function (f) {
     return '<div class="sl">' + f.label + ' /' + f.max + '</div><input type="number" min="0" max="' + f.max + '" data-score="' + f.key + '" value="' + (sc[f.key] != null ? sc[f.key] : '') + '">';
   }).join('');
-  var quick = ['Under Review', 'Shortlisted', 'Selected', 'Rejected'].map(function (s) {
+  var quick = ['Under Review', 'Shortlisted', 'Selected', 'Waitlisted', 'Rejected'].map(function (s) {
     return '<button class="' + (normStatus(a.status) === s ? 'active' : '') + '" onclick="setReviewStatus(\'' + s + '\')">' + esc(s) + '</button>';
   }).join('');
   var raw = rawPreview(a.raw);
@@ -349,6 +399,7 @@ function openApplicant(id) {
           field('Reviewer notes', '<textarea id="f-notes" rows="4">' + esc(a.notes || '') + '</textarea>') +
         '</section>' +
       '</div>' +
+      renderAdmissionsChecks(a) +
       '<section class="review-panel"><h4>Scoring rubric</h4><div class="scoregrid" id="scoregrid">' + scoreInputs + '</div></section>' +
       (raw ? '<section class="review-panel"><h4>Imported answers</h4><div class="raw-box">' + raw + '</div></section>' : '') +
       '<div class="row review-actions">' +
@@ -539,12 +590,12 @@ var ENTITY_VIEWS = {
     fields: [['name', 'Name', 'text'], ['email', 'Email', 'text'], ['org', 'Org / title', 'text'], ['role', 'Role', 'mentorRole'], ['status', 'Status', 'mentorStatus'], ['capacity', 'Capacity (founders)', 'number']]
   },
   'guest-mentors': {
-    title: 'Guest Faculty', sub: 'One-off masterclass, keynote, and clinic faculty. They teach a 1-2 hour session and are not assigned to founders.',
+    title: 'Featured Speakers', sub: 'Special speakers for keynotes, masterclasses, and clinics. They teach focused 1-2 hour sessions.',
     cols: [['name', 'Name'], ['org', 'Org / profile'], ['topic', 'Session topic'], ['week', 'Week'], ['status', 'Status', statusBadge]],
     fields: [['name', 'Name', 'text'], ['email', 'Email', 'text'], ['org', 'Org / profile', 'text'], ['topic', 'Session topic', 'text'], ['week', 'Week', 'week'], ['date', 'Date', 'date'], ['status', 'Status', 'facilitatorStatus'], ['notes', 'Notes', 'textarea']]
   },
   facilitators: {
-    title: 'Program Team', sub: 'The core delivery team running live sessions, Discord check-ins, reviews, and founder operations.',
+    title: 'Program Leads', sub: 'The core delivery leads running live sessions, Discord check-ins, reviews, and founder operations.',
     cols: [['name', 'Name'], ['org', 'Org'], ['topic', 'Session / topic'], ['week', 'Week'], ['status', 'Status', statusBadge]],
     fields: [['name', 'Name', 'text'], ['email', 'Email', 'text'], ['org', 'Org / title', 'text'], ['topic', 'Session / topic', 'text'], ['week', 'Week', 'week'], ['date', 'Date', 'date'], ['status', 'Status', 'facilitatorStatus']]
   },

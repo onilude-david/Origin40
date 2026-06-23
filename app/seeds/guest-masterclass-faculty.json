@@ -73,50 +73,5 @@
     "sourceConfidence": "Public institutional profile found.",
     "sourceUrl": "https://knowledgecentre.euclidnetwork.eu/authors-and-experts/carlos-azevedo/",
     "notes": "One-off guest faculty for impact thesis, stakeholder mapping, and Demo Day story."
-  },
-  {
-    "id": "GM-006",
-    "name": "Bukola Aladesulu",
-    "email": "",
-    "org": "Youth Development and Career Systems",
-    "topic": "Opportunity Readiness: Founder Communication, Confidence, and Positioning",
-    "week": "Week 3",
-    "date": "2026-07-23",
-    "status": "Confirmed",
-    "capacity": 0,
-    "track": "Youth development, opportunity readiness, employability, storytelling",
-    "sourceConfidence": "Public profile found; moved out of Program Team per program owner clarification.",
-    "sourceUrl": "https://www.coachli.co/bukolaaladesulu",
-    "notes": "One-off guest faculty talk. Not responsible for program operations, Discord check-ins, or build sprint delivery."
-  },
-  {
-    "id": "GM-007",
-    "name": "Victory Ashaka",
-    "email": "",
-    "org": "Youth Leadership and Creative Advocacy",
-    "topic": "Telling The Founder Story: Presence, Conviction, and Demo Day Delivery",
-    "week": "Week 4",
-    "date": "2026-07-28",
-    "status": "Confirmed",
-    "capacity": 0,
-    "track": "Storytelling, public speaking, youth leadership, social impact",
-    "sourceConfidence": "Public profile found; moved out of Program Team per program owner clarification.",
-    "sourceUrl": "https://victoryashaka.com/",
-    "notes": "One-off guest faculty talk. Not responsible for program operations, Discord check-ins, or build sprint delivery."
-  },
-  {
-    "id": "GM-008",
-    "name": "Moh Sheriff",
-    "email": "",
-    "org": "Amor Fati / Hoodies'n'Stuffs",
-    "topic": "Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up",
-    "week": "Week 1",
-    "date": "2026-07-09",
-    "status": "Confirmed",
-    "capacity": 0,
-    "track": "Confidence, mindset, personal growth, content, entrepreneurship",
-    "sourceConfidence": "Bio provided by program owner.",
-    "sourceUrl": "",
-    "notes": "Born Sheriff Muhammad. Nigerian keynote speaker, content creator, entrepreneur, founder of Amor Fati and Hoodies'n'Stuffs, host of Crazy Enough with Sheriff Muhammad, and creator of Overconfidence 101. One-off guest faculty talk; not responsible for program operations, Discord check-ins, or build sprint delivery."
   }
 ]

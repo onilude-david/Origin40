@@ -77,7 +77,7 @@ const PROGRAM_SCHEDULE = [
           ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
           ['10:00-15:00', 'Build sprint', 'Validation brief polish and customer proof packaging', 'Founders', 'Draft Week 1 submission'],
           ['16:00-17:00', 'Review', 'Async facilitator review window', 'David Onilude, Kazeem Quadri', 'Feedback comments returned'],
-          ['17:00-18:00', 'Guest faculty', 'Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up', 'Moh Sheriff', 'Founder confidence and public-facing courage strengthened', true]
+          ['17:00-18:00', 'Founder mentor', 'Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up', 'Moh Sheriff', 'Founder confidence and public-facing courage strengthened', true]
         ]
       },
       {
@@ -87,7 +87,7 @@ const PROGRAM_SCHEDULE = [
           ['09:00-09:45', 'Live review', 'Standup and build review', 'David Onilude', 'Demo focus set'],
           ['10:00-12:30', 'Build sprint', 'Final edits to Problem-Validation Brief', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Submission ready'],
           ['13:30-15:00', 'Demo gate', 'Problem, customer, and evidence review', 'Review panel', 'Week 1 score', true],
-          ['15:00-16:00', 'Feedback', 'Mentor/facilitator feedback and next actions', 'Program team', 'Week 2 priorities'],
+          ['15:00-16:00', 'Feedback', 'Mentor/facilitator feedback and next actions', 'Program leads', 'Week 2 priorities'],
           ['16:00-16:30', 'Closeout', 'Risk flags and support desk updates', 'David Onilude', 'Support tickets assigned']
         ]
       }
@@ -142,7 +142,7 @@ const PROGRAM_SCHEDULE = [
           ['09:00-09:45', 'Live review', 'Standup and build review', 'David Onilude', 'Demo focus set'],
           ['10:00-12:30', 'Build sprint', 'MVP core flow repair and demo preparation', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'MVP/prototype v1'],
           ['13:30-15:00', 'Demo gate', 'Core flow works review', 'Review panel', 'Week 2 score', true],
-          ['15:00-16:00', 'Feedback', 'Technical/product feedback and next actions', 'Program team', 'Week 3 test priorities'],
+          ['15:00-16:00', 'Feedback', 'Technical/product feedback and next actions', 'Program leads', 'Week 3 test priorities'],
           ['16:00-16:30', 'Closeout', 'Risk flags and support desk updates', 'David Onilude', 'Support tickets assigned']
         ]
       }
@@ -189,7 +189,7 @@ const PROGRAM_SCHEDULE = [
         slots: [
           ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
           ['10:00-15:00', 'Build sprint', 'Validation report prep and product iteration', 'Founders', 'Draft Validation Report'],
-          ['16:00-17:00', 'Guest faculty', 'Opportunity Readiness: Founder Communication, Confidence, and Positioning', 'Bukola Aladesulu', 'Founder positioning and communication improved', true]
+          ['16:00-17:00', 'Founder mentor', 'Opportunity Readiness: Founder Communication, Confidence, and Positioning', 'Bukola Aladesulu', 'Founder positioning and communication improved', true]
         ]
       },
       {
@@ -199,7 +199,7 @@ const PROGRAM_SCHEDULE = [
           ['09:00-09:45', 'Live review', 'Standup and build review', 'David Onilude', 'Demo focus set'],
           ['10:00-12:30', 'Build sprint', 'Final validation report and demo preparation', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Validation Report ready'],
           ['13:30-15:00', 'Demo gate', 'Evidence from real users review', 'Review panel', 'Week 3 score', true],
-          ['15:00-16:00', 'Feedback', 'Traction, risk, and iteration feedback', 'Program team', 'Week 4 priorities'],
+          ['15:00-16:00', 'Feedback', 'Traction, risk, and iteration feedback', 'Program leads', 'Week 4 priorities'],
           ['16:00-16:30', 'Closeout', 'Risk flags and support desk updates', 'David Onilude', 'Support tickets assigned']
         ]
       }
@@ -228,7 +228,7 @@ const PROGRAM_SCHEDULE = [
         slots: [
           ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
           ['10:00-15:00', 'Build sprint', 'Deck and demo polish', 'Founders', 'Deck v2'],
-          ['16:00-17:30', 'Guest faculty', 'Telling The Founder Story: Presence, Conviction, and Demo Day Delivery', 'Victory Ashaka', 'Pitch delivery and founder presence improved', true]
+          ['16:00-17:30', 'Founder mentor', 'Telling The Founder Story: Presence, Conviction, and Demo Day Delivery', 'Victory Ashaka', 'Pitch delivery and founder presence improved', true]
         ]
       },
       {
@@ -256,7 +256,7 @@ const PROGRAM_SCHEDULE = [
           ['09:00-09:45', 'Live review', 'Final standup and demo readiness check', 'David Onilude', 'Demo order confirmed'],
           ['10:00-12:30', 'Build sprint', 'Last-mile fixes and final submission', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Final package ready'],
           ['13:30-15:30', 'Final demo gate', 'Final demo / pre-Demo Day review', 'Review panel', 'Demo Day readiness score', true],
-          ['15:30-16:15', 'Feedback', 'Launch, funding, partner, and mentor next actions', 'Program team', '30-day roadmap confirmed'],
+          ['15:30-16:15', 'Feedback', 'Launch, funding, partner, and mentor next actions', 'Program leads', '30-day roadmap confirmed'],
           ['16:15-16:45', 'Closeout', 'Cohort close, alumni onboarding, and next-step assignments', 'David Onilude', 'Alumni support started']
         ]
       }
@@ -347,10 +347,14 @@ function docsIndex() {
 
 function programSchedule() {
   const start = new Date(Date.UTC(2026, 6, 6));
-  const dateForProgramDay = function (programDay) {
+  const isoForProgramDay = function (programDay) {
     const week = Math.floor((programDay - 1) / 5);
     const day = (programDay - 1) % 5;
     const d = new Date(start.getTime() + ((week * 7) + day) * 24 * 60 * 60 * 1000);
+    return d.toISOString().slice(0, 10);
+  };
+  const dateForProgramDay = function (programDay) {
+    const d = new Date(isoForProgramDay(programDay) + 'T00:00:00Z');
     return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
   };
   const weeks = PROGRAM_SCHEDULE.map(function (week) {
@@ -358,6 +362,7 @@ function programSchedule() {
       days: week.days.map(function (day) {
         return Object.assign({}, day, {
           mode: /Monday|Friday/.test(day.day) ? 'Live online' : 'Remote/build',
+          dateIso: isoForProgramDay(day.programDay),
           date: dateForProgramDay(day.programDay),
           slots: day.slots.map(function (slot) {
             return {
@@ -384,6 +389,7 @@ function programSchedule() {
           day: day.day,
           programDay: day.programDay,
           mode: day.mode,
+          dateIso: day.dateIso,
           date: day.date
         }, slot));
       });
@@ -406,8 +412,75 @@ function programSchedule() {
       anchorSlots: slots.filter(function (s) { return s.anchor; }).length
     },
     weeks: weeks,
+    slots: slots,
     anchors: slots.filter(function (s) { return s.anchor; })
   };
+}
+
+function csvCell(v) {
+  return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+}
+
+function scheduleCsv() {
+  const s = programSchedule();
+  const rows = [['Subject', 'Start Date', 'Start Time', 'End Date', 'End Time', 'Description', 'Location']];
+  s.slots.forEach(function (slot) {
+    const times = String(slot.time || '').split('-');
+    rows.push([
+      'Origin40: ' + slot.title,
+      slot.dateIso,
+      times[0] || '',
+      slot.dateIso,
+      times[1] || '',
+      slot.week + ' · ' + slot.theme + '\nOwner: ' + slot.owner + '\nOutput: ' + slot.output,
+      'Online / Discord'
+    ]);
+  });
+  return rows.map(function (row) { return row.map(csvCell).join(','); }).join('\r\n');
+}
+
+function icsDateTime(dateIso, time) {
+  const parts = String(time || '09:00').split(':');
+  const d = new Date(dateIso + 'T' + String(parts[0] || '09').padStart(2, '0') + ':' + String(parts[1] || '00').padStart(2, '0') + ':00+01:00');
+  return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+}
+
+function icsText(v) {
+  return String(v == null ? '' : v)
+    .replace(/\\/g, '\\\\')
+    .replace(/\n/g, '\\n')
+    .replace(/,/g, '\\,')
+    .replace(/;/g, '\\;');
+}
+
+function scheduleIcs() {
+  const s = programSchedule();
+  const now = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Origin40//Founder Build Incubator//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'X-WR-CALNAME:Origin40 Founder Build Incubator',
+    'X-WR-TIMEZONE:Africa/Lagos'
+  ];
+  s.slots.forEach(function (slot, idx) {
+    const times = String(slot.time || '09:00-10:00').split('-');
+    lines.push(
+      'BEGIN:VEVENT',
+      'UID:origin40-' + slot.dateIso + '-' + idx + '@origin40',
+      'DTSTAMP:' + now,
+      'DTSTART:' + icsDateTime(slot.dateIso, times[0]),
+      'DTEND:' + icsDateTime(slot.dateIso, times[1] || times[0]),
+      'SUMMARY:' + icsText('Origin40: ' + slot.title),
+      'DESCRIPTION:' + icsText(slot.week + ' · ' + slot.theme + '\nOwner: ' + slot.owner + '\nOutput: ' + slot.output),
+      'LOCATION:' + icsText('Online / Discord'),
+      'END:VEVENT'
+    );
+  });
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
 }
 
 function allDocs() {
@@ -575,6 +648,10 @@ function addApplicant(rec) {
   return { id: rec.id, added: true };
 }
 
+function enrichApplicant(a) {
+  return S.scoreApplicant(Object.assign({}, a, { scores: Object.assign({}, a.scores || {}) }));
+}
+
 function meta() {
   return {
     brand: { name: 'Origin40', tagline: 'Build the Product. Launch the Venture.', campaign: '4 Weeks. 40 Founders. Real Products.' },
@@ -588,7 +665,7 @@ function meta() {
 }
 
 function dashboard() {
-  const apps = db.list('applicants');
+  const apps = db.list('applicants').map(enrichApplicant);
   const founders = db.list('founders');
   const mentors = db.list('mentors');
   const guestMentors = db.list('guest-mentors');
@@ -602,6 +679,8 @@ function dashboard() {
   const funds = committed.reduce(function (s, p) { return s + (Number(p.value) || 0); }, 0);
   const atRisk = founders.filter(function (f) { return f.status === 'At Risk'; }).length;
   const pending = apps.filter(function (a) { return a.status === 'Submitted' || a.status === 'Under Review'; }).length;
+  const readyToMove = apps.filter(function (a) { return a.admissions && (a.admissions.recommendedMove === 'Select' || a.admissions.recommendedMove === 'Shortlist'); }).length;
+  const rejectRecommended = apps.filter(function (a) { return a.admissions && /^Reject/.test(a.admissions.recommendedMove); }).length;
   const avgAttend = founders.length ? founders.reduce(function (s, f) { return s + (Number(f.attendancePct) || 0); }, 0) / founders.length : 0;
   const completed = founders.filter(function (f) { return f.status === 'Completed'; }).length;
   const band = function (lo, hi) { return apps.filter(function (a) { return S.hasAnyScore(a.scores) && a.total >= lo && a.total < hi; }).length; };
@@ -613,8 +692,8 @@ function dashboard() {
       { label: 'Avg attendance', value: Math.round(avgAttend * 100) + '%', ctx: 'cohort average · target 70%' },
       { label: 'Completion rate', value: (selected ? Math.round((completed / selected) * 100) : 0) + '%', ctx: 'completers of selected' },
       { label: 'Founder mentors', value: mentorsConfirmed, ctx: 'regular founder support' },
-      { label: 'Guest faculty', value: guestMentors.length, ctx: guestMentors.filter(function (m) { return m.status === 'Confirmed'; }).length + ' confirmed one-off sessions' },
-      { label: 'Program team ready', value: facilReady, ctx: 'delivering sessions' },
+      { label: 'Featured speakers', value: guestMentors.length, ctx: guestMentors.filter(function (m) { return m.status === 'Confirmed'; }).length + ' confirmed sessions' },
+      { label: 'Program leads ready', value: facilReady, ctx: 'delivering sessions' },
       { label: 'Funds committed', value: '₦' + funds.toLocaleString(), ctx: committed.length + ' sponsors' },
       { label: 'Pending review', value: pending, ctx: 'applicants awaiting scoring', warn: pending > 0 }
     ],
@@ -632,7 +711,9 @@ function dashboard() {
       { label: 'Applicants pending review', n: pending },
       { label: 'At-risk founders', n: atRisk },
       { label: 'Seats remaining (of 40)', n: Math.max(0, 40 - selected) },
-      { label: 'Sponsors not yet committed', n: partners.filter(function (p) { return p.stage !== 'Committed' && p.stage !== 'Declined'; }).length }
+      { label: 'Sponsors not yet committed', n: partners.filter(function (p) { return p.stage !== 'Committed' && p.stage !== 'Declined'; }).length },
+      { label: 'Ready to move forward', n: readyToMove },
+      { label: 'Reject/fix recommended', n: rejectRecommended }
     ]
   };
 }
@@ -663,7 +744,11 @@ async function handleApi(req, res, fullUrl) {
 
   if (a === 'meta') return send(res, 200, meta());
   if (a === 'dashboard') return send(res, 200, dashboard());
-  if (a === 'schedule') return send(res, 200, programSchedule());
+  if (a === 'schedule') {
+    if (b === 'ics') return sendDownload(res, 'origin40-program-calendar.ics', scheduleIcs(), 'text/calendar; charset=utf-8');
+    if (b === 'csv') return sendDownload(res, 'origin40-program-calendar.csv', scheduleCsv(), 'text/csv; charset=utf-8');
+    return send(res, 200, programSchedule());
+  }
   if (a === 'events') return send(res, 200, db.recentEvents(50));
   if (a === 'docs' && req.method === 'GET') {
     if (b === 'download-all') {
@@ -798,7 +883,10 @@ async function handleApi(req, res, fullUrl) {
   /* entities CRUD */
   if (ENTITIES[a]) {
     const entity = a, id = b;
-    if (req.method === 'GET') return send(res, 200, db.list(entity));
+    if (req.method === 'GET') {
+      const rows = db.list(entity);
+      return send(res, 200, entity === 'applicants' ? rows.map(enrichApplicant) : rows);
+    }
     if (req.method === 'POST') {
       const body = await readBody(req);
       body.id = db.nextId(entity, ENTITIES[entity]);

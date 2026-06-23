@@ -1,30 +1,30 @@
 # Origin40 Guest Masterclass Faculty Lineup
 
-This document maps the first confirmed/proposed special guest masterclass faculty into the 4-week
-Origin40 build curriculum. These are not ongoing mentors. Each guest comes in for one focused
-1-2 hour applied founder class: teach, teardown, framework, founder work block, hot seats, and
-follow-up list.
+This document maps the first confirmed/proposed special guest masterclass faculty and scheduled
+founder-mentor sessions into the 4-week Origin40 build curriculum. Some people are one-off guest
+faculty; Bukola Aladesulu, Victory Ashaka, and Moh Sheriff now sit in the Founder Mentors pool while
+still holding scheduled class blocks.
 
 **Operating rule:** guest masterclass faculty have `capacity = 0` in the cPanel because they are not
-assigned to founders after the class. Any follow-up actions they identify are handed to the program
-team, facilitators, or regular mentors.
+assigned to founders after the class. Founder mentors have active capacity and may be matched for
+office hours, review, or follow-up.
 
 ## Mentor Fit Summary
 
-| Guest faculty | Country | Suggested track | Why this fits Origin40 |
+| Person | Country | Suggested track | Why this fits Origin40 |
 |---|---:|---|---|
 | David Oke Opeyemi | Nigeria | Legacy keynote / founder standard | Confirmed guest mentor and the honoree/celebrant behind the Origin40 legacy. Best used at kickoff to set the standard, mission, discipline, and service lens for the cohort. |
 | Samuel Afolabi | Nigeria | Founder execution / local market building | Strong fit for early founders building in Nigeria, especially around local pain, resilience, product focus, and market execution. Confirm exact public profile before publishing bio. |
-| Moh Sheriff | Nigeria | Confidence, mindset, personal growth, entrepreneurship | Confirmed guest faculty. Best used early to help founders build confidence before customer conversations, public validation, and founder storytelling. |
+| Moh Sheriff | Nigeria | Confidence, mindset, personal growth, entrepreneurship | Confirmed founder mentor. Best used early to help founders build confidence before customer conversations, public validation, and founder storytelling. |
 | Gbemi Adunbarin | United States | E-commerce, AI commerce, product trust | Public references connect him with Vegeel, Baltimore, and an E-Commerce AI Summit panel; useful for commerce founders, digital products, and diaspora market thinking. |
 | Dr. Abiola Olamoyegun | United States | Cybersecurity, governance, risk, enterprise readiness | Public profiles identify her as VP, Information Technology IA at PHEAA, with cybersecurity, internal audit, and risk leadership. Strong fit for founder security basics and credibility. |
-| Bukola Aladesulu | Nigeria | Opportunity readiness, communication, career systems | Confirmed guest faculty. Best used to sharpen founder positioning, confidence, communication, and opportunity readiness. |
+| Bukola Aladesulu | Nigeria | Opportunity readiness, communication, career systems | Confirmed founder mentor. Best used to sharpen founder positioning, confidence, communication, and opportunity readiness. |
 | Prof. Carlos Azevedo | Portugal | Social innovation, impact model, venture purpose | Public profiles identify him as an Adjunct Professor of Social Innovation at Catolica Lisbon and Research Manager at the Yunus Social Innovation Centre. Strong fit for impact-driven venture design. |
-| Victory Ashaka | Nigeria | Founder storytelling, public speaking, creative advocacy | Confirmed guest faculty. Best used near Demo Day to strengthen presence, conviction, founder story, and delivery. |
+| Victory Ashaka | Nigeria | Founder storytelling, public speaking, creative advocacy | Confirmed founder mentor. Best used near Demo Day to strengthen presence, conviction, founder story, and delivery. |
 
 ## Recommended 4-Week Placement
 
-| Week | Build sprint | Guest faculty | Session title | Duration | Founder output |
+| Week | Build sprint | Lead | Session title | Duration | Founder output |
 |---|---|---|---|---:|---|
 | Week 1 | Kickoff | David Oke Opeyemi | Origin40 Legacy Charge: Building With Standard, Courage, and Service | 45 min | Founder legacy pledge, cohort standard, and personal commitment |
 | Week 1 | Validate the Problem | Samuel Afolabi | Building From Local Pain: Turning Broken Markets Into Products | 90 min | Founder-market fit note, sharper problem statement, and 5 real customer discovery targets |

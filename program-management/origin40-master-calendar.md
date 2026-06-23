@@ -20,7 +20,7 @@ and is surfaced in the cPanel through the dedicated Calendar page.
 - Portugal-based guests can usually take normal WAT business hours.
 - Every guest session needs a facilitator assigned for setup, timekeeping, hot seats, and follow-up.
 
-## Confirmed Program Team
+## Confirmed Program Leads
 
 | Person | Role | Primary ownership |
 |---|---|---|
@@ -33,17 +33,17 @@ and is surfaced in the cPanel through the dedicated Calendar page.
 | Day | Mode | Time block | Activity | Owner | Output |
 |---|---|---:|---|---|---|
 | Monday | Live online | 09:00-09:30 | Founder standup and weekly alignment | David Onilude | Weekly focus locked |
-| Monday | Live online | 10:00-12:00 | Guest masterclass primary slot | Guest faculty + facilitator | Weekly founder artifact |
+| Monday | Live online | 10:00-12:00 | Featured speaker masterclass primary slot | Featured speaker + program lead | Weekly founder artifact |
 | Monday | Live online | 12:00-13:00 | Workshop / application block | Facilitators | Draft artifact |
 | Monday | Remote/build | 14:00-16:30 | Supervised build sprint | David Onilude, Kazeem Quadri, Origin40 Core Team | First visible progress |
-| Monday | Live online | 16:30-17:00 | Commitments and blocker logging | Program team | Build log updated |
+| Monday | Live online | 16:30-17:00 | Commitments and blocker logging | Program leads | Build log updated |
 | Tuesday | Remote/build | Flexible | Customer work, build, async check-in | Founders | Evidence update |
 | Wednesday | Remote/build | 16:00-18:00 | Optional remote clinic / guest-friendly slot | Specialist / facilitator | Specific blocker resolved |
 | Thursday | Remote/build | Flexible | Testing, documentation, submission prep | Founders | Draft milestone |
 | Friday | Live online | 09:00-09:45 | Standup and build review | David Onilude | Demo focus set |
 | Friday | Remote/build | 10:00-12:30 | Build/demo sprint | David Onilude, Kazeem Quadri, Origin40 Core Team | Product/prototype improved |
 | Friday | Live online | 13:30-15:00 | Demo gate and milestone review | Review panel | Weekly score |
-| Friday | Live online | 15:00-16:00 | Mentor/facilitator feedback | Program team | Next actions |
+| Friday | Live online | 15:00-16:00 | Mentor/program lead feedback | Program leads | Next actions |
 | Friday | Live online | 16:00-16:30 | Risk flags and next sprint decision | David Onilude | Support desk updated |
 
 ## Week-by-Week Calendar
@@ -108,7 +108,7 @@ and is surfaced in the cPanel through the dedicated Calendar page.
 
 ## Current Guest Calendar Recommendation
 
-| Guest faculty | Best week | Primary slot | Backup slot | Session |
+| Featured speaker | Best week | Primary slot | Backup slot | Session |
 |---|---|---|---|---|
 | David Oke Opeyemi | Week 1 | Monday 09:30-10:15 | Friday 15:00-15:45 | Origin40 Legacy Charge |
 | Samuel Afolabi | Week 1 | M-AM-90 | F-PM-60 | Building From Local Pain |
