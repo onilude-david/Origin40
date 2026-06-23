@@ -20,6 +20,8 @@ const discordBot = require('./src/integrations/discord-bot');
 const PORT = process.env.PORT || 3000;
 const PUBLIC = path.join(__dirname, 'public');
 const ROOT = path.join(__dirname, '..');
+const SEEDS = path.join(__dirname, 'seeds');
+let bootstrapped = false;
 
 const DOC_SECTIONS = [
   { id: 'curriculum', label: 'Curriculum & Weekly Sprints', dir: 'curriculum', icon: 'ti-route', desc: 'The 4-week online founder build curriculum, live sessions, milestones, and week-by-week delivery.' },
@@ -648,6 +650,49 @@ function addApplicant(rec) {
   return { id: rec.id, added: true };
 }
 
+function seedEntityIfEmpty(entity, filename) {
+  if (db.count(entity) > 0) return 0;
+  const file = path.join(SEEDS, filename);
+  if (!fs.existsSync(file)) return 0;
+  const records = JSON.parse(fs.readFileSync(file, 'utf8'));
+  records.forEach(function (rec) { db.put(entity, rec); });
+  return records.length;
+}
+
+function seedApplicantsFromEnv() {
+  if (db.count('applicants') > 0) return { added: 0, skipped: 0, rejected: 0 };
+  const encoded = process.env.ORIGIN40_APPLICANTS_CSV_B64;
+  const plain = process.env.ORIGIN40_APPLICANTS_CSV;
+  const csv = encoded ? Buffer.from(encoded, 'base64').toString('utf8') : plain;
+  if (!csv || !csv.trim()) return { added: 0, skipped: 0, rejected: 0 };
+  const imported = intake.importCsv(csv);
+  let added = 0, skipped = 0, rejected = imported.report.rejected;
+  imported.applicants.forEach(function (rec, i) {
+    const x = addApplicant(rec);
+    if (x.added) added++;
+    else if (x.skipped) skipped++;
+    else if (x.rejected) {
+      rejected++;
+      imported.report.rejectedRows.push({ row: x.row || i + 2, reason: x.reason });
+    }
+  });
+  return { added: added, skipped: skipped, rejected: rejected };
+}
+
+function ensureBootstrapped() {
+  if (bootstrapped) return;
+  bootstrapped = true;
+  const report = {
+    mentors: seedEntityIfEmpty('mentors', 'confirmed-mentors.json'),
+    guestMentors: seedEntityIfEmpty('guest-mentors', 'guest-masterclass-faculty.json'),
+    facilitators: seedEntityIfEmpty('facilitators', 'confirmed-facilitators.json'),
+    applicants: seedApplicantsFromEnv()
+  };
+  if (report.mentors || report.guestMentors || report.facilitators || report.applicants.added) {
+    db.logEvent('data.bootstrap', report);
+  }
+}
+
 function enrichApplicant(a) {
   return S.scoreApplicant(Object.assign({}, a, { scores: Object.assign({}, a.scores || {}) }));
 }
@@ -738,6 +783,7 @@ function integrationsStatus() {
 }
 
 async function handleApi(req, res, fullUrl) {
+  ensureBootstrapped();
   const pathname = fullUrl.split('?')[0];
   const parts = pathname.split('/').filter(Boolean); // ['api', a, b, c?]
   const a = parts[1], b = parts[2], c = parts[3];
