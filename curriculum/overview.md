@@ -17,11 +17,11 @@ and a Friday demo gate. Mirror build status into Sheets tab `09 · Curriculum Ma
 
 ## Weekly operating rhythm (every week)
 
-- **Monday on-site:** founder standup, 1-2 hour guest mentor masterclass, sprint planning,
+- **Monday live online:** founder standup, 1-2 hour guest masterclass, sprint planning,
   supervised build sprint, and weekly commitments.
 - **Tuesday-Thursday remote/build:** execution, customer work, mentor office hours, async progress
   checks, and support desk escalation.
-- **Friday on-site:** build sprint, demo gate, milestone submission, mentor review, and next actions.
+- **Friday live online:** build sprint, demo gate, milestone submission, mentor review, and next actions.
 - **Async all week:** WordPress LMS lessons, Discord cohort server, accountability pairs,
   build logs, customer evidence logs, and mentor feedback.
 
@@ -103,7 +103,7 @@ progress and ≥70% attendance (auto-tracked in tab `05 · Progress Tracker`).
 
 ## Curriculum files
 
-- `founder-build-schedule.md` — operating rhythm, on-site days, guest mentor standards, demo gates.
+- `founder-build-schedule.md` — online operating rhythm, guest masterclass standards, demo gates.
 - `week1-validate-the-problem.md` — problem validation and customer discovery.
 - `week2-design-and-build-mvp.md` — MVP scope, design, and core build.
 - `week3-test-and-validate.md` — user testing, iteration, and traction evidence.

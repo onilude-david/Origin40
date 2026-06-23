@@ -75,7 +75,8 @@ in your jurisdiction review before use. Adapt names, dates, and governing law.
 
 ---
 
-## 8. Photography Notice (Demo Day venue signage)
+## 8. Recording Notice (Live Online Demo Day)
 
-> 📷 **Notice:** Origin40 Demo Day is being photographed, recorded, and may be livestreamed. By entering,
-> you consent to appearing in these materials. Please speak to a team member if you have concerns.
+> **Notice:** Origin40 Demo Day may be recorded, photographed via screenshots, and livestreamed. By
+> joining the live online session, you consent to appearing in these materials. Please message a team
+> member before the session if you have concerns.

@@ -117,7 +117,7 @@ Reply to this email or open a support ticket if you're stuck. Let's build. 🛠�
 
 Hi [First name],
 
-You're invited to **Origin40 Demo Day** on **[date], [time]** at **[venue / livestream]**.
+You're invited to **Origin40 Demo Day** on **[date], [time]** at **[livestream]**.
 
 40 African founders will pitch real products — 3 minutes each — built over an intensive 4-week sprint.
 Come meet your next investment, partner, or hire.

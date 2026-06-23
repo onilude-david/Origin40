@@ -123,7 +123,7 @@ analytics/signup capture on · launch post scheduled.
 **Learning objectives:** Deliver a confident, evidence-led pitch and demo under time.
 **Assignment — FINAL MILESTONE:** Deliver your **Demo Day pitch** + submit final deck and product link.
 **Submission:** Final deck + live product + 1-paragraph "where we are / what's next", via LMS.
-**Worksheet — Demo Day readiness:** deck final · demo tested on venue wifi + offline backup video ·
+**Worksheet — Demo Day readiness:** deck final · demo tested on internet connection + backup demo video ·
 script rehearsed ×2 with a mentor · Q&A answers ready · one-pager printed for investors.
 **Reflection:** What will you commit to building in the 30 days after Demo Day? (Feeds the follow-up tracker.)
 **Mentor/Judge rubric — Demo Day (/80):** Problem clarity · Product progress · Market opportunity ·

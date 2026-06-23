@@ -4,7 +4,7 @@ Use this as the review copy for the final Fluent Forms JSON import file:
 `wordpress/origin40-fluentform-founder-application-v5-final.json`.
 
 Current upload recommendation: use `v5-final`. It is shorter, early-founder-friendly, and includes
-the Lagos (Badagry) onsite requirement.
+the 100% online live-session requirement.
 
 Styling file: `wordpress/origin40-fluentform-style.css`.
 
@@ -59,7 +59,7 @@ readiness, coachability, and ability to attend the 4-week Origin40 build sprint.
 
 ## Section 6 - Commitment and Program Fit
 
-29. Can you attend onsite build days in Lagos (Badagry) every Monday and Friday for 4 weeks?
+29. Can you attend live online build sessions every Monday and Friday for 4 weeks?
 30. Can you commit at least 10-15 hours weekly outside sessions?
 31. Can you use Discord as the official Origin40 communication hub?
 32. Which mentor areas do you need most? Select up to 3.
@@ -103,4 +103,4 @@ The local dashboard import will recognize these important Fluent Forms field nam
 | Build readiness | 20 | Realistic 4-week milestone, laptop/internet, builder ownership |
 | Market and business | 15 | Coherent customer, alternatives, early business hypothesis |
 | Validation | 15 | Conversations, lived experience, evidence, early signal |
-| Program fit | 10 | Lagos (Badagry) availability, Discord readiness, coachability |
+| Program fit | 10 | online live-session availability, Discord readiness, coachability |

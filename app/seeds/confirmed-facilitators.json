@@ -1,0 +1,30 @@
+[
+  {
+    "id": "FAC-001",
+    "name": "David Onilude",
+    "email": "",
+    "org": "Origin40 / Beere Software / Tech Now Global",
+    "topic": "Lead Facilitator / Program Lead",
+    "week": "All Weeks",
+    "date": "2026-07-06",
+    "status": "Confirmed",
+    "track": "Program leadership, product building, digital literacy, youth innovation",
+    "sourceConfidence": "Public profile found; role confirmed by program owner.",
+    "sourceUrl": "https://davidonilude.com.ng/",
+    "notes": "Core operations owner for founder alignment, build standards, live reviews, and cPanel/program operations."
+  },
+  {
+    "id": "FAC-002",
+    "name": "Kazeem Quadri",
+    "email": "",
+    "org": "Origin40 / Beere Software / Tech Now Global",
+    "topic": "Co-Facilitator / Build Lead",
+    "week": "All Weeks",
+    "date": "2026-07-06",
+    "status": "Confirmed",
+    "track": "Software engineering, technical build support, product architecture",
+    "sourceConfidence": "Public profile found; cofounder role confirmed by program owner.",
+    "sourceUrl": "https://kazeemquadri.com/",
+    "notes": "Core operations owner for technical build support, MVP/product flow, and founder implementation support."
+  }
+]

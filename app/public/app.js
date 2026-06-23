@@ -7,10 +7,12 @@ var app = document.getElementById('app');
 var ROUTES = [
   { id: 'control', label: 'Control Center', icon: 'ti-apps' },
   { id: 'dashboard', label: 'Dashboard', icon: 'ti-layout-dashboard' },
+  { id: 'calendar', label: 'Calendar', icon: 'ti-calendar-time' },
   { id: 'applicants', label: 'Applications', icon: 'ti-file-text' },
   { id: 'founders', label: 'Founders', icon: 'ti-rocket' },
-  { id: 'mentors', label: 'Mentors', icon: 'ti-users' },
-  { id: 'facilitators', label: 'Facilitators', icon: 'ti-school' },
+  { id: 'mentors', label: 'Founder Mentors', icon: 'ti-users' },
+  { id: 'guest-mentors', label: 'Guest Faculty', icon: 'ti-microphone-2' },
+  { id: 'facilitators', label: 'Program Team', icon: 'ti-school' },
   { id: 'partners', label: 'Partners', icon: 'ti-building-store' },
   { id: 'documents', label: 'Documents', icon: 'ti-folders' },
   { id: 'settings', label: 'Settings', icon: 'ti-settings' }
@@ -71,7 +73,7 @@ function renderNav() {
   var title = document.getElementById('routeTitle');
   if (title) title.textContent = current.label;
   document.getElementById('nav').innerHTML = ROUTES.map(function (r) {
-    return '<a href="#/' + r.id + '" class="' + (r.id === cur ? 'active' : '') + '"><i class="ti ' + r.icon + '"></i><span>' + r.label + '</span></a>';
+    return '<a href="#/' + r.id + '" title="' + esc(r.label) + '" aria-label="' + esc(r.label) + '" class="' + (r.id === cur ? 'active' : '') + '"><i class="ti ' + r.icon + '"></i><span>' + r.label + '</span></a>';
   }).join('');
 }
 
@@ -80,6 +82,7 @@ function router() {
   var route = location.hash.replace('#/', '') || 'control';
   if (route === 'control') return viewControl();
   if (route === 'dashboard') return viewDashboard();
+  if (route === 'calendar') return viewCalendar();
   if (route === 'applicants') return viewApplicants();
   if (route === 'documents') return viewDocuments();
   if (route === 'settings') return viewSettings();
@@ -97,12 +100,16 @@ function viewControl() {
     var k = {};
     d.kpis.forEach(function (x) { k[x.label] = x.value; });
     var sections = [
-      { cat: 'Overview', tiles: [{ icon: 'ti-layout-dashboard', t: 'Dashboard', s: 'KPIs · charts · alerts', go: 'dashboard' }] },
+      { cat: 'Overview', tiles: [
+        { icon: 'ti-layout-dashboard', t: 'Dashboard', s: 'KPIs · charts · alerts', go: 'dashboard' },
+        { icon: 'ti-calendar-time', t: 'Program Calendar', s: 'July 6-31 · live schedule', go: 'calendar' }
+      ] },
       { cat: 'People', tiles: [
         { icon: 'ti-file-text', t: 'Applications', s: k['Applications received'] + ' received', go: 'applicants' },
         { icon: 'ti-rocket', t: 'Founders', s: 'progress tracker', go: 'founders' },
-        { icon: 'ti-users', t: 'Mentors', s: k['Mentors confirmed'] + ' confirmed', go: 'mentors' },
-        { icon: 'ti-school', t: 'Facilitators', s: k['Facilitators ready'] + ' ready', go: 'facilitators' }
+        { icon: 'ti-users', t: 'Founder Mentors', s: k['Founder mentors'] + ' confirmed', go: 'mentors' },
+        { icon: 'ti-microphone-2', t: 'Guest Faculty', s: (k['Guest faculty'] || 0) + ' masterclass faculty', go: 'guest-mentors' },
+        { icon: 'ti-school', t: 'Program Team', s: k['Program team ready'] + ' ready', go: 'facilitators' }
       ]},
       { cat: 'Growth', tiles: [
         { icon: 'ti-building-store', t: 'Partners & Sponsors', s: k['Funds committed'] + ' committed', go: 'partners' }
@@ -119,7 +126,8 @@ function viewControl() {
         { icon: 'ti-confetti', t: 'Demo Day page', s: 'public', url: resources.demoDayUrl || '#' }
       ]}
     ];
-    var html = '<h2 class="page">Control Center</h2><p class="sub">A single operating surface for admissions, founder delivery, mentors, partners, documents, and external program tools.</p>';
+    var html = '<div class="ops-hero"><div><div class="eyebrow">Program command room</div><h2 class="page">Control Center</h2><p class="sub">A single operating surface for admissions, founder delivery, faculty, partners, documents, and external program tools.</p></div>' +
+      '<div class="ops-timeline"><span>Week 1 validate</span><span>Week 2 build</span><span>Week 3 test</span><span>Week 4 launch</span></div></div>';
     sections.forEach(function (sec) {
       html += '<div class="cat">' + sec.cat + '</div><div class="grid">';
       sec.tiles.forEach(function (t) {
@@ -156,11 +164,87 @@ function viewDashboard() {
       var bad = a.n > 0;
       return '<div class="alert"><span>' + esc(a.label) + '</span><span class="pill ' + (bad ? 'bad' : 'ok') + '">' + a.n + '</span></div>';
     }).join('') + '</div>';
+    html += '<div class="card schedule-card" id="scheduleCard"><h3>Final Online Schedule</h3><p class="sub">Loading program calendar...</p></div>';
     html += '<div class="card" id="docCard"><h3>Documents Library</h3><p class="sub">Loading curriculum and operations docs...</p></div>';
     html += '</div>';
     app.innerHTML = html;
+    renderDashboardSchedule();
     renderDashboardDocs();
   });
+}
+
+function renderDashboardSchedule() {
+  getJSON('schedule').then(function (s) {
+    var card = document.getElementById('scheduleCard');
+    if (!card) return;
+    var anchors = (s.anchors || []).slice(0, 6);
+    card.innerHTML =
+      '<div class="schedule-head">' +
+        '<div><h3>Final Online Schedule</h3><p>' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p></div>' +
+        '<span class="status-chip ok">Dates locked</span>' +
+      '</div>' +
+      '<div class="schedule-stats">' +
+        '<div><b>' + s.totals.weeks + '</b><span>weeks</span></div>' +
+        '<div><b>' + s.totals.operatingDays + '</b><span>days</span></div>' +
+        '<div><b>' + s.totals.demoGates + '</b><span>demo gates</span></div>' +
+      '</div>' +
+      '<div class="schedule-note">' + esc(s.dateStatus) + '</div>' +
+      '<div class="schedule-list">' + anchors.map(function (slot) {
+        return '<div class="schedule-item">' +
+          '<span class="slot-time">' + esc(slot.date) + '<b>' + esc(slot.time) + '</b></span>' +
+          '<span><strong>' + esc(slot.title) + '</strong><small>' + esc(slot.owner) + '</small></span>' +
+          '<em>' + esc(slot.output) + '</em>' +
+        '</div>';
+      }).join('') + '</div>' +
+      '<a class="inline-link" href="#/calendar"><i class="ti ti-calendar-time"></i> Open full calendar</a>';
+  });
+}
+
+/* ---------- Calendar ---------- */
+function viewCalendar() {
+  getJSON('schedule').then(function (s) {
+    window.__schedule = s;
+    window.__scheduleWeek = window.__scheduleWeek || 0;
+    var current = s.weeks[window.__scheduleWeek] || s.weeks[0];
+    var html =
+      '<div class="calendar-hero">' +
+        '<div><div class="eyebrow">Standard program calendar</div><h2 class="page">' + esc(s.title) + '</h2>' +
+        '<p class="sub">' + esc(s.dateStatus) + ' · ' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p></div>' +
+        '<div class="calendar-datebox"><span>Start</span><b>Jul 6</b><em>Monday, 2026</em></div>' +
+        '<div class="calendar-datebox"><span>Finish</span><b>Jul 31</b><em>Friday, 2026</em></div>' +
+      '</div>' +
+      '<div class="calendar-metrics">' +
+        '<div><b>' + s.totals.weeks + '</b><span>weeks</span></div>' +
+        '<div><b>' + s.totals.operatingDays + '</b><span>program days</span></div>' +
+        '<div><b>' + s.totals.slots + '</b><span>timed blocks</span></div>' +
+        '<div><b>' + s.totals.demoGates + '</b><span>demo gates</span></div>' +
+      '</div>' +
+      '<div class="calendar-tabs">' + s.weeks.map(function (week, idx) {
+        return '<button class="' + (idx === window.__scheduleWeek ? 'active' : '') + '" onclick="setScheduleWeek(' + idx + ')"><span>' + esc(week.label) + '</span><b>' + esc(week.theme) + '</b></button>';
+      }).join('') + '</div>' +
+      '<section class="calendar-week">' +
+        '<div class="calendar-week-head"><div><h3>' + esc(current.label) + ': ' + esc(current.theme) + '</h3><p>' + esc(current.outcome) + '</p></div><span class="status-chip ok">Dates locked</span></div>' +
+        '<div class="calendar-days">' + current.days.map(renderCalendarDay).join('') + '</div>' +
+      '</section>';
+    app.innerHTML = html;
+  });
+}
+
+function setScheduleWeek(idx) {
+  window.__scheduleWeek = idx;
+  viewCalendar();
+}
+
+function renderCalendarDay(day) {
+  return '<article class="calendar-day">' +
+    '<div class="calendar-day-head"><span>Day ' + esc(day.programDay) + '</span><h4>' + esc(day.date) + '</h4><em>' + esc(day.mode) + '</em></div>' +
+    '<div class="calendar-slots">' + day.slots.map(function (slot) {
+      return '<div class="calendar-slot">' +
+        '<time>' + esc(slot.time) + '</time>' +
+        '<div><b>' + esc(slot.title) + '</b><span>' + esc(slot.type) + ' · ' + esc(slot.owner) + '</span><small>' + esc(slot.output) + '</small></div>' +
+      '</div>';
+    }).join('') + '</div>' +
+  '</article>';
 }
 
 function renderDashboardDocs() {
@@ -450,12 +534,17 @@ var ENTITY_VIEWS = {
     fields: [['name', 'Name', 'text'], ['startup', 'Startup', 'text'], ['mentor', 'Mentor', 'text'], ['status', 'Status', 'founderStatus'], ['attendancePct', 'Attendance (0–1)', 'number'], ['notes', 'Notes', 'textarea']]
   },
   mentors: {
-    title: 'Mentors', sub: 'Mentor directory across the 8 roles.',
+    title: 'Founder Mentors', sub: 'Regular founder-support mentors who can be matched to founders for office hours, review, and follow-up.',
     cols: [['name', 'Name'], ['org', 'Org'], ['role', 'Role'], ['capacity', 'Capacity'], ['status', 'Status', statusBadge]],
     fields: [['name', 'Name', 'text'], ['email', 'Email', 'text'], ['org', 'Org / title', 'text'], ['role', 'Role', 'mentorRole'], ['status', 'Status', 'mentorStatus'], ['capacity', 'Capacity (founders)', 'number']]
   },
+  'guest-mentors': {
+    title: 'Guest Faculty', sub: 'One-off masterclass, keynote, and clinic faculty. They teach a 1-2 hour session and are not assigned to founders.',
+    cols: [['name', 'Name'], ['org', 'Org / profile'], ['topic', 'Session topic'], ['week', 'Week'], ['status', 'Status', statusBadge]],
+    fields: [['name', 'Name', 'text'], ['email', 'Email', 'text'], ['org', 'Org / profile', 'text'], ['topic', 'Session topic', 'text'], ['week', 'Week', 'week'], ['date', 'Date', 'date'], ['status', 'Status', 'facilitatorStatus'], ['notes', 'Notes', 'textarea']]
+  },
   facilitators: {
-    title: 'Facilitators', sub: 'People delivering the live sessions (distinct from mentors).',
+    title: 'Program Team', sub: 'The core delivery team running live sessions, Discord check-ins, reviews, and founder operations.',
     cols: [['name', 'Name'], ['org', 'Org'], ['topic', 'Session / topic'], ['week', 'Week'], ['status', 'Status', statusBadge]],
     fields: [['name', 'Name', 'text'], ['email', 'Email', 'text'], ['org', 'Org / title', 'text'], ['topic', 'Session / topic', 'text'], ['week', 'Week', 'week'], ['date', 'Date', 'date'], ['status', 'Status', 'facilitatorStatus']]
   },
@@ -473,14 +562,14 @@ function viewEntity(name) {
     window['__' + name] = list;
     var html = '<div class="row"><h2 class="page">' + cfg.title + '</h2><div class="spacer"></div>' +
       '<button class="primary" onclick="openEntity(\'' + name + '\',null)"><i class="ti ti-plus"></i> Add</button></div>' +
-      '<p class="sub">' + cfg.sub + '</p><table><thead><tr>' +
+      '<p class="sub">' + cfg.sub + '</p><div class="table-tools entity-tools"><span>' + list.length + ' record' + (list.length === 1 ? '' : 's') + '</span><span>' + esc(cfg.title) + '</span></div><div class="data-table"><table><thead><tr>' +
       cfg.cols.map(function (c) { return '<th>' + c[1] + '</th>'; }).join('') + '<th></th></tr></thead><tbody>';
     html += list.map(function (r) {
       return '<tr class="clickable" onclick="openEntity(\'' + name + '\',\'' + r.id + '\')">' +
         cfg.cols.map(function (c) { var v = r[c[0]]; return '<td>' + (c[2] ? c[2](v) : esc(v == null ? '—' : v)) + '</td>'; }).join('') +
         '<td style="color:#bbb"><i class="ti ti-chevron-right"></i></td></tr>';
-    }).join('') || '<tr><td colspan="' + (cfg.cols.length + 1) + '" style="color:#888">None yet.</td></tr>';
-    html += '</tbody></table>';
+    }).join('') || '<tr><td colspan="' + (cfg.cols.length + 1) + '"><div class="empty-state table-empty"><b>No records yet</b><span>Add the first ' + esc(cfg.title.toLowerCase().replace(/s$/, '')) + ' when you are ready.</span></div></td></tr>';
+    html += '</tbody></table></div>';
     app.innerHTML = html;
   });
 }
@@ -562,8 +651,9 @@ function viewSettings() {
              field('Fluent Form ID', '<input data-s="wordpress.formId" value="' + esc(wp.formId || '') + '" placeholder="e.g. 3">')) +
       twoCol(field('WP username', '<input data-s="wordpress.username" value="' + esc(wp.username || '') + '">'),
              field('Application password', '<input data-s="wordpress.appPassword" type="password" value="' + esc(wp.appPassword || '') + '">'));
+    html += '<div class="note-info" style="margin:4px 0 10px"><b>To enable pull:</b> in WordPress, <b>Users → Profile → Application Passwords</b> → add one named "Origin40" and paste it above (with your WP username). <b>Form ID</b> is in Fluent Forms → your form (the number in the URL). Mapped automatically to your form\'s fields.</div>';
     html += '<div class="row"><button onclick="saveSettings()" class="primary">Save</button>' +
-      '<button onclick="doAction(\'intake/pull\',{},\'Pulled applications\')">Pull applications now</button>' +
+      '<button onclick="doAction(\'intake/pull\',{},\'Pulled applications\')"><i class="ti ti-cloud-download"></i> Pull applications now</button>' +
       '<span class="spacer"></span>' + dot(st.wordpress && st.wordpress.configured) + '</div>';
     html += '<div class="field" style="margin-top:14px"><label>3 · CSV import (paste an export or choose a file)</label>' +
       '<textarea id="csvbox" rows="4" placeholder="name,email,phone,country,startup,pitch"></textarea></div>' +
@@ -582,14 +672,30 @@ function viewSettings() {
       '<button onclick="testEmail()">Send test</button></div></div>';
 
     html += '<div class="sech">Discord ' + dot(st.discord && st.discord.configured) + '</div><div class="card">';
-    html += '<p class="sub" style="margin-top:0">Official Origin40 communication hub. Add invite and key channel links once the server is ready.</p>';
+    html += '<p class="sub" style="margin-top:0">Official Origin40 communication hub. Use auto-setup to build the whole server, or add links/webhooks manually.</p>';
+    html += '<div class="note-info" style="margin:0 0 12px"><b>Auto-setup (one click):</b> create an app at <a href="https://discord.com/developers/applications" target="_blank">discord.com/developers</a> → add a <b>Bot</b> → copy the <b>Application ID</b> + <b>Bot Token</b>. Paste below, Save, click <b>Get bot invite link</b> and authorize it into your server, then <b>Provision server</b> — it builds every role, channel, and webhook for you.</div>';
+    html += twoCol(field('Application ID', '<input data-s="discord.appId" value="' + esc(di.appId || '') + '" placeholder="numbers only">'),
+      field('Server (guild) ID', '<input data-s="discord.guildId" value="' + esc(di.guildId || '') + '" placeholder="enable Developer Mode → right-click server → Copy Server ID">'));
+    html += field('Bot token', '<input data-s="discord.botToken" type="password" value="' + esc(di.botToken || '') + '" placeholder="kept on this machine only">');
+    html += '<div class="row"><button onclick="saveSettings()" class="primary">Save</button>' +
+      '<button onclick="discordInvite()"><i class="ti ti-robot"></i> Get bot invite link</button>' +
+      '<button onclick="provisionDiscord()"><i class="ti ti-wand"></i> Provision server</button></div>';
+    html += '<div id="discProvision"></div>';
+    html += '<div class="field" style="margin-top:14px"><label>Or wire it manually — links + webhooks</label></div>';
     html += twoCol(field('Server / invite URL', '<input data-s="discord.inviteUrl" value="' + esc(di.inviteUrl || '') + '" placeholder="https://discord.gg/...">'),
       field('Server URL', '<input data-s="discord.serverUrl" value="' + esc(di.serverUrl || '') + '" placeholder="https://discord.com/channels/...">'));
     html += twoCol(field('Announcements channel', '<input data-s="discord.announcementsUrl" value="' + esc(di.announcementsUrl || '') + '">'),
       field('Support channel', '<input data-s="discord.supportUrl" value="' + esc(di.supportUrl || '') + '">'));
     html += twoCol(field('Build log channel', '<input data-s="discord.buildLogUrl" value="' + esc(di.buildLogUrl || '') + '">'),
       field('Demo / showcase channel', '<input data-s="discord.demoUrl" value="' + esc(di.demoUrl || '') + '">'));
+    html += '<div class="field" style="margin-top:6px"><label>Channel webhooks (the app posts through these) ' + dot(st.discord && st.discord.webhook) + '</label></div>';
+    html += twoCol(field('Announcements webhook', '<input data-s="discord.webhookAnnouncements" type="password" value="' + esc(di.webhookAnnouncements || '') + '" placeholder="https://discord.com/api/webhooks/...">'),
+      field('Automation-log webhook', '<input data-s="discord.webhookLog" type="password" value="' + esc(di.webhookLog || '') + '">'));
+    html += field('Submissions webhook (optional)', '<input data-s="discord.webhookSubmissions" type="password" value="' + esc(di.webhookSubmissions || '') + '">');
+    html += '<div class="note-info" style="margin:4px 0 12px">Create a webhook in Discord: <b>Channel → Edit → Integrations → Webhooks → New Webhook → Copy URL</b>. Full setup is in <a href="#/documents">Documents → Founder Operations → Discord Server Blueprint</a>.</div>';
     html += '<div class="row"><button onclick="saveSettings()" class="primary">Save</button>' +
+      '<input id="discordTest" placeholder="test message to #announcements" style="width:220px">' +
+      '<button onclick="testDiscord()"><i class="ti ti-send"></i> Send test</button>' +
       '<a class="button-link" href="' + esc(di.inviteUrl || di.serverUrl || '#') + '" target="_blank"><i class="ti ti-brand-discord"></i> Open Discord</a></div></div>';
 
     html += '<div class="sech">WhatsApp ' + dot(st.whatsapp && st.whatsapp.configured) + '</div><div class="card">';
@@ -695,6 +801,44 @@ function testWa() {
   saveSettings().then(function () {
     api('POST', 'actions/whatsapp', { to: to, text: 'Origin40 test. Build the Product. Launch the Venture.' })
       .then(function (r) { toast(r.ok ? 'WhatsApp sent' : 'WhatsApp failed: ' + (r.error || r.body || r.status), r.ok); });
+  });
+}
+function testDiscord() {
+  var box = document.getElementById('discordTest');
+  var msg = (box && box.value) || '✅ Origin40 admin app connected. Build the Product. Launch the Venture.';
+  saveSettings().then(function () {
+    api('POST', 'actions/discord', { channel: 'announcements', content: msg })
+      .then(function (r) { toast(r.ok ? 'Posted to Discord' : 'Discord failed: ' + (r.error || r.body || r.status), r.ok); });
+  });
+}
+function discordInvite() {
+  saveSettings().then(function () {
+    getJSON('actions/discord/invite').then(function (r) {
+      if (!r.url || r.url.indexOf('client_id=&') > -1) return toast('Enter the Application ID first, then Save', false);
+      window.open(r.url, '_blank');
+      toast('Opening Discord — authorize the bot into your server');
+    });
+  });
+}
+function provisionDiscord() {
+  var target = document.getElementById('discProvision');
+  if (target) target.innerHTML = '<div class="import-report">Provisioning server… creating roles, channels, and webhooks. This can take ~30s.</div>';
+  saveSettings().then(function () {
+    api('POST', 'actions/discord/provision', {}).then(function (r) {
+      var c = r.created || { roles: [], categories: [], channels: [], webhooks: [] };
+      var hooks = r.webhooks || {};
+      var html = '<div class="import-report"><div class="import-stats">' +
+        '<span><b>' + c.roles.length + '</b> roles</span>' +
+        '<span><b>' + c.categories.length + '</b> categories</span>' +
+        '<span><b>' + c.channels.length + '</b> channels</span>' +
+        '<span><b>' + c.webhooks.length + '</b> webhooks</span></div>';
+      html += '<div class="mini-list"><b>Webhooks wired:</b> ' + (Object.keys(hooks).length ? Object.keys(hooks).join(' · ') : 'none') + '</div>';
+      if (r.errors && r.errors.length) html += '<div class="mini-list warn"><b>Issues:</b> ' + r.errors.slice(0, 6).map(esc).join(' · ') + '</div>';
+      html += '</div>';
+      if (target) target.innerHTML = html;
+      toast(r.ok ? 'Server provisioned — webhooks saved' : 'Provision had issues: ' + (r.error || 'see report'), r.ok);
+      if (Object.keys(hooks).length) setTimeout(viewSettings, 1200);
+    });
   });
 }
 

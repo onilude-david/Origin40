@@ -63,7 +63,7 @@ Small team? One person can hold several roles — the Sheets engine does the hea
 ## 5. Budget (tab 20)
 
 Lean by design. Categories: Platform (WordPress/LMS) · Tools (Google Workspace) · Marketing · Demo Day
-(venue/AV/refreshments) · Awards · Contingency (10%). Track Budgeted vs Actual (auto Variance). Prefer
+(livestream platform/AV/online support) · Awards · Contingency (10%). Track Budgeted vs Actual (auto Variance). Prefer
 in-kind partners and free/low-cost tools. Cost-per-application auto-shows in tab `10b`.
 
 ---

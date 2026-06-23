@@ -25,7 +25,7 @@ The final form is intentionally lean and early-founder friendly. It accepts appl
 
 ## Must-Know Requirement
 
-The application clearly states that onsite build days happen in **Lagos (Badagry)** every Monday
+The application clearly states that Origin40 is **100% online** and that live build sessions happen every Monday
 and Friday for 4 weeks.
 
 ## Review Focus
@@ -39,5 +39,5 @@ Use the form to screen for:
 - business thinking
 - legal/finance awareness
 - Discord readiness
-- Lagos (Badagry) onsite availability
+- Online Session Availability
 

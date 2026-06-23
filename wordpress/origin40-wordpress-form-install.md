@@ -32,5 +32,5 @@ This is the lean final version for early founders. It accepts:
 - founders with early revenue or pilots
 
 It still checks the important things: clarity, build readiness, business basics, legal/finance
-awareness, Lagos (Badagry) onsite availability, Discord readiness, and mentor needs.
+awareness, Online Session Availability, Discord readiness, and mentor needs.
 

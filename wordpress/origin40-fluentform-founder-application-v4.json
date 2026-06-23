@@ -2407,23 +2407,23 @@
         {
           "element": "input_radio",
           "attributes": {
-            "name": "onsite_availability",
+            "name": "online_availability",
             "type": "radio",
             "value": "",
             "class": "",
             "id": ""
           },
           "settings": {
-            "label": "Can you attend onsite build days in Lagos (Badagry) every Monday and Friday for 4 weeks?",
-            "admin_field_label": "Lagos (Badagry) Onsite Availability",
+            "label": "Can you attend live online build sessions every Monday and Friday for 4 weeks?",
+            "admin_field_label": "Online Session Availability",
             "advanced_options": [
               {
-                "label": "Yes, I can attend all Monday and Friday sessions in Lagos (Badagry)",
-                "value": "Yes all Lagos Badagry sessions"
+                "label": "Yes, I can attend all live online Monday and Friday sessions",
+                "value": "Yes all live online sessions"
               },
               {
-                "label": "Mostly, but I may miss one Lagos (Badagry) session",
-                "value": "Mostly Lagos Badagry"
+                "label": "Mostly, but I may miss one live online session",
+                "value": "Mostly live online sessions"
               },
               {
                 "label": "No / unsure",
@@ -2432,7 +2432,7 @@
             ],
             "container_class": "",
             "label_placement": "",
-            "help_message": "Origin40 onsite build days happen in Lagos (Badagry). Please only select yes if you can physically attend.",
+            "help_message": "Origin40 is 100% online. Please only select yes if you can attend the live online Monday and Friday sessions.",
             "conditional_logics": {
               "type": "any",
               "status": false,

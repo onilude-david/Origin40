@@ -11,10 +11,10 @@ Workstreams: **Venue/AV · Judges · Founders (rehearsals) · Investors · Media
 Each task has Owner, Due date, Status, Priority; "Days to Due" auto-flags overdue.
 
 **Countdown checklist:**
-- **T−14:** venue + date locked; investor pack drafted; judges shortlisted.
+- **T−14:** livestream date locked; investor pack drafted; judges shortlisted.
 - **T−7:** judges confirmed; founder rehearsal #1; invites + RSVPs live; media outreach sent.
 - **T−3:** run-of-show final; AV test; rehearsal #2; certificates + awards printed.
-- **T−1:** tech check at venue; backup demo videos collected; investor packs printed.
+- **T−1:** livestream tech check; backup demo videos collected; investor packs printed.
 - **Day:** doors, run show, capture content, awards, investor mingle.
 
 ---
@@ -68,7 +68,7 @@ Business model + **the ask** (30s). Backup demo video mandatory. (See `curriculu
 
 ## 6. Demo Day Invitation Copy
 *(Social + email versions in `marketing/`.)*
-> 🎤 **Origin40 Demo Day — [date], [time], [venue/livestream].**
+> 🎤 **Origin40 Demo Day — [date], [time], [livestream].**
 > 40 African founders pitch real products built in 4 weeks. Meet your next investment, partner, or hire.
 > RSVP 👉 [link]. Build the Product. Launch the Venture.
 

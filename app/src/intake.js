@@ -100,19 +100,24 @@ function mapToApplicant(raw) {
   const status = pick(flat, FIELD_ALIASES.status);
   const scores = {};
   ['problem', 'founder', 'product', 'market', 'build', 'availability'].forEach(function (key) {
-    const v = toNumber(pick(flat, FIELD_ALIASES[key]));
-    if (v !== '') scores[key] = v;
+    const raw = pick(flat, FIELD_ALIASES[key]);
+    // Only accept a real score cell: a small standalone number (e.g. "18"),
+    // never a long free-text answer that merely happens to contain digits.
+    if (/^\s*\d{1,3}(\.\d+)?\s*$/.test(String(raw))) {
+      const v = toNumber(raw);
+      if (v !== '') scores[key] = v;
+    }
   });
   return {
     name: pick(flat, FIELD_ALIASES.name) || [first, last].filter(Boolean).join(' '),
     email: pick(flat, FIELD_ALIASES.email),
-    phone: pick(flat, FIELD_ALIASES.phone),
+    phone: pick(flat, FIELD_ALIASES.phone).replace(/^['’\s]+/, ''), // strip CSV text-guard apostrophe
     country: pick(flat, FIELD_ALIASES.country),
     startup: pick(flat, FIELD_ALIASES.startup),
     pitch: pick(flat, FIELD_ALIASES.pitch),
     timestamp: pick(flat, FIELD_ALIASES.timestamp),
     status: status || 'Submitted',
-    scores: scores, manualOverride: !!status, reviewer: '', notes: '',
+    scores: scores, manualOverride: !!(status && String(status).trim().toLowerCase() !== 'submitted'), reviewer: '', notes: '',
     source: 'intake', raw: flat
   };
 }
@@ -211,19 +216,44 @@ function importCsv(text, options) {
 /* ---- WordPress / Fluent Forms API pull ---- */
 async function pullFromWordPress(cfg) {
   // cfg: { baseUrl, formId, username, appPassword }
-  if (!cfg || !cfg.baseUrl || !cfg.formId) return { ok: false, error: 'WordPress pull needs baseUrl + formId in Settings.' };
-  const auth = cfg.username && cfg.appPassword ? 'Basic ' + Buffer.from(cfg.username + ':' + cfg.appPassword).toString('base64') : null;
-  const url = cfg.baseUrl.replace(/\/$/, '') + '/wp-json/fluentform/v1/forms/' + cfg.formId + '/entries?per_page=200';
+  if (!cfg || !cfg.baseUrl || !cfg.formId) return { ok: false, error: 'WordPress pull needs Site URL + Form ID in Settings.' };
+  const base = String(cfg.baseUrl).replace(/\/$/, '');
+  const auth = cfg.username && cfg.appPassword
+    ? 'Basic ' + Buffer.from(cfg.username + ':' + String(cfg.appPassword).replace(/\s+/g, '')).toString('base64')
+    : null;
+  const headers = auth ? { 'Authorization': auth, 'Accept': 'application/json' } : { 'Accept': 'application/json' };
+  const perPage = 100;
+  const all = [];
+  let firstKeys = null, page = 1, pages = 0;
   try {
-    const res = await fetch(url, { headers: auth ? { 'Authorization': auth } : {} });
-    if (!res.ok) return { ok: false, status: res.status, error: (await res.text()).slice(0, 200) };
-    const j = await res.json();
-    const entries = j.data || j.entries || j || [];
-    const applicants = (Array.isArray(entries) ? entries : []).map(function (e) {
-      const src = e.response || e.user_inputs || e.data || e;
-      return mapToApplicant(typeof src === 'string' ? safeJson(src) : src);
-    });
-    return { ok: true, applicants: applicants };
+    while (page <= 50) { // safety cap = 5000 entries
+      const url = base + '/wp-json/fluentform/v1/forms/' + cfg.formId + '/entries?per_page=' + perPage + '&page=' + page;
+      let res;
+      try { res = await fetch(url, { headers: headers }); }
+      catch (e) { return { ok: false, error: 'Could not reach ' + base + ' (' + e + '). Check the Site URL and that the machine has internet.' }; }
+      if (!res.ok) {
+        const text = (await res.text()).slice(0, 200);
+        let hint = '';
+        if (res.status === 401 || res.status === 403) hint = ' — check the WP username + application password, and that this user can view Fluent Forms entries.';
+        else if (res.status === 404) hint = ' — endpoint not found. Confirm Fluent Forms is active, the Form ID is right, and its REST API is enabled.';
+        return { ok: false, status: res.status, error: 'WordPress returned ' + res.status + hint + ' [' + text + ']' };
+      }
+      let j;
+      try { j = await res.json(); } catch (e) { return { ok: false, error: 'WordPress did not return JSON (is this the right Site URL?).' }; }
+      const entries = j.data || j.entries || (Array.isArray(j) ? j : []) || [];
+      if (!Array.isArray(entries) || !entries.length) break;
+      entries.forEach(function (e) {
+        let src = e.response || e.user_inputs || e.data || e;
+        if (typeof src === 'string') src = safeJson(src);
+        if (!firstKeys) firstKeys = Object.keys(src || {}).slice(0, 40);
+        const merged = Object.assign({ created_at: e.created_at || e.created_at_human || e.created || '' }, src);
+        all.push(mapToApplicant(merged));
+      });
+      pages = page;
+      if (entries.length < perPage) break;
+      page++;
+    }
+    return { ok: true, applicants: all, pages: pages, sampleKeys: firstKeys || [] };
   } catch (e) {
     return { ok: false, error: String(e) };
   }

@@ -7,6 +7,10 @@ relevant Sheets tab (`11 · Mentor Directory`, `14 · Partner Pipeline`).
 
 ## Mentor outreach
 
+Use this section for **ongoing mentors** who can review founders, take office hours, and support
+the cohort beyond one session. For one-off 1-2 hour guest faculty, use the guest masterclass copy in
+`mentors/guest-masterclass-research-and-outreach.md`.
+
 **LinkedIn DM (cold/warm)**
 > Hi [Name], I'm helping run **Origin40** — a 4-week incubator taking 40 early-stage African founders
 > from idea to a real MVP and Demo Day. Your work in **[their expertise]** is exactly what our founders
@@ -29,6 +33,40 @@ founders, Demo Day visibility, and the chance to shape Africa's next ventures.
 Would you be open to a 15-minute chat this week? Onboarding guide attached.
 
 — [Your name], Origin40
+
+---
+
+## Guest masterclass faculty outreach
+
+Use when inviting high-profile operators, professors, executives, or specialists for **one focused
+1-2 hour applied class**. They are not expected to mentor founders after the session.
+
+**Email**
+**Subject:** Origin40 guest masterclass
+
+Hi [Name],
+
+Your work in **[their category]** fits a specific gap we want to cover for Origin40 founders.
+
+Origin40 is a 4-week build-focused incubator helping 40 early-stage African founders move from idea
+or early MVP to a real product, user evidence, and Demo Day.
+
+Would you be open to taking a one-off **[90-minute / 120-minute] guest masterclass** on:
+
+**[Session title]**
+
+The format is practical: teach from experience, break down examples, run a founder work block, take
+a few hot seats, and hand off follow-up to our facilitators. You would not be expected to mentor
+founders after the session.
+
+Would this be something you would consider?
+
+— [Your name], Origin40
+
+**Follow-up**
+> Hi [Name], floating this back up. The ask is intentionally light: one focused guest class for
+> founders, no ongoing mentor commitment. We would shape it around your strongest area and handle
+> follow-up ourselves. Worth considering?
 
 ---
 

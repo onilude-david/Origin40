@@ -335,7 +335,7 @@ const SHEET_SPECS = [
       'Days to Due': '=ARRAYFORMULA(IF(ROW(H2:H)=ROW(H2),"Days to Due",IF(D2:D="","",IF(E2:E="Done","-",D2:D-TODAY()))))'
     },
     seed: [
-      ['Venue', 'Confirm venue + AV', '', '', 'Not Started', 'High', '', ''],
+      ['Livestream', 'Confirm livestream platform + tech setup', '', '', 'Not Started', 'High', '', ''],
       ['Judges', 'Confirm 5 judges', '', '', 'Not Started', 'High', '', ''],
       ['Founders', 'Pitch rehearsals x2', '', '', 'Not Started', 'High', '', ''],
       ['Investors', 'Send investor pack + invites', '', '', 'Not Started', 'Critical', '', ''],

@@ -4,10 +4,10 @@
 **Core rule:** every founder must build, test, improve, and pitch something real.
 
 This schedule is the standard operating rhythm for the incubator. It is designed for a tight,
-high-accountability founder program with two on-site days each week:
+high-accountability founder program delivered **100% online**:
 
-- **Monday on-site:** alignment, guest mentor masterclass, sprint planning, build kickoff.
-- **Friday on-site:** demo gate, submission review, mentor feedback, next sprint decision.
+- **Monday live online:** alignment, guest masterclass, sprint planning, build kickoff.
+- **Friday live online:** demo gate, submission review, mentor feedback, next sprint decision.
 - **Tuesday to Thursday remote/build days:** execution, customer work, office hours, async review.
 
 The curriculum is not a lecture series. The classes exist to improve the build. Every session must
@@ -19,11 +19,11 @@ end with a concrete founder action, a visible artifact, or a decision that moves
 
 | Day | Mode | Standard schedule | Required output |
 |---|---|---|---|
-| Monday | On-site | 30m founder standup · 90-120m guest mentor masterclass · 60m workshop · 2-3h supervised build sprint · 30m commitments | Weekly sprint plan + first artifact |
+| Monday | Live online | 30m founder standup · 90-120m guest mentor masterclass · 60m workshop · 2-3h supervised build sprint · 30m commitments | Weekly sprint plan + first artifact |
 | Tuesday | Remote/build | Founder execution · customer work · async check-in · mentor office hours | Evidence of build/customer progress |
 | Wednesday | Remote/build | Build block · technical/product clinic · accountability check | Midweek progress update |
 | Thursday | Remote/build | Polish, testing, documentation, submission prep | Draft milestone submission |
-| Friday | On-site | 45m standup · 2-3h build/demo sprint · 90m demo gate · 60m mentor review · 30m next actions | Scored weekly milestone |
+| Friday | Live online | 45m standup · 2-3h build/demo sprint · 90m demo gate · 60m mentor review · 30m next actions | Scored weekly milestone |
 
 ## Guest Masterclass Standard
 

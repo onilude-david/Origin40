@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M-001",
+    "name": "Damilola Obaro",
+    "email": "",
+    "org": "Ukiri Lijadu",
+    "role": "Legal/Operations",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Startup law, corporate/commercial transactions, compliance, IP, data, fundraising readiness",
+    "sourceConfidence": "Bio provided by program owner; public law-firm profile found.",
+    "sourceUrl": "https://www.ul-law.com/team_member/tomilola-opaleye/",
+    "notes": "Confirmed regular mentor. Best placed as Legal/Operations mentor because he can support founders on incorporation, structure, IP, data/privacy, regulatory compliance, contracts, employment, and fundraising legal readiness."
+  },
+  {
+    "id": "M-002",
+    "name": "Stanley Anigbogu",
+    "email": "",
+    "org": "LightEd",
+    "role": "Technical",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Technical/product mentoring, clean energy, climate-tech, circular design, impact ventures",
+    "sourceConfidence": "Public profiles found; confirmed by program owner as mentor.",
+    "sourceUrl": "https://thecommonwealth.org/young-nigerian-innovator-lighting-and-powering-communities",
+    "notes": "Confirmed regular mentor. Best placed as Technical/Product mentor because his work with LightEd fits prototype thinking, impact ventures, climate-tech, circular design, hardware/product validation, and community adoption."
+  },
+  {
+    "id": "M-003",
+    "name": "Gift Best",
+    "email": "",
+    "org": "",
+    "role": "Business",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "Business mentoring, exact category pending bio",
+    "sourceConfidence": "Internal confirmation from program owner; public profile not confidently matched yet.",
+    "sourceUrl": "",
+    "notes": "Confirmed regular mentor. Keep under Business until Gift's bio, organization, and strongest support category are provided."
+  }
+]

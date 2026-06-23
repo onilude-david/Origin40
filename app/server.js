@@ -14,13 +14,15 @@ const intake = require('./src/intake');
 const email = require('./src/integrations/email');
 const whatsapp = require('./src/integrations/whatsapp');
 const google = require('./src/integrations/google');
+const discord = require('./src/integrations/discord');
+const discordBot = require('./src/integrations/discord-bot');
 
 const PORT = process.env.PORT || 3000;
 const PUBLIC = path.join(__dirname, 'public');
 const ROOT = path.join(__dirname, '..');
 
 const DOC_SECTIONS = [
-  { id: 'curriculum', label: 'Curriculum & Weekly Sprints', dir: 'curriculum', icon: 'ti-route', desc: 'The 4-week founder build curriculum, onsite rhythm, milestones, and week-by-week delivery.' },
+  { id: 'curriculum', label: 'Curriculum & Weekly Sprints', dir: 'curriculum', icon: 'ti-route', desc: 'The 4-week online founder build curriculum, live sessions, milestones, and week-by-week delivery.' },
   { id: 'founder-ops', label: 'Founder Operations', dir: 'founder-ops', icon: 'ti-users-group', desc: 'Founder onboarding, attendance, Discord operations, accountability, and cohort systems.' },
   { id: 'program-management', label: 'Program Management & Legal', dir: 'program-management', icon: 'ti-clipboard-check', desc: 'Runbook, quality checks, consent language, and practical legal/disclaimer templates.' },
   { id: 'wordpress', label: 'Admissions & Form Assets', dir: 'wordpress', icon: 'ti-forms', desc: 'Fluent Forms JSON, registration questions, WordPress install notes, and form styling files.' },
@@ -31,8 +33,239 @@ const DOC_SECTIONS = [
   { id: 'impact', label: 'Impact & Alumni', dir: 'impact', icon: 'ti-chart-arcs', desc: 'Follow-up, alumni tracking, funding outcomes, impact dashboard, and reporting system.' }
 ];
 
+const PROGRAM_SCHEDULE = [
+  {
+    week: 1,
+    label: 'Week 1',
+    theme: 'Validate The Problem',
+    outcome: 'Problem-Validation Brief with evidence from reachable customers.',
+    days: [
+      {
+        day: 'Monday',
+        programDay: 1,
+        slots: [
+          ['09:00-09:30', 'Alignment', 'Founder standup, onboarding, and weekly sprint alignment', 'David Onilude', 'Weekly focus locked', true],
+          ['09:30-10:15', 'Legacy keynote', 'Origin40 Legacy Charge: Building With Standard, Courage, and Service', 'David Oke Opeyemi, confirmed guest mentor and honoree', 'Founder legacy pledge and cohort standard', true],
+          ['10:30-12:00', 'Masterclass', 'Building From Local Pain / Founder-Market Fit', 'Samuel Afolabi or founder-execution guest needed', 'Problem lens and market pain mapped', true],
+          ['12:00-13:00', 'Workshop', 'Problem statement and customer segment teardown', 'David Onilude, Kazeem Quadri', 'Problem-Validation Brief v1'],
+          ['14:00-16:30', 'Build sprint', 'Interview plan, evidence tracker, and landing page/message draft', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'First visible validation asset'],
+          ['16:30-17:00', 'Commitments', 'Blocker log and Tuesday fieldwork commitments', 'David Onilude', 'Build log updated']
+        ]
+      },
+      {
+        day: 'Tuesday',
+        programDay: 2,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Fieldwork', 'Customer discovery interviews and evidence capture', 'Founders', '2-3 customer conversations logged'],
+          ['16:00-17:00', 'Clinic', 'Interview script and insight-quality clinic', 'Customer discovery facilitator needed', 'Interview questions improved']
+        ]
+      },
+      {
+        day: 'Wednesday',
+        programDay: 3,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Problem evidence synthesis and persona refinement', 'Founders', 'Evidence tracker updated'],
+          ['17:00-18:00', 'Clinic', 'Legal/data basics for discovery, consent, and privacy', 'Damilola Obaro or legal mentor', 'Consent/data capture checklist']
+        ]
+      },
+      {
+        day: 'Thursday',
+        programDay: 4,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Validation brief polish and customer proof packaging', 'Founders', 'Draft Week 1 submission'],
+          ['16:00-17:00', 'Review', 'Async facilitator review window', 'David Onilude, Kazeem Quadri', 'Feedback comments returned'],
+          ['17:00-18:00', 'Guest faculty', 'Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up', 'Moh Sheriff', 'Founder confidence and public-facing courage strengthened', true]
+        ]
+      },
+      {
+        day: 'Friday',
+        programDay: 5,
+        slots: [
+          ['09:00-09:45', 'Live review', 'Standup and build review', 'David Onilude', 'Demo focus set'],
+          ['10:00-12:30', 'Build sprint', 'Final edits to Problem-Validation Brief', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Submission ready'],
+          ['13:30-15:00', 'Demo gate', 'Problem, customer, and evidence review', 'Review panel', 'Week 1 score', true],
+          ['15:00-16:00', 'Feedback', 'Mentor/facilitator feedback and next actions', 'Program team', 'Week 2 priorities'],
+          ['16:00-16:30', 'Closeout', 'Risk flags and support desk updates', 'David Onilude', 'Support tickets assigned']
+        ]
+      }
+    ]
+  },
+  {
+    week: 2,
+    label: 'Week 2',
+    theme: 'Design And Build The MVP',
+    outcome: 'A smallest usable product/prototype with core flow, stack decision, and pricing hypothesis.',
+    days: [
+      {
+        day: 'Monday',
+        programDay: 6,
+        slots: [
+          ['09:00-09:30', 'Alignment', 'MVP sprint alignment and Week 1 learning transfer', 'David Onilude', 'Build scope locked'],
+          ['10:30-12:00', 'Workshop', 'MVP scope, core workflow, and build plan', 'David Onilude, Kazeem Quadri', 'MVP Core Flow v1'],
+          ['16:00-17:30', 'Masterclass', 'Commerce, AI, Trust, and Product Credibility', 'Gbemi Adunbarin or product/AI trust guest needed', 'Trust Checklist', true]
+        ]
+      },
+      {
+        day: 'Tuesday',
+        programDay: 7,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Prototype build and user path implementation', 'Founders', 'First working flow'],
+          ['16:00-17:00', 'Clinic', 'Product/UX clinic', 'Product mentor needed', 'Core flow improved']
+        ]
+      },
+      {
+        day: 'Wednesday',
+        programDay: 8,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Tech stack, automation, and prototype support', 'Stanley Anigbogu or technical mentor', 'Stack decision'],
+          ['17:00-18:00', 'Clinic', 'Finance, pricing, unit economics, and business model clinic', 'Finance mentor needed', 'Pricing hypothesis']
+        ]
+      },
+      {
+        day: 'Thursday',
+        programDay: 9,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Prototype testing prep and submission packaging', 'Founders', 'Draft MVP submission'],
+          ['16:00-17:00', 'Review', 'Async facilitator review window', 'David Onilude, Kazeem Quadri', 'Feedback comments returned']
+        ]
+      },
+      {
+        day: 'Friday',
+        programDay: 10,
+        slots: [
+          ['09:00-09:45', 'Live review', 'Standup and build review', 'David Onilude', 'Demo focus set'],
+          ['10:00-12:30', 'Build sprint', 'MVP core flow repair and demo preparation', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'MVP/prototype v1'],
+          ['13:30-15:00', 'Demo gate', 'Core flow works review', 'Review panel', 'Week 2 score', true],
+          ['15:00-16:00', 'Feedback', 'Technical/product feedback and next actions', 'Program team', 'Week 3 test priorities'],
+          ['16:00-16:30', 'Closeout', 'Risk flags and support desk updates', 'David Onilude', 'Support tickets assigned']
+        ]
+      }
+    ]
+  },
+  {
+    week: 3,
+    label: 'Week 3',
+    theme: 'Test And Validate',
+    outcome: 'Real user feedback, traction signal, risk map, and validation report.',
+    days: [
+      {
+        day: 'Monday',
+        programDay: 11,
+        slots: [
+          ['09:00-09:30', 'Alignment', 'Testing sprint alignment and traction metric selection', 'David Onilude', 'Test plan locked'],
+          ['10:30-12:00', 'Masterclass', 'User Testing, Sales Discovery, and Growth Loops', 'Growth/testing guest needed', 'User Test Plan', true],
+          ['12:00-13:00', 'Workshop', 'Test script, feedback log, and traction metric setup', 'David Onilude, Kazeem Quadri', 'Validation tracker ready'],
+          ['14:00-16:30', 'Build sprint', 'User testing outreach and instrumentation', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Test pipeline started'],
+          ['16:30-17:00', 'Commitments', 'Blocker log and test targets', 'David Onilude', 'User test targets posted']
+        ]
+      },
+      {
+        day: 'Tuesday',
+        programDay: 12,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Fieldwork', 'User tests, sales discovery, and behavior observation', 'Founders', 'Feedback log updated'],
+          ['16:00-17:00', 'Clinic', 'Growth/sales clinic', 'Growth mentor needed', 'Sales/testing blockers resolved']
+        ]
+      },
+      {
+        day: 'Wednesday',
+        programDay: 13,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Iteration from user feedback', 'Founders', 'Improved prototype'],
+          ['17:00-18:30', 'Masterclass', 'Minimum Viable Security, Risk, and Credibility', 'Dr. Abiola Olamoyegun or security/risk guest needed', 'Product Risk Map + Security Checklist', true]
+        ]
+      },
+      {
+        day: 'Thursday',
+        programDay: 14,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Validation report prep and product iteration', 'Founders', 'Draft Validation Report'],
+          ['16:00-17:00', 'Guest faculty', 'Opportunity Readiness: Founder Communication, Confidence, and Positioning', 'Bukola Aladesulu', 'Founder positioning and communication improved', true]
+        ]
+      },
+      {
+        day: 'Friday',
+        programDay: 15,
+        slots: [
+          ['09:00-09:45', 'Live review', 'Standup and build review', 'David Onilude', 'Demo focus set'],
+          ['10:00-12:30', 'Build sprint', 'Final validation report and demo preparation', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Validation Report ready'],
+          ['13:30-15:00', 'Demo gate', 'Evidence from real users review', 'Review panel', 'Week 3 score', true],
+          ['15:00-16:00', 'Feedback', 'Traction, risk, and iteration feedback', 'Program team', 'Week 4 priorities'],
+          ['16:00-16:30', 'Closeout', 'Risk flags and support desk updates', 'David Onilude', 'Support tickets assigned']
+        ]
+      }
+    ]
+  },
+  {
+    week: 4,
+    label: 'Week 4',
+    theme: 'Pitch And Launch',
+    outcome: 'Final deck, demo, legal/finance readiness, launch roadmap, and demo readiness score.',
+    days: [
+      {
+        day: 'Monday',
+        programDay: 16,
+        slots: [
+          ['09:00-09:30', 'Alignment', 'Pitch and launch sprint alignment', 'David Onilude', 'Final sprint locked'],
+          ['10:00-12:00', 'Masterclass', 'Impact That Strengthens The Venture Story', 'Prof. Carlos Azevedo or impact/storytelling guest needed', 'Impact Thesis + Demo Day narrative', true],
+          ['12:00-13:00', 'Workshop', 'Pitch structure, venture story, and ask', 'David Onilude, Kazeem Quadri', 'Deck outline'],
+          ['14:00-16:30', 'Build sprint', 'Deck, demo, and 30-day launch roadmap', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Deck v1'],
+          ['16:30-17:00', 'Commitments', 'Blocker log and final sprint commitments', 'David Onilude', 'Launch priorities posted']
+        ]
+      },
+      {
+        day: 'Tuesday',
+        programDay: 17,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Deck and demo polish', 'Founders', 'Deck v2'],
+          ['16:00-17:30', 'Guest faculty', 'Telling The Founder Story: Presence, Conviction, and Demo Day Delivery', 'Victory Ashaka', 'Pitch delivery and founder presence improved', true]
+        ]
+      },
+      {
+        day: 'Wednesday',
+        programDay: 18,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Budget, ask, launch plan, and compliance cleanup', 'Founders', 'Investor/support ask draft'],
+          ['17:00-18:30', 'Clinic', 'Legal, finance, IP, data privacy, and funding readiness', 'Damilola Obaro + finance mentor needed', 'Budget, ask, and legal checklist', true]
+        ]
+      },
+      {
+        day: 'Thursday',
+        programDay: 19,
+        slots: [
+          ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
+          ['10:00-15:00', 'Build sprint', 'Final demo rehearsal and submission packaging', 'Founders', 'Final deck + demo link'],
+          ['16:00-18:00', 'Rehearsal', 'Async review and final corrections', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Final review comments closed']
+        ]
+      },
+      {
+        day: 'Friday',
+        programDay: 20,
+        slots: [
+          ['09:00-09:45', 'Live review', 'Final standup and demo readiness check', 'David Onilude', 'Demo order confirmed'],
+          ['10:00-12:30', 'Build sprint', 'Last-mile fixes and final submission', 'David Onilude, Kazeem Quadri, Origin40 Core Team', 'Final package ready'],
+          ['13:30-15:30', 'Final demo gate', 'Final demo / pre-Demo Day review', 'Review panel', 'Demo Day readiness score', true],
+          ['15:30-16:15', 'Feedback', 'Launch, funding, partner, and mentor next actions', 'Program team', '30-day roadmap confirmed'],
+          ['16:15-16:45', 'Closeout', 'Cohort close, alumni onboarding, and next-step assignments', 'David Onilude', 'Alumni support started']
+        ]
+      }
+    ]
+  }
+];
+
 const ENTITIES = {
-  applicants: 'O40', founders: 'F', mentors: 'M', facilitators: 'FAC', partners: 'P'
+  applicants: 'O40', founders: 'F', mentors: 'M', 'guest-mentors': 'GM', facilitators: 'FAC', partners: 'P'
 };
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 
@@ -109,6 +342,71 @@ function docsIndex() {
   return {
     total: sections.reduce(function (sum, s) { return sum + s.docs.length; }, extras.length),
     sections: [{ id: 'root', label: 'Project Manual', dir: '.', icon: 'ti-book-2', desc: 'The top-level Origin40 system map and operating overview.', docs: extras }].concat(sections)
+  };
+}
+
+function programSchedule() {
+  const start = new Date(Date.UTC(2026, 6, 6));
+  const dateForProgramDay = function (programDay) {
+    const week = Math.floor((programDay - 1) / 5);
+    const day = (programDay - 1) % 5;
+    const d = new Date(start.getTime() + ((week * 7) + day) * 24 * 60 * 60 * 1000);
+    return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  };
+  const weeks = PROGRAM_SCHEDULE.map(function (week) {
+    return Object.assign({}, week, {
+      days: week.days.map(function (day) {
+        return Object.assign({}, day, {
+          mode: /Monday|Friday/.test(day.day) ? 'Live online' : 'Remote/build',
+          date: dateForProgramDay(day.programDay),
+          slots: day.slots.map(function (slot) {
+            return {
+              time: slot[0],
+              type: slot[1],
+              title: slot[2],
+              owner: slot[3],
+              output: slot[4],
+              anchor: !!slot[5]
+            };
+          })
+        });
+      })
+    });
+  });
+  const slots = [];
+  weeks.forEach(function (week) {
+    week.days.forEach(function (day) {
+      day.slots.forEach(function (slot) {
+        slots.push(Object.assign({
+          week: week.label,
+          weekNumber: week.week,
+          theme: week.theme,
+          day: day.day,
+          programDay: day.programDay,
+          mode: day.mode,
+          date: day.date
+        }, slot));
+      });
+    });
+  });
+  return {
+    title: 'Origin40 Final Online Schedule',
+    timezone: 'WAT (UTC+1, Lagos)',
+    delivery: '100% online',
+    dateStatus: 'Locked: Monday, July 6, 2026 to Friday, July 31, 2026',
+    startDate: '2026-07-06',
+    endDate: '2026-07-31',
+    exactDateRule: 'Week 1 Monday is July 6, 2026. Week 4 Friday is July 31, 2026.',
+    defaultLivePlatform: 'Zoom / Google Meet for live rooms; Discord for daily operations and async check-ins',
+    totals: {
+      weeks: weeks.length,
+      operatingDays: weeks.reduce(function (sum, week) { return sum + week.days.length; }, 0),
+      slots: slots.length,
+      demoGates: slots.filter(function (s) { return /Demo gate|Final demo gate/.test(s.type); }).length,
+      anchorSlots: slots.filter(function (s) { return s.anchor; }).length
+    },
+    weeks: weeks,
+    anchors: slots.filter(function (s) { return s.anchor; })
   };
 }
 
@@ -293,6 +591,7 @@ function dashboard() {
   const apps = db.list('applicants');
   const founders = db.list('founders');
   const mentors = db.list('mentors');
+  const guestMentors = db.list('guest-mentors');
   const facils = db.list('facilitators');
   const partners = db.list('partners');
   const cStatus = function (st) { return apps.filter(function (a) { return a.status === st; }).length; };
@@ -313,8 +612,9 @@ function dashboard() {
       { label: 'Founders selected', value: selected, ctx: 'of 40 seats · ' + Math.round((selected / 40) * 100) + '% filled' },
       { label: 'Avg attendance', value: Math.round(avgAttend * 100) + '%', ctx: 'cohort average · target 70%' },
       { label: 'Completion rate', value: (selected ? Math.round((completed / selected) * 100) : 0) + '%', ctx: 'completers of selected' },
-      { label: 'Mentors confirmed', value: mentorsConfirmed, ctx: 'across 8 mentor roles' },
-      { label: 'Facilitators ready', value: facilReady, ctx: 'delivering sessions' },
+      { label: 'Founder mentors', value: mentorsConfirmed, ctx: 'regular founder support' },
+      { label: 'Guest faculty', value: guestMentors.length, ctx: guestMentors.filter(function (m) { return m.status === 'Confirmed'; }).length + ' confirmed one-off sessions' },
+      { label: 'Program team ready', value: facilReady, ctx: 'delivering sessions' },
       { label: 'Funds committed', value: '₦' + funds.toLocaleString(), ctx: committed.length + ' sponsors' },
       { label: 'Pending review', value: pending, ctx: 'applicants awaiting scoring', warn: pending > 0 }
     ],
@@ -345,7 +645,11 @@ function integrationsStatus() {
     wordpress: { configured: has(s.wordpress, ['baseUrl', 'formId']), cfg: s.wordpress || {} },
     intake: { webhookToken: (s.intake && s.intake.webhookToken) || '' },
     email: { configured: has(s.email, ['apiKey', 'fromEmail']), provider: (s.email && s.email.provider) || 'brevo' },
-    discord: { configured: !!(s.discord && (s.discord.inviteUrl || s.discord.serverUrl)), cfg: s.discord || {} },
+    discord: {
+      configured: !!(s.discord && (s.discord.inviteUrl || s.discord.serverUrl || s.discord.webhookAnnouncements || s.discord.webhookLog)),
+      webhook: !!(s.discord && (s.discord.webhookAnnouncements || s.discord.webhookLog || s.discord.webhookSubmissions)),
+      cfg: s.discord || {}
+    },
     resources: { configured: !!(s.resources && s.resources.websiteUrl), cfg: s.resources || {} },
     whatsapp: { configured: !!(s.whatsapp && (s.whatsapp.token || s.whatsapp.accountSid)), provider: (s.whatsapp && s.whatsapp.provider) || 'meta' },
     google: { configured: !!(s.google && s.google.serviceAccountJson && s.google.spreadsheetId) }
@@ -359,6 +663,7 @@ async function handleApi(req, res, fullUrl) {
 
   if (a === 'meta') return send(res, 200, meta());
   if (a === 'dashboard') return send(res, 200, dashboard());
+  if (a === 'schedule') return send(res, 200, programSchedule());
   if (a === 'events') return send(res, 200, db.recentEvents(50));
   if (a === 'docs' && req.method === 'GET') {
     if (b === 'download-all') {
@@ -411,8 +716,9 @@ async function handleApi(req, res, fullUrl) {
     if (!r.ok) return send(res, 400, r);
     let added = 0, skipped = 0;
     r.applicants.forEach(function (rec) { const x = addApplicant(rec); x.added ? added++ : skipped++; });
-    db.logEvent('intake.pull', { added: added, skipped: skipped });
-    return send(res, 200, { ok: true, added: added, skipped: skipped, total: r.applicants.length });
+    db.logEvent('intake.pull', { added: added, skipped: skipped, pages: r.pages });
+    discord.notify(db.getSetting('discord', {}), 'log', '🔄 WordPress pull — ' + added + ' new, ' + skipped + ' already in system (' + r.applicants.length + ' fetched).');
+    return send(res, 200, { ok: true, added: added, skipped: skipped, total: r.applicants.length, pages: r.pages, sampleKeys: r.sampleKeys });
   }
 
   /* import: CSV */
@@ -429,6 +735,7 @@ async function handleApi(req, res, fullUrl) {
     });
     const report = Object.assign({}, imported.report, { added: added, skipped: skipped, rejected: rejected, skippedRows: skippedRows });
     db.logEvent('import.csv', { added: added, skipped: skipped, rejected: rejected, parsed: imported.applicants.length });
+    discord.notify(db.getSetting('discord', {}), 'log', '📥 Application import — ' + added + ' added, ' + skipped + ' duplicates, ' + rejected + ' rejected.');
     return send(res, 200, { ok: true, added: added, skipped: skipped, rejected: rejected, parsed: imported.report.rows, report: report });
   }
 
@@ -444,6 +751,32 @@ async function handleApi(req, res, fullUrl) {
     const m = await readBody(req);
     const r = await whatsapp.send(db.getSetting('whatsapp', {}), m);
     db.logEvent('whatsapp.send', { to: m.to, ok: r.ok, error: r.error });
+    return send(res, r.ok ? 200 : 400, r);
+  }
+  /* actions: auto-provision the discord server (bot token) */
+  if (a === 'actions' && b === 'discord' && c === 'provision' && req.method === 'POST') {
+    const cfg = db.getSetting('discord', {});
+    const r = await discordBot.provision({ botToken: cfg.botToken, guildId: cfg.guildId });
+    if (r.webhooks && Object.keys(r.webhooks).length) {
+      const next = Object.assign({}, cfg);
+      if (r.webhooks.announcements) next.webhookAnnouncements = r.webhooks.announcements;
+      if (r.webhooks.log) next.webhookLog = r.webhooks.log;
+      if (r.webhooks.submissions) next.webhookSubmissions = r.webhooks.submissions;
+      db.setSetting('discord', next);
+    }
+    db.logEvent('discord.provision', { created: r.created, errors: (r.errors || []).length });
+    return send(res, r.ok ? 200 : 400, r);
+  }
+  /* actions: discord bot invite link */
+  if (a === 'actions' && b === 'discord' && c === 'invite' && req.method === 'GET') {
+    const cfg = db.getSetting('discord', {});
+    return send(res, 200, { url: discordBot.buildInviteUrl(cfg.appId || ''), permissions: discordBot.INVITE_PERMS });
+  }
+  /* actions: send discord (webhook) */
+  if (a === 'actions' && b === 'discord' && req.method === 'POST') {
+    const m = await readBody(req);
+    const r = await discord.send(db.getSetting('discord', {}), m);
+    db.logEvent('discord.send', { channel: m.channel || 'announcements', ok: r.ok, error: r.error });
     return send(res, r.ok ? 200 : 400, r);
   }
   /* sync: google sheets */

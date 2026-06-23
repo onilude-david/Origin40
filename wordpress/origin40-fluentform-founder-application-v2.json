@@ -1088,14 +1088,14 @@
           },
           "index": 48
         },
-        "onsite_availability": {
+        "online_availability": {
           "element": "input_radio",
           "attributes": {
-            "name": "onsite_availability",
+            "name": "online_availability",
             "type": "radio"
           },
           "settings": {
-            "label": "Can you attend onsite build days every Monday and Friday for 4 weeks?",
+            "label": "Can you attend live online build sessions every Monday and Friday for 4 weeks?",
             "required": true,
             "admin_field_label": "Onsite Availability",
             "advanced_options": [

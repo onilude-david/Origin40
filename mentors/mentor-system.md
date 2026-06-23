@@ -47,12 +47,32 @@ follow-up list.
 **Capacity rule:** set guest masterclass capacity to `0` in the cPanel. Capacity only applies to
 regular mentors who will follow founders after the class.
 
-See `guest-mentor-lineup.md` for the current first guest masterclass faculty slate:
+See `guest-mentor-lineup.md` for the current first guest masterclass faculty slate, and
+`guest-masterclass-research-and-outreach.md` for research notes, session topics, invitation emails,
+DMs, and follow-up copy.
 
 - Samuel Afolabi — founder execution / local market building.
 - Gbemi Adunbarin — e-commerce, AI commerce, and product trust.
 - Dr. Abiola Olamoyegun — cybersecurity, governance, risk, and enterprise readiness.
 - Prof. Carlos Azevedo — social innovation, impact model, and venture purpose.
+
+---
+
+## 1c. Confirmed Regular Mentors
+
+See `confirmed-mentor-profiles.md` for copy-ready mentor bios and founder support lenses.
+
+Current confirmed regular mentor:
+
+- **Damilola Obaro** — Legal/Operations mentor; enterprise lawyer and Senior Associate at Ukiri
+  Lijadu. Best fit for startup legal basics, incorporation, structuring, IP, data privacy,
+  regulatory compliance, fundraising/legal readiness, contracts, and founder risk management.
+- **Stanley Anigbogu** — Technical/Product mentor; founder/CEO of LightEd and Nigerian creative
+  technologist working across clean energy, circular design, climate innovation, storytelling, and
+  community impact. Best fit for prototype thinking, climate/impact ventures, hardware/product
+  validation, and impact storytelling.
+- **Gift Best** — Confirmed regular mentor. Full bio, organization, and best-fit mentoring track to
+  be added once provided.
 
 ---
 

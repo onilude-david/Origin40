@@ -1688,7 +1688,7 @@
                 }
               ]
             },
-            "description": "The program is intense, onsite twice a week, and coordinated through Discord."
+            "description": "The program is intense, 100% online, and coordinated through Discord."
           },
           "editor_options": {
             "title": "Section Break",
@@ -1701,7 +1701,7 @@
           "index": 34,
           "element": "input_radio",
           "attributes": {
-            "name": "onsite_availability",
+            "name": "online_availability",
             "type": "radio",
             "value": "",
             "id": "",
@@ -1709,10 +1709,10 @@
           },
           "settings": {
             "container_class": "",
-            "label": "Can you attend onsite build days in Lagos (Badagry) every Monday and Friday for 4 weeks?",
-            "admin_field_label": "Lagos (Badagry) Onsite Availability",
+            "label": "Can you attend live online build sessions every Monday and Friday for 4 weeks?",
+            "admin_field_label": "Online Session Availability",
             "label_placement": "",
-            "help_message": "Origin40 onsite build days happen in Lagos (Badagry). Please only select yes if you can physically attend.",
+            "help_message": "Origin40 is 100% online. Please only select yes if you can attend the live online Monday and Friday sessions.",
             "validation_rules": {
               "required": {
                 "value": true,
@@ -1733,12 +1733,12 @@
             },
             "advanced_options": [
               {
-                "label": "Yes, I can attend all Monday and Friday sessions in Lagos (Badagry)",
-                "value": "Yes all Lagos Badagry sessions"
+                "label": "Yes, I can attend all live online Monday and Friday sessions",
+                "value": "Yes all live online sessions"
               },
               {
-                "label": "Mostly, but I may miss one Lagos (Badagry) session",
-                "value": "Mostly Lagos Badagry"
+                "label": "Mostly, but I may miss one live online session",
+                "value": "Mostly live online sessions"
               },
               {
                 "label": "No / unsure",

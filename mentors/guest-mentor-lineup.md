@@ -13,25 +13,50 @@ team, facilitators, or regular mentors.
 
 | Guest faculty | Country | Suggested track | Why this fits Origin40 |
 |---|---:|---|---|
+| David Oke Opeyemi | Nigeria | Legacy keynote / founder standard | Confirmed guest mentor and the honoree/celebrant behind the Origin40 legacy. Best used at kickoff to set the standard, mission, discipline, and service lens for the cohort. |
 | Samuel Afolabi | Nigeria | Founder execution / local market building | Strong fit for early founders building in Nigeria, especially around local pain, resilience, product focus, and market execution. Confirm exact public profile before publishing bio. |
+| Moh Sheriff | Nigeria | Confidence, mindset, personal growth, entrepreneurship | Confirmed guest faculty. Best used early to help founders build confidence before customer conversations, public validation, and founder storytelling. |
 | Gbemi Adunbarin | United States | E-commerce, AI commerce, product trust | Public references connect him with Vegeel, Baltimore, and an E-Commerce AI Summit panel; useful for commerce founders, digital products, and diaspora market thinking. |
 | Dr. Abiola Olamoyegun | United States | Cybersecurity, governance, risk, enterprise readiness | Public profiles identify her as VP, Information Technology IA at PHEAA, with cybersecurity, internal audit, and risk leadership. Strong fit for founder security basics and credibility. |
+| Bukola Aladesulu | Nigeria | Opportunity readiness, communication, career systems | Confirmed guest faculty. Best used to sharpen founder positioning, confidence, communication, and opportunity readiness. |
 | Prof. Carlos Azevedo | Portugal | Social innovation, impact model, venture purpose | Public profiles identify him as an Adjunct Professor of Social Innovation at Catolica Lisbon and Research Manager at the Yunus Social Innovation Centre. Strong fit for impact-driven venture design. |
+| Victory Ashaka | Nigeria | Founder storytelling, public speaking, creative advocacy | Confirmed guest faculty. Best used near Demo Day to strengthen presence, conviction, founder story, and delivery. |
 
 ## Recommended 4-Week Placement
 
 | Week | Build sprint | Guest faculty | Session title | Duration | Founder output |
 |---|---|---|---|---:|---|
+| Week 1 | Kickoff | David Oke Opeyemi | Origin40 Legacy Charge: Building With Standard, Courage, and Service | 45 min | Founder legacy pledge, cohort standard, and personal commitment |
 | Week 1 | Validate the Problem | Samuel Afolabi | Building From Local Pain: Turning Broken Markets Into Products | 90 min | Founder-market fit note, sharper problem statement, and 5 real customer discovery targets |
+| Week 1 | Validate the Problem | Moh Sheriff | Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up | 60 min | Founder confidence pledge and public validation courage |
 | Week 2 | Design & Build the MVP | Gbemi Adunbarin | Commerce, AI, and Trust: Designing Products People Can Actually Use and Buy | 90 min | MVP trust checklist, core transaction/workflow map, and one AI-enabled workflow decision |
 | Week 3 | Test & Validate | Dr. Abiola Olamoyegun | Security, Risk, and Credibility for Early Products | 90 min | Founder security checklist, data/privacy risk map, and enterprise-readiness actions |
+| Week 3 | Test & Validate | Bukola Aladesulu | Opportunity Readiness: Founder Communication, Confidence, and Positioning | 60 min | Founder positioning statement and opportunity-readiness checklist |
 | Week 4 | Pitch & Launch | Prof. Carlos Azevedo | Impact, Social Innovation, and the Venture Story | 90-120 min | Impact thesis, stakeholder map, credible outcomes, and stronger Demo Day narrative |
+| Week 4 | Pitch & Launch | Victory Ashaka | Telling The Founder Story: Presence, Conviction, and Demo Day Delivery | 90 min | Pitch delivery notes and founder presence improvements |
 
 ## Session Briefs
 
+### David Oke Opeyemi - Origin40 Honoree / Legacy Keynote
+
+**Best week:** Week 1 kickoff, Monday live online.
+
+**Class promise:** founders understand the standard behind Origin40: build with discipline, serve
+real people, and use the 4-week sprint to create visible proof rather than only talk about ideas.
+
+**Suggested agenda:**
+
+1. Why Origin40 exists and what this cohort is honoring.
+2. The standard expected from every founder in the program.
+3. Building with courage, service, and proof.
+4. Founder commitment exercise: what each founder will build by July 31.
+5. Handoff into the first problem-validation sprint.
+
+**Founder artifact:** founder legacy pledge + personal build commitment.
+
 ### Samuel Afolabi - Founder Execution / Local Market Building
 
-**Best week:** Week 1, Monday onsite.
+**Best week:** Week 1, Monday live online.
 
 **Class promise:** founders learn how to turn a real local pain into a focused product wedge
 without getting lost in noise, market frustration, or overbuilding.
@@ -49,9 +74,32 @@ without getting lost in noise, market frustration, or overbuilding.
 **Publishing caution:** confirm whether the intended Samuel Afolabi is the MyAgent founder or the
 cybersecurity speaker/profile before publishing a public bio.
 
+### Moh Sheriff - Confidence, Mindset, Content, Entrepreneurship
+
+**Best week:** Week 1, Thursday live online.
+
+**Class promise:** founders learn confidence as a practical skill they can use when talking to
+customers, pitching their idea, creating public proof, and showing up before everything feels ready.
+
+**Short bio:** Moh Sheriff, born Sheriff Muhammad, is a Nigerian keynote speaker, content creator,
+and entrepreneur based in Lagos. He is the founder of Amor Fati and is known for empowering content
+and personal-growth programs, especially his **Overconfidence 101** series. He is a Business
+Management student at the University of Lagos, previously served as a Lagos Youth Ambassador, hosts
+the podcast **Crazy Enough with Sheriff Muhammad**, and founded the apparel brand Hoodies'n'Stuffs.
+
+**Suggested agenda:**
+
+1. Confidence as a learnable founder skill.
+2. Killing mediocrity: why showing up matters before perfection.
+3. Public-facing founder mindset for customer conversations.
+4. Live founder work block: personal confidence statement.
+5. Founder challenge: one uncomfortable public action before the next demo gate.
+
+**Founder artifact:** Founder confidence pledge + one public validation action.
+
 ### Gbemi Adunbarin - E-commerce, AI Commerce, Product Trust
 
-**Best week:** Week 2, Monday onsite or midweek product clinic.
+**Best week:** Week 2, Monday live online or midweek product clinic.
 
 **Class promise:** founders understand how to design a useful digital commerce/product workflow,
 where AI helps, and where trust, payment, delivery, or support can break the product.
@@ -85,7 +133,7 @@ credible, especially when handling users, payments, personal data, partners, or 
 
 ### Prof. Carlos Azevedo - Social Innovation, Impact, Venture Purpose
 
-**Best week:** Week 4, Monday onsite.
+**Best week:** Week 4, Monday live online.
 
 **Class promise:** founders learn how to connect venture model, stakeholder need, and measurable
 impact without turning their pitch into vague social-good language.
