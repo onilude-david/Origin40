@@ -782,6 +782,7 @@ function viewSettings() {
       field('Support channel', '<input data-s="discord.supportUrl" value="' + esc(di.supportUrl || '') + '">'));
     html += twoCol(field('Build log channel', '<input data-s="discord.buildLogUrl" value="' + esc(di.buildLogUrl || '') + '">'),
       field('Demo / showcase channel', '<input data-s="discord.demoUrl" value="' + esc(di.demoUrl || '') + '">'));
+    html += field('Automation-log channel', '<input data-s="discord.automationLogUrl" value="' + esc(di.automationLogUrl || '') + '">');
     html += '<div class="field" style="margin-top:6px"><label>Channel webhooks (the app posts through these) ' + dot(st.discord && st.discord.webhook) + '</label></div>';
     html += twoCol(field('Announcements webhook', '<input data-s="discord.webhookAnnouncements" type="password" value="' + esc(di.webhookAnnouncements || '') + '" placeholder="https://discord.com/api/webhooks/...">'),
       field('Automation-log webhook', '<input data-s="discord.webhookLog" type="password" value="' + esc(di.webhookLog || '') + '">'));
