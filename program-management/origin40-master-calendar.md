@@ -52,6 +52,9 @@ execution days for customer work, product building, testing, and assignment comp
 |---|---|---|
 | David Oke Opeyemi | Week 1, Monday, July 13 | Origin40 Legacy Charge |
 | Mofiyinfoluwa Faniyi | Week 3, Monday, July 27 | Growth, Partnerships and Go-to-Market Strategy |
+| Mofiyinfoluwa Faniyi | Week 3, Monday, July 27 | Launch Build Lab: partnership targets and go-to-market review |
+| Mofiyinfoluwa Faniyi | Week 3, Wednesday, July 29 | Cross-functional Build Lab: partnership and market iteration feedback |
+| Mofiyinfoluwa Faniyi | Week 3, Friday, July 31 | Brand, marketing and media studio: partnership story and final launch messaging |
 | Marcene Mitchell | Week 3, Wednesday, July 29 | Building Investable Climate and Impact Ventures |
 
 ## Weekly Rhythm
