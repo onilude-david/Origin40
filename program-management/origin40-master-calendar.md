@@ -41,6 +41,7 @@ execution days for customer work, product building, testing, and assignment comp
 | Stanley Anigbogu | Technical feasibility, product building, prototyping, and impact products |
 | Segun Ajanaku | UI/UX, branding, visual identity, user flows, prototypes, and usability testing |
 | Bukola Aladesulu | Marketing, audience and messaging, go-to-market planning, positioning, confidence, and founder communication |
+| Mofiyinfoluwa Faniyi | Business development, strategic partnerships, growth strategy, investor relations, go-to-market, and opportunity readiness |
 | Victory Ashaka | Founder storytelling, pitch presence, and Demo Day delivery |
 | Erioluwa Adeyinka | Evidence, stakeholder mapping, social-impact execution, and operations |
 | Gift Best | Founder hot seats and general mentoring; detailed specialization pending |
@@ -50,6 +51,7 @@ execution days for customer work, product building, testing, and assignment comp
 | Person | Placement | Session |
 |---|---|---|
 | David Oke Opeyemi | Week 1, Monday, July 13 | Origin40 Legacy Charge |
+| Mofiyinfoluwa Faniyi | Week 3, Monday, July 27 | Growth, Partnerships and Go-to-Market Strategy |
 | Marcene Mitchell | Week 3, Wednesday, July 29 | Building Investable Climate and Impact Ventures |
 
 ## Weekly Rhythm

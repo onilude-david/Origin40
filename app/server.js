@@ -327,7 +327,7 @@ const PROGRAM_SCHEDULE = [
     days: [
       { day: 'Monday', programDay: 7, slots: [
         ['09:00-09:30', 'Alignment', 'Final testing sprint and Showcase Day countdown', 'David Onilude', 'Final-week targets locked'],
-        ['10:00-11:15', 'Marketing workshop', 'Marketing and Opportunity Readiness: audience, messaging, positioning, and founder communication', 'Bukola Aladesulu', 'Audience Profile, Core Message, and Go-to-Market Action Sheet', true],
+        ['10:00-11:15', 'Marketing workshop', 'Growth, Partnerships and Go-to-Market Strategy: audience, messaging, positioning, partnerships, and founder communication', 'Bukola Aladesulu, Mofiyinfoluwa Faniyi', 'Audience Profile, Core Message, Partnership Map, and Go-to-Market Action Sheet', true],
         ['11:30-12:45', 'Readiness clinic', 'Structure, IP, data, contracts, and funding readiness', 'Damilola Obaro', 'Founder Legal Readiness Checklist', true],
         ['14:00-16:00', 'Launch Build Lab', 'Product fixes, campaign assets, brand application, legal/operating checks, and showcase planning', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Launch Readiness Board and validation evidence locked']
       ]},

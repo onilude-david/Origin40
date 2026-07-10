@@ -34,7 +34,7 @@
 
 | Date | Core programme | Confirmed people | Founder output |
 |---|---|---|---|
-| Mon, Jul 27 | Marketing, legal/funding readiness, testing, and Launch Build Lab across all build tracks | Bukola Aladesulu, Damilola Obaro, David Onilude, Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Erioluwa Adeyinka | Go-to-Market Action Sheet, Launch Readiness Board, legal checklist and validation evidence |
+| Mon, Jul 27 | Growth, partnerships, marketing, legal/funding readiness, testing, and Launch Build Lab across all build tracks | Bukola Aladesulu, Mofiyinfoluwa Faniyi, Damilola Obaro, David Onilude, Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Erioluwa Adeyinka | Go-to-Market Action Sheet, Partnership Map, Launch Readiness Board, legal checklist and validation evidence |
 | Wed, Jul 29 | Founder hot seats, Cross-functional Build Lab, production sprint, and climate/impact investment masterclass | Gift Best, Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Erioluwa Adeyinka, Marcene Mitchell | Final iteration list, Showcase Asset Pack and Finance-and-Scale Note |
 | Fri, Jul 31 | Brand and marketing review, founder storytelling, interview practice, product explanation, and showcase rehearsal | Segun Ajanaku, Victory Ashaka, David Onilude, Bukola Aladesulu, Kazeem Quadri, programme leads | Brand-checked marketing message, media profile, and showcase readiness |
 

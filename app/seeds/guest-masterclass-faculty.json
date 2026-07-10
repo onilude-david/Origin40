@@ -88,5 +88,20 @@
     "sourceConfidence": "Confirmed by program owner; professional expertise verified through her official speaking site and IFC/World Bank Group sources.",
     "sourceUrl": "https://marcenemitchell.com/about-me/speaking/",
     "notes": "Confirmed one-off guest speaker. Best placed in Week 4 to help founders connect climate and impact outcomes to commercial strategy, financing, scale, and a credible investor or partner narrative. Recommended founder artifact: Climate and Impact Opportunity Map plus Finance-and-Scale Note."
+  },
+  {
+    "id": "GM-007",
+    "name": "Mofiyinfoluwa Faniyi",
+    "email": "",
+    "org": "Bluecraft Consulting / Equitable Education Initiative",
+    "topic": "Growth, Partnerships and Go-to-Market Strategy",
+    "week": "Week 3",
+    "date": "2026-07-27",
+    "status": "Confirmed",
+    "capacity": 0,
+    "track": "Business development, marketing, strategic partnerships, growth strategy, commercial strategy, investor relations, go-to-market, social impact",
+    "sourceConfidence": "Bio provided by program owner; confirmed by program owner as mentor and guest speaker.",
+    "sourceUrl": "",
+    "notes": "Confirmed mentor and guest speaker. Supports founders on business development, strategic partnerships, go-to-market, growth strategy, investor relations, and opportunity readiness."
   }
 ]
