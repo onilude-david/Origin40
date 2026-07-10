@@ -307,7 +307,7 @@ const PROGRAM_SCHEDULE = [
       ]},
       { day: 'Wednesday', programDay: 5, slots: [
         ['09:00-09:30', 'Standup', 'Design and build blockers', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Blockers assigned'],
-        ['10:00-11:30', 'Mentor clinic', 'Prototype architecture, feasibility, and product wedge', 'Stanley Anigbogu', 'Technical decision note', true],
+        ['10:00-11:30', 'Mentor clinic', 'Building Products People Actually Want: Lessons from Building and Scaling as a Founder', 'Stanley Anigbogu', 'Product desirability and founder scaling lessons note', true],
         ['11:45-13:00', 'Usability clinic', 'Interface critique and usability test preparation', 'Segun Ajanaku', 'Usability test script'],
         ['14:00-16:30', 'Cross-functional Build Lab', 'Parallel development, UI/UX, branding, marketing, and business-readiness support', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Working MVP, Brand Starter Kit, marketing message, and readiness checklist']
       ]},

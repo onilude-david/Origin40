@@ -25,7 +25,7 @@
 | Date | Core programme | Confirmed people | Founder output |
 |---|---|---|---|
 | Mon, Jul 20 | MVP scope, UI/UX and branding workshop: user flow, prototype and visual direction | Segun Ajanaku, David Onilude, Kazeem Quadri, programme leads | Core flow, wireframe, Brand Foundation Sheet, MVP Scope Sheet |
-| Wed, Jul 22 | Technical feasibility, UX critique, and Cross-functional Build Lab covering development, branding, marketing and readiness | Stanley Anigbogu, Segun Ajanaku, Kazeem Quadri, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka | Working MVP, Brand Starter Kit, marketing message and readiness checklist |
+| Wed, Jul 22 | Building Products People Actually Want: Lessons from Building and Scaling as a Founder; UX critique; and Cross-functional Build Lab covering development, branding, marketing and readiness | Stanley Anigbogu, Segun Ajanaku, Kazeem Quadri, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka | Product desirability note, Working MVP, Brand Starter Kit, marketing message and readiness checklist |
 | Fri, Jul 24 | Guided Build Lab and MVP milestone gate | David Onilude, Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Erioluwa Adeyinka | MVP/Prototype v1 and Market Asset Pack |
 
 ## Week 3 — Test, Tell and Prepare
