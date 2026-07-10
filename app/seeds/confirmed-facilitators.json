@@ -26,5 +26,47 @@
     "sourceConfidence": "Public profile found; cofounder role confirmed by program owner.",
     "sourceUrl": "https://kazeemquadri.com/",
     "notes": "Core operations owner for technical build support, MVP/product flow, and founder implementation support."
+  },
+  {
+    "id": "FAC-003",
+    "name": "Dotonu Wonder",
+    "email": "",
+    "org": "Beere / Origin40",
+    "topic": "Program Lead / Beere Team",
+    "week": "All Weeks",
+    "date": "2026-07-06",
+    "status": "Confirmed",
+    "track": "Program operations, founder support, Beere team delivery",
+    "sourceConfidence": "Confirmed by program owner as Beere Program Lead.",
+    "sourceUrl": "",
+    "notes": "Confirmed Program Lead and part of Beere. Supports Origin40 delivery, founder operations, coordination, and program execution."
+  },
+  {
+    "id": "FAC-004",
+    "name": "Avoseh Yohan",
+    "email": "",
+    "org": "Beere / Origin40",
+    "topic": "Program Lead / Beere Team",
+    "week": "All Weeks",
+    "date": "2026-07-06",
+    "status": "Confirmed",
+    "track": "Program operations, founder support, Beere team delivery",
+    "sourceConfidence": "Confirmed by program owner as Beere Program Lead.",
+    "sourceUrl": "",
+    "notes": "Confirmed Program Lead and part of Beere. Supports Origin40 delivery, founder operations, coordination, and program execution."
+  },
+  {
+    "id": "FAC-005",
+    "name": "Moses Deborah",
+    "email": "",
+    "org": "Beere / Origin40",
+    "topic": "Program Lead / Beere Team",
+    "week": "All Weeks",
+    "date": "2026-07-06",
+    "status": "Confirmed",
+    "track": "Program operations, founder support, Beere team delivery",
+    "sourceConfidence": "Confirmed by program owner as Beere Program Lead.",
+    "sourceUrl": "",
+    "notes": "Confirmed Program Lead and part of Beere. Supports Origin40 delivery, founder operations, coordination, and program execution."
   }
 ]

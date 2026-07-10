@@ -33,23 +33,23 @@
     "role": "Business",
     "status": "Confirmed",
     "capacity": 5,
-    "track": "Business mentoring, exact category pending bio",
-    "sourceConfidence": "Internal confirmation from program owner; public profile not confidently matched yet.",
+    "track": "Mentoring category and support areas to be finalized",
+    "sourceConfidence": "Confirmed by program owner; bio and preferred mentoring category pending.",
     "sourceUrl": "",
-    "notes": "Confirmed regular mentor. Keep under Business until Gift's bio, organization, and strongest support category are provided."
+    "notes": "Confirmed regular mentor. Assign to a specific clinic or founder group after the bio, organization, and strongest support category are finalized."
   },
   {
     "id": "M-004",
     "name": "Bukola Aladesulu",
     "email": "",
     "org": "Youth Development and Career Systems",
-    "role": "Business",
+    "role": "Growth",
     "status": "Confirmed",
     "capacity": 5,
-    "track": "Founder communication, opportunity readiness, positioning, employability, storytelling",
+    "track": "Marketing, go-to-market strategy, audience definition, messaging, founder communication, opportunity readiness, positioning, employability, storytelling",
     "sourceConfidence": "Public profile found; confirmed by program owner as founder mentor.",
     "sourceUrl": "https://www.coachli.co/bukolaaladesulu",
-    "notes": "Confirmed founder mentor. Supports founders on opportunity readiness, communication, confidence, positioning, and story clarity. Scheduled session: Opportunity Readiness: Founder Communication, Confidence, and Positioning."
+    "notes": "Confirmed marketing and founder-communication mentor. Supports founders on audience definition, messaging, practical go-to-market planning, opportunity readiness, confidence, positioning, and story clarity. Scheduled session: Marketing and Opportunity Readiness: Audience, Messaging, Positioning, and Founder Communication."
   },
   {
     "id": "M-005",
@@ -65,19 +65,6 @@
     "notes": "Confirmed founder mentor. Supports founders on storytelling, pitch presence, conviction, and demo-day delivery. Scheduled session: Telling The Founder Story: Presence, Conviction, and Demo Day Delivery."
   },
   {
-    "id": "M-006",
-    "name": "Moh Sheriff",
-    "email": "",
-    "org": "Amor Fati / Hoodies'n'Stuffs",
-    "role": "Growth",
-    "status": "Confirmed",
-    "capacity": 5,
-    "track": "Founder confidence, mindset, personal brand, content, audience building, entrepreneurship",
-    "sourceConfidence": "Bio provided by program owner; confirmed by program owner as founder mentor.",
-    "sourceUrl": "",
-    "notes": "Born Sheriff Muhammad. Nigerian keynote speaker, content creator, entrepreneur, founder of Amor Fati and Hoodies'n'Stuffs, host of Crazy Enough with Sheriff Muhammad, and creator of Overconfidence 101. Confirmed founder mentor. Supports founders on confidence, mindset, showing up, personal growth, content, and public-facing courage."
-  },
-  {
     "id": "M-007",
     "name": "Erioluwa Adeyinka",
     "email": "",
@@ -89,5 +76,44 @@
     "sourceConfidence": "Bio provided by program owner; confirmed by program owner as mentor.",
     "sourceUrl": "",
     "notes": "Confirmed founder mentor. Educator, social entrepreneur, and development practitioner with operational experience across education and development projects with social businesses, NGOs, and government in Nigeria and globally. Best placed for education founders, social-impact ventures, operations, ecosystem partnerships, and development-sector credibility."
+  },
+  {
+    "id": "M-008",
+    "name": "Dr. Chukwudi Ezenwa Akubueze",
+    "email": "",
+    "org": "Anchorage Medical Consultants / Olusegun Obasanjo Foundation",
+    "role": "Business",
+    "status": "Invited",
+    "capacity": 5,
+    "track": "Healthtech, public health, clinical operations, occupational health, medical consulting, programme support, healthcare documentation, social impact",
+    "sourceConfidence": "Bio provided by program owner; confirmed by program owner as mentor.",
+    "sourceUrl": "",
+    "notes": "Not yet confirmed. Medical doctor, entrepreneur, and public health professional with five years of experience across clinical practice, occupational health, clinical documentation, medical consulting, and programme support. Do not assign to the live calendar until confirmation is received."
+  },
+  {
+    "id": "M-009",
+    "name": "Mofiyinfoluwa Faniyi",
+    "email": "",
+    "org": "Bluecraft Consulting / Equitable Education Initiative",
+    "role": "Growth",
+    "status": "Invited",
+    "capacity": 5,
+    "track": "Business development, marketing, strategic partnerships, growth strategy, commercial strategy, investor relations, go-to-market, social impact",
+    "sourceConfidence": "Bio provided by program owner; confirmed by program owner as mentor.",
+    "sourceUrl": "",
+    "notes": "Not yet confirmed. Principal Consultant at Bluecraft Consulting with experience in business development, marketing, growth strategy, strategic partnerships, and commercial execution. Do not assign to the live calendar until confirmation is received."
+  },
+  {
+    "id": "M-010",
+    "name": "Segun Ajanaku",
+    "email": "",
+    "org": "",
+    "role": "Product",
+    "status": "Confirmed",
+    "capacity": 5,
+    "track": "UI/UX design, branding, visual identity, user research, user flows, wireframing, prototyping, usability testing, product experience",
+    "sourceConfidence": "Confirmed by program owner as a UI/UX mentor; no reliable matching public profile was found.",
+    "sourceUrl": "",
+    "notes": "Confirmed regular mentor for UI/UX and branding. Best placed in Week 2 to help founders translate customer evidence into user flows, wireframes, clickable prototypes, visual identity, and coherent product presentation; also supports final brand consistency before the showcase and media day."
   }
 ]

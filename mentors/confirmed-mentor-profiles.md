@@ -127,3 +127,31 @@ founder support areas are pending.
 ### Founder Support Lens
 
 To be completed after receiving Gift's bio and preferred mentoring category.
+
+---
+
+## Segun Ajanaku
+
+**Status:** Confirmed  
+**Track:** UI/UX / Product Design / Branding  
+**Suggested capacity:** 5 founders  
+**Current role:** To confirm  
+**Best-fit support areas:** user research, user journeys, user flows, information architecture,
+wireframing, interface design, clickable prototypes, usability testing, MVP experience design,
+brand foundations, visual identity, and consistent product presentation.
+
+### Founder Support Lens
+
+Segun should be positioned as the product-design and branding mentor who helps founders turn
+validated customer problems into simple, usable, recognizable product experiences. His strongest
+programme placement is Week 2, before founders lock their MVP scope, core workflow, and basic brand
+direction. He also supports the July 31 brand and media-readiness review.
+
+### Recommended Week 2 Clinic
+
+**Design and Brand the Smallest Usable Product: From User Flow to Testable Prototype**
+
+**Founder artifact:** Core User Flow + Wireframe or Clickable Prototype + Brand Foundation Sheet +
+Usability Test Plan.
+
+Segun's detailed bio, organization, role, and preferred public portfolio/profile are still pending.

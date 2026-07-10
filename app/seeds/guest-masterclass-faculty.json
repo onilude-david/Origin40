@@ -73,5 +73,20 @@
     "sourceConfidence": "Public institutional profile found.",
     "sourceUrl": "https://knowledgecentre.euclidnetwork.eu/authors-and-experts/carlos-azevedo/",
     "notes": "One-off guest faculty for impact thesis, stakeholder mapping, and Demo Day story."
+  },
+  {
+    "id": "GM-006",
+    "name": "Marcene Mitchell",
+    "email": "",
+    "org": "Climate finance and sustainable business",
+    "topic": "Building Investable Climate and Impact Ventures",
+    "week": "Week 4",
+    "date": "2026-07-29",
+    "status": "Confirmed",
+    "capacity": 0,
+    "track": "Climate finance, sustainable business, clean energy, nature-based solutions, emerging markets, investment readiness",
+    "sourceConfidence": "Confirmed by program owner; professional expertise verified through her official speaking site and IFC/World Bank Group sources.",
+    "sourceUrl": "https://marcenemitchell.com/about-me/speaking/",
+    "notes": "Confirmed one-off guest speaker. Best placed in Week 4 to help founders connect climate and impact outcomes to commercial strategy, financing, scale, and a credible investor or partner narrative. Recommended founder artifact: Climate and Impact Opportunity Map plus Finance-and-Scale Note."
   }
 ]

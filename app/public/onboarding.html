@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111a18">
+<title>Selected Founder Onboarding | Origin40</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="/" aria-label="Origin40 home"><span>O40</span><strong>Origin40</strong></a>
+  <div class="program-mark">2026 Founder Cohort</div>
+</header>
+
+<main>
+  <section class="intro">
+    <p class="eyebrow">You made it into the room</p>
+    <h1>Welcome to<br>Origin40.</h1>
+    <p class="lede">Complete your founder profile so we can prepare your cohort materials and introduce your venture properly.</p>
+    <div class="start-note">
+      <i class="ti ti-calendar-event" aria-hidden="true"></i>
+      <div><span>Program begins</span><strong>Monday, 13 July 2026</strong><small>Online build sessions · Lagos showcase on August 3</small></div>
+    </div>
+  </section>
+
+  <section class="form-panel" aria-labelledby="form-title">
+    <div id="formWrap">
+      <div class="form-head">
+        <span>Selected founder onboarding</span>
+        <span>About 3 minutes</span>
+      </div>
+      <h2 id="form-title">Your founder profile</h2>
+      <p class="form-copy">Please use the details you want published in official Origin40 materials.</p>
+
+      <form id="onboardingForm" novalidate>
+        <div class="field">
+          <label for="name">Full name <b>*</b></label>
+          <input id="name" name="name" autocomplete="name" required placeholder="e.g. Amara Okafor">
+          <small class="error" data-error="name"></small>
+        </div>
+        <div class="field">
+          <label for="preferredName">Preferred name <span>Optional</span></label>
+          <input id="preferredName" name="preferredName" autocomplete="nickname" placeholder="What should we call you?">
+        </div>
+        <div class="field">
+          <label for="email">Email address <b>*</b></label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com">
+          <small class="error" data-error="email"></small>
+        </div>
+        <div class="field">
+          <label for="phone">Phone / WhatsApp <span>Optional</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+234 800 000 0000">
+        </div>
+        <div class="field">
+          <label for="venture">Venture name <b>*</b></label>
+          <input id="venture" name="venture" autocomplete="organization" required placeholder="Your startup or project name">
+          <small class="error" data-error="venture"></small>
+        </div>
+        <div class="field">
+          <label for="ventureSummary">One-sentence venture description <b>*</b></label>
+          <textarea id="ventureSummary" name="ventureSummary" rows="3" maxlength="240" required placeholder="What are you building, and for whom?"></textarea>
+          <div class="field-meta"><small class="error" data-error="ventureSummary"></small><small id="count">0 / 240</small></div>
+        </div>
+        <div class="field">
+          <label for="discord">Discord username <b>*</b></label>
+          <input id="discord" name="discord" required placeholder="e.g. amara_okafor">
+          <small>Discord is Origin40's official communication channel.</small>
+          <small class="error" data-error="discord"></small>
+        </div>
+        <div class="field">
+          <label for="headshot">Professional headshot <b>*</b></label>
+          <label class="upload" for="headshot">
+            <span class="upload-icon"><i class="ti ti-camera-plus"></i></span>
+            <span><strong id="fileLabel">Choose your headshot</strong><small>JPG, PNG, or WebP · Maximum 2 MB</small></span>
+            <img id="preview" alt="">
+          </label>
+          <input class="sr-only" id="headshot" name="headshot" type="file" accept="image/jpeg,image/png,image/webp" required>
+          <small class="error" data-error="headshot"></small>
+        </div>
+
+        <fieldset>
+          <legend>Final confirmations</legend>
+          <label class="check">
+            <input id="availability" name="availability" type="checkbox" required>
+            <span>I confirm that I am available for the Origin40 program from 13 July to 3 August 2026. <b>*</b></span>
+          </label>
+          <small class="error" data-error="availability"></small>
+          <label class="check">
+            <input id="mediaConsent" name="mediaConsent" type="checkbox" required>
+            <span>I allow Origin40 and its partners to use my name, venture details, and headshot for program communications. <b>*</b></span>
+          </label>
+          <small class="error" data-error="mediaConsent"></small>
+        </fieldset>
+
+        <button id="submitBtn" type="submit"><span>Complete my onboarding</span><i class="ti ti-arrow-right"></i></button>
+        <p class="privacy"><i class="ti ti-lock"></i> Your information is used only for Origin40 program operations and communications.</p>
+        <div id="formError" class="form-error" role="alert"></div>
+      </form>
+    </div>
+
+    <div id="success" class="success" hidden>
+      <span class="success-icon"><i class="ti ti-check"></i></span>
+      <p class="eyebrow">Profile received</p>
+      <h2>You’re all set, <span id="successName">Founder</span>.</h2>
+      <p>Watch your email for the cohort schedule, Discord access, and joining instructions.</p>
+      <div class="success-date"><span>We begin</span><strong>Monday, 13 July</strong></div>
+    </div>
+  </section>
+</main>
+
+<footer><span>Origin40</span><span>Built by Beere Softwares</span></footer>
+<script src="onboarding.js"></script>
+</body>
+</html>

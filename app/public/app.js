@@ -9,6 +9,7 @@ var ROUTES = [
   { id: 'dashboard', label: 'Dashboard', short: 'Dash', icon: 'ti-layout-dashboard', group: 'Command' },
   { id: 'calendar', label: 'Calendar', short: 'Calendar', icon: 'ti-calendar-time', group: 'Command' },
   { id: 'applicants', label: 'Applications', short: 'Apps', icon: 'ti-file-text', group: 'Admissions' },
+  { id: 'onboarding', label: 'Onboarding', short: 'Onboard', icon: 'ti-user-check', group: 'Admissions' },
   { id: 'founders', label: 'Founders', short: 'Founders', icon: 'ti-rocket', group: 'Admissions' },
   { id: 'mentors', label: 'Founder Mentors', short: 'Mentors', icon: 'ti-users', group: 'People' },
   { id: 'guest-mentors', label: 'Featured Speakers', short: 'Speakers', icon: 'ti-microphone-2', group: 'People' },
@@ -82,6 +83,13 @@ function admissionMove(a) {
   return (a.admissions && a.admissions.recommendedMove) || 'Needs Review';
 }
 
+function applicantOutreach(a) {
+  if (a.selectionEmail) return Object.assign({ label: 'Selection email' }, a.selectionEmail);
+  if (a.conditionalEmail) return Object.assign({ label: 'Conditional email' }, a.conditionalEmail);
+  if (a.waitlistEmail) return Object.assign({ label: 'Waitlist email' }, a.waitlistEmail);
+  return null;
+}
+
 /* ---------- nav + router ---------- */
 function renderNav() {
   var cur = location.hash.replace('#/', '') || 'control';
@@ -125,7 +133,7 @@ function viewControl() {
     var sections = [
       { cat: 'Overview', tiles: [
         { icon: 'ti-layout-dashboard', t: 'Dashboard', s: 'KPIs · charts · alerts', go: 'dashboard' },
-        { icon: 'ti-calendar-time', t: 'Program Calendar', s: 'July 6-31 · live schedule', go: 'calendar' }
+        { icon: 'ti-calendar-time', t: 'Programme Calendar', s: 'July 13-August 3 · official schedule', go: 'calendar' }
       ] },
       { cat: 'People', tiles: [
         { icon: 'ti-file-text', t: 'Applications', s: k['Applications received'] + ' received', go: 'applicants' },
@@ -187,7 +195,7 @@ function viewDashboard() {
       var bad = a.n > 0;
       return '<div class="alert"><span>' + esc(a.label) + '</span><span class="pill ' + (bad ? 'bad' : 'ok') + '">' + a.n + '</span></div>';
     }).join('') + '</div>';
-    html += '<div class="card schedule-card" id="scheduleCard"><h3>Final Online Schedule</h3><p class="sub">Loading program calendar...</p></div>';
+    html += '<div class="card schedule-card" id="scheduleCard"><h3>Official Programme Calendar</h3><p class="sub">Loading programme calendar...</p></div>';
     html += '<div class="card" id="docCard"><h3>Documents Library</h3><p class="sub">Loading curriculum and operations docs...</p></div>';
     html += '</div>';
     app.innerHTML = html;
@@ -203,7 +211,7 @@ function renderDashboardSchedule() {
     var anchors = (s.anchors || []).slice(0, 6);
     card.innerHTML =
       '<div class="schedule-head">' +
-        '<div><h3>Final Online Schedule</h3><p>' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p></div>' +
+        '<div><h3>Official Programme Calendar</h3><p>' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p></div>' +
         '<span class="status-chip ok">Dates locked</span>' +
       '</div>' +
       '<div class="schedule-stats">' +
@@ -231,12 +239,12 @@ function viewCalendar() {
     var current = s.weeks[window.__scheduleWeek] || s.weeks[0];
     var html =
       '<div class="calendar-hero">' +
-        '<div><div class="eyebrow">Standard program calendar</div><h2 class="page">' + esc(s.title) + '</h2>' +
+        '<div><div class="eyebrow">Official programme calendar</div><h2 class="page">' + esc(s.title) + '</h2>' +
         '<p class="sub">' + esc(s.dateStatus) + ' · ' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p>' +
         '<div class="calendar-actions"><a class="button-link primary" href="/api/schedule/ics"><i class="ti ti-calendar-plus"></i> Download ICS</a>' +
         '<a class="button-link" href="/api/schedule/csv"><i class="ti ti-table-export"></i> Download CSV</a></div></div>' +
-        '<div class="calendar-datebox"><span>Start</span><b>Jul 6</b><em>Monday, 2026</em></div>' +
-        '<div class="calendar-datebox"><span>Finish</span><b>Jul 31</b><em>Friday, 2026</em></div>' +
+        '<div class="calendar-datebox"><span>Start</span><b>Jul 13</b><em>Monday, 2026</em></div>' +
+        '<div class="calendar-datebox"><span>Showcase Day</span><b>Aug 3</b><em>Monday · Lagos</em></div>' +
       '</div>' +
       '<div class="calendar-metrics">' +
         '<div><b>' + s.totals.weeks + '</b><span>weeks</span></div>' +
@@ -334,7 +342,7 @@ function renderApplicantTable(q) {
     return passSearch && passFilter;
   }).sort(function (x, y) { return (y.total || 0) - (x.total || 0); });
   var html = '<div class="table-tools"><span>' + rows.length + ' shown</span><span>' + (window.__appFilter || 'All') + '</span></div>';
-  html += '<table><thead><tr><th>Applicant</th><th>Startup / pitch</th><th>Country</th><th>Score</th><th>Gate</th><th>Decision</th><th>Status</th></tr></thead><tbody>';
+  html += '<table><thead><tr><th>Applicant</th><th>Startup / pitch</th><th>Country</th><th>Score</th><th>Gate</th><th>Decision</th><th>Outreach</th><th>Status</th></tr></thead><tbody>';
   html += rows.map(function (a) {
     var move = admissionMove(a);
     return '<tr class="clickable" onclick="openApplicant(\'' + a.id + '\')">' +
@@ -344,9 +352,12 @@ function renderApplicantTable(q) {
       '<td><div class="score-pill"><b>' + (a.total || 0) + '</b><span>/100</span></div></td>' +
       '<td><span class="move-pill ' + moveClass(move) + '">' + esc(move) + '</span></td>' +
       '<td><div class="decision-cell"><b>' + esc(a.recommendation || '—') + '</b><span>' + esc(applicantRank(a)) + '</span></div></td>' +
+      '<td>' + (applicantOutreach(a) && applicantOutreach(a).status === 'Sent'
+        ? '<span class="move-pill move-select">' + esc(applicantOutreach(a).template || 'Email sent') + '</span>'
+        : '<span class="muted">Not sent</span>') + '</td>' +
       '<td>' + statusBadge(a.status) + '</td></tr>';
   }).join('');
-  if (!rows.length) html += '<tr><td colspan="7"><div class="empty-state table-empty"><b>No matching applications</b><span>Change the status filter, search something broader, import a Fluent Forms CSV from Settings, or add an applicant manually.</span></div></td></tr>';
+  if (!rows.length) html += '<tr><td colspan="8"><div class="empty-state table-empty"><b>No matching applications</b><span>Change the status filter, search something broader, import a Fluent Forms CSV from Settings, or add an applicant manually.</span></div></td></tr>';
   html += '</tbody></table>';
   document.getElementById('atable').innerHTML = html;
 }
@@ -366,6 +377,31 @@ function renderAdmissionsChecks(a) {
     }).join('') + '</div>' +
     (ad.legalFlag ? '<div class="admission-flag"><b>Legal/risk note:</b> ' + esc(ad.legalNote) + '</div>' : '') +
     '</section>';
+}
+
+function renderIndividualReview(a) {
+  var r = a.individualReview;
+  if (!r) return '';
+  return '<section class="review-panel"><h4>Individual review</h4>' +
+    '<div class="check-list">' +
+      '<div class="check-item pass"><i class="ti ti-sparkles"></i><span><b>Strengths</b><small>' + esc(r.strengths || '—') + '</small></span></div>' +
+      '<div class="check-item fail"><i class="ti ti-alert-triangle"></i><span><b>Concerns</b><small>' + esc(r.concerns || '—') + '</small></span></div>' +
+      '<div class="check-item"><i class="ti ti-arrow-right"></i><span><b>Next action</b><small>' + esc(r.nextAction || r.decisionRationale || '—') + '</small></span></div>' +
+    '</div></section>';
+}
+
+function renderApplicantCommunication(a) {
+  var m = applicantOutreach(a);
+  if (!m && !a.acceptanceStatus) return '';
+  return '<section class="review-panel"><div class="review-panel-head"><h4>Admission communication</h4>' +
+    (m && m.status === 'Sent' ? '<span class="move-pill move-select">Delivered</span>' : '<span class="move-pill">Pending</span>') +
+    '</div><div class="check-list">' +
+      '<div class="check-item"><i class="ti ti-mail"></i><span><b>' + esc((m && m.label) || 'Admission email') + '</b><small>' +
+        esc(m ? ((m.provider || m.channel || 'Email') + ' · ' + (m.sentAt || 'date not recorded')) : 'Not sent') +
+      '</small></span></div>' +
+      '<div class="check-item"><i class="ti ti-user-check"></i><span><b>Acceptance</b><small>' + esc(a.acceptanceStatus || 'Pending') + '</small></span></div>' +
+      (m && m.subject ? '<div class="check-item"><i class="ti ti-message"></i><span><b>Subject</b><small>' + esc(m.subject) + '</small></span></div>' : '') +
+    '</div></section>';
 }
 
 function openApplicant(id) {
@@ -400,6 +436,8 @@ function openApplicant(id) {
         '</section>' +
       '</div>' +
       renderAdmissionsChecks(a) +
+      renderIndividualReview(a) +
+      renderApplicantCommunication(a) +
       '<section class="review-panel"><h4>Scoring rubric</h4><div class="scoregrid" id="scoregrid">' + scoreInputs + '</div></section>' +
       (raw ? '<section class="review-panel"><h4>Imported answers</h4><div class="raw-box">' + raw + '</div></section>' : '') +
       '<div class="row review-actions">' +
@@ -579,6 +617,11 @@ function printCurrentDoc() {
 
 /* ---------- generic entities ---------- */
 var ENTITY_VIEWS = {
+  onboarding: {
+    title: 'Founder Onboarding', sub: 'Details submitted by selected founders before the cohort begins.',
+    cols: [['name', 'Founder'], ['venture', 'Venture'], ['email', 'Email'], ['availability', 'Availability', statusBadge], ['status', 'Status', statusBadge]],
+    fields: [['name', 'Full name', 'text'], ['preferredName', 'Preferred name', 'text'], ['email', 'Email', 'text'], ['phone', 'Phone / WhatsApp', 'text'], ['venture', 'Venture', 'text'], ['ventureSummary', 'Venture summary', 'textarea'], ['discord', 'Discord username', 'text'], ['availability', 'Availability', 'text'], ['mediaConsent', 'Media consent', 'text'], ['status', 'Status', 'text']]
+  },
   founders: {
     title: 'Founders', sub: 'Cohort progress tracker.',
     cols: [['name', 'Founder'], ['startup', 'Startup'], ['mentor', 'Mentor'], ['attendancePct', 'Attendance', pct], ['status', 'Status', statusBadge]],

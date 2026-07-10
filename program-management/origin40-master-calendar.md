@@ -1,129 +1,156 @@
 # Origin40 Master Program Calendar
 
-**Timezone:** West Africa Time (WAT), Lagos.  
-**Delivery model:** 100% online. Monday and Friday are live online program days; Tuesday to Thursday
-are remote/build days unless marked otherwise.  
-**Program dates:** Monday, July 6, 2026 to Friday, July 31, 2026.
+**Document status:** Official operating calendar — Version 1.0  
+**Calendar owner:** Origin40 Programme Lead  
+**Timezone:** West Africa Time (WAT), Lagos  
+**Delivery:** 100% online  
+**Programme dates:** Monday, July 13 to Monday, August 3, 2026  
+**Online class days:** Monday, Wednesday, and Friday through July 31  
+**Founder Showcase, Networking & Media Day and official close:** Monday, August 3, 2026, in Lagos  
+**Special celebration:** David Oke Opeyemi’s birthday  
+**Duration:** 3 online build weeks plus the in-person closing event
 
-This calendar is the operating map for the 4-week Origin40 build incubator. It shows what happens
-when, what the founder output is, and where guest masterclass faculty can be scheduled.
+Origin40 now runs three structured class days each week. Tuesday and Thursday are independent
+execution days for customer work, product building, testing, and assignment completion.
 
-The finalized timestamped version is maintained in `program-management/origin40-final-online-schedule.md`
-and is surfaced in the cPanel through the dedicated Calendar page.
+## Calendar Authority
 
-## Calendar Rules
+- This document and the cPanel Calendar are the official schedule sources.
+- All invitations must use WAT and state whether a session is online or in person.
+- A person is named publicly only after their participation is confirmed.
+- Approved changes must be reflected in the cPanel, CSV, ICS, team brief, and founder announcement.
+- The Lagos venue remains **TBC** and must not be guessed or published prematurely.
 
-- Monday and Friday are fixed live online days.
-- Guest masterclasses are one-off 1-2 hour sessions. They are not ongoing mentorship.
-- Each guest session must produce a founder artifact or decision.
-- US-based guests should be offered late-afternoon WAT options when possible.
-- Portugal-based guests can usually take normal WAT business hours.
-- Every guest session needs a facilitator assigned for setup, timekeeping, hot seats, and follow-up.
+## Confirmed Delivery Team
 
-## Confirmed Program Leads
+### Programme Leads
 
-| Person | Role | Primary ownership |
+| Person | Role |
+|---|---|
+| David Onilude | Lead Facilitator / Programme Lead |
+| Kazeem Quadri | Co-Facilitator / Build Lead |
+| Dotonu Wonder | Programme Lead / Founder Operations |
+| Avoseh Yohan | Programme Lead / Founder Operations |
+| Moses Deborah | Programme Lead / Founder Operations |
+
+### Confirmed Mentors
+
+| Person | Best-fit placement |
+|---|---|
+| Damilola Obaro | Legal, compliance, data, IP, contracts, and funding readiness |
+| Stanley Anigbogu | Technical feasibility, product building, prototyping, and impact products |
+| Segun Ajanaku | UI/UX, branding, visual identity, user flows, prototypes, and usability testing |
+| Bukola Aladesulu | Marketing, audience and messaging, go-to-market planning, positioning, confidence, and founder communication |
+| Victory Ashaka | Founder storytelling, pitch presence, and Demo Day delivery |
+| Erioluwa Adeyinka | Evidence, stakeholder mapping, social-impact execution, and operations |
+| Gift Best | Founder hot seats and general mentoring; detailed specialization pending |
+
+### Confirmed Guest Speakers
+
+| Person | Placement | Session |
 |---|---|---|
-| David Onilude | Lead Facilitator / Program Lead | Weekly alignment, live reviews, risk decisions, cohort closeout |
-| Kazeem Quadri | Co-Facilitator / Build Lead | Build sprints, MVP/product flow, pitch support |
-| Origin40 Core Team | Operations bench | Discord standups, support desk, founder follow-up, submissions |
+| David Oke Opeyemi | Week 1, Monday, July 13 | Origin40 Legacy Charge |
+| Marcene Mitchell | Week 3, Wednesday, July 29 | Building Investable Climate and Impact Ventures |
 
-## Standard Weekly Rhythm
+## Weekly Rhythm
 
-| Day | Mode | Time block | Activity | Owner | Output |
-|---|---|---:|---|---|---|
-| Monday | Live online | 09:00-09:30 | Founder standup and weekly alignment | David Onilude | Weekly focus locked |
-| Monday | Live online | 10:00-12:00 | Featured speaker masterclass primary slot | Featured speaker + program lead | Weekly founder artifact |
-| Monday | Live online | 12:00-13:00 | Workshop / application block | Facilitators | Draft artifact |
-| Monday | Remote/build | 14:00-16:30 | Supervised build sprint | David Onilude, Kazeem Quadri, Origin40 Core Team | First visible progress |
-| Monday | Live online | 16:30-17:00 | Commitments and blocker logging | Program leads | Build log updated |
-| Tuesday | Remote/build | Flexible | Customer work, build, async check-in | Founders | Evidence update |
-| Wednesday | Remote/build | 16:00-18:00 | Optional remote clinic / guest-friendly slot | Specialist / facilitator | Specific blocker resolved |
-| Thursday | Remote/build | Flexible | Testing, documentation, submission prep | Founders | Draft milestone |
-| Friday | Live online | 09:00-09:45 | Standup and build review | David Onilude | Demo focus set |
-| Friday | Remote/build | 10:00-12:30 | Build/demo sprint | David Onilude, Kazeem Quadri, Origin40 Core Team | Product/prototype improved |
-| Friday | Live online | 13:30-15:00 | Demo gate and milestone review | Review panel | Weekly score |
-| Friday | Live online | 15:00-16:00 | Mentor/program lead feedback | Program leads | Next actions |
-| Friday | Live online | 16:00-16:30 | Risk flags and next sprint decision | David Onilude | Support desk updated |
+| Day | Purpose |
+|---|---|
+| Monday | Weekly alignment, teaching/masterclass, applied workshop, and sprint launch |
+| Wednesday | Mentor clinic, specialist support, critique, and guided build work |
+| Friday | Final build work, demo gate, scored feedback, and next-week decision |
+| Tuesday/Thursday | Independent customer work, product execution, testing, and async support |
 
-## Week-by-Week Calendar
+## Founder Build System
 
-### Week 1 - Validate The Problem
+Origin40 is not delivered as a lecture series. Every founder moves through one shared build system,
+with parallel specialist help during the **Foundation Build Lab**, **Cross-functional Build Lab**,
+**Guided Build Lab**, and **Launch Build Lab**.
 
-**Goal:** founders prove they are solving a painful, real problem for a reachable customer.
+| Build track | Owner(s) | What the team helps founders produce |
+|---|---|---|
+| Product direction | David Onilude | Problem-to-product decisions, MVP scope, priorities, and build accountability |
+| Development and technical build | Kazeem Quadri, Stanley Anigbogu | Architecture, stack decisions, implementation, prototype repair, reliability, and product demonstration |
+| UI/UX and branding | Segun Ajanaku | User flows, wireframes, interface quality, visual direction, Brand Starter Kit, and showcase consistency |
+| Marketing and go-to-market | Bukola Aladesulu | Audience profile, value proposition, messaging, launch channels, campaign assets, and public product explanation |
+| Legal and business readiness | Damilola Obaro | Consent, data/privacy, IP, contracts, structure, compliance, and founder legal-readiness checklist |
+| Operations and impact execution | Erioluwa Adeyinka | Stakeholder map, operating workflow, delivery plan, evidence, partnerships, and impact execution |
+| Founder decisions and accountability | Gift Best | Founder hot seats, decision review, priorities, and next actions |
+| Storytelling and media readiness | Victory Ashaka | Founder story, interview delivery, presence, showcase conversation, and media confidence |
+| Climate, impact, and investment context | Marcene Mitchell | Climate/impact opportunity, finance-and-scale thinking, and credible external narrative |
 
-| Day | Core activity | Guest / clinic slot | Founder output |
-|---|---|---|---|
-| Monday | Program kickoff, founder alignment, problem validation sprint | Samuel Afolabi primary slot: Building From Local Pain | Problem-Validation Brief v1 |
-| Tuesday | Customer discovery interviews | Optional interview script clinic | 2-3 customer conversations logged |
-| Wednesday | Evidence review and problem sharpening | Legal/data basics clinic if available | Consent/data capture checklist |
-| Thursday | Problem brief polish | Async facilitator review | Draft Week 1 submission |
-| Friday | Demo gate: problem, customer, evidence | Review lens: is the problem painful? | Scored Problem-Validation Brief |
+### Weekly Build Outputs
 
-### Week 2 - Design And Build The MVP
-
-**Goal:** founders scope and build the smallest usable product/prototype.
-
-| Day | Core activity | Guest / clinic slot | Founder output |
-|---|---|---|---|
-| Monday | MVP scope, core workflow, build kickoff | Gbemi Adunbarin primary/US-friendly slot: Commerce, AI, and Trust | MVP Core Flow + Trust Checklist |
-| Tuesday | Prototype build | Product/UX clinic | First working flow |
-| Wednesday | Tech stack and build support | Finance/pricing clinic if available | Stack decision + pricing hypothesis |
-| Thursday | Testing prep and prototype polish | Async facilitator review | Draft MVP submission |
-| Friday | Demo gate: core flow works | Review lens: does the smallest product work? | MVP/Prototype v1 scored |
-
-### Week 3 - Test And Validate
-
-**Goal:** founders put the product in front of users and learn from real behavior.
-
-| Day | Core activity | Guest / clinic slot | Founder output |
-|---|---|---|---|
-| Monday | User testing plan, traction metric, test kickoff | Growth/testing masterclass slot if available | User Test Plan |
-| Tuesday | User tests and sales discovery | Growth/sales clinic | Feedback log updated |
-| Wednesday | Risk, security, data, and credibility | Dr. Abiola Olamoyegun US-friendly slot: Minimum Viable Security | Product Risk Map + Security Checklist |
-| Thursday | Iteration and validation report prep | Analytics clinic if available | Draft Validation Report |
-| Friday | Demo gate: evidence from real users | Review lens: did real users respond safely and credibly? | Validation Report scored |
-
-### Week 4 - Pitch And Launch
-
-**Goal:** founders package the product, evidence, model, ask, and 30-day roadmap.
-
-| Day | Core activity | Guest / clinic slot | Founder output |
-|---|---|---|---|
-| Monday | Pitch structure, venture story, launch sprint | Prof. Carlos Azevedo primary slot: Impact That Strengthens The Venture Story | Impact Thesis + Demo Day narrative |
-| Tuesday | Deck and demo polish | Pitch clinic | Deck v1 |
-| Wednesday | Finance/legal/funding readiness | Legal/finance readiness clinic | Budget, ask, legal checklist |
-| Thursday | Demo rehearsal and final submissions | Async review | Final deck + demo link |
-| Friday | Final demo gate / pre-Demo Day review | Review lens: is this credible and launchable? | Demo Day readiness score |
-
-## Recommended Guest Slot Windows
-
-| Slot code | Best for | Time WAT | Notes |
-|---|---|---:|---|
-| M-AM-90 | Nigeria/Portugal guests, live online energy | Monday 10:30-12:00 | Best default slot |
-| M-AM-120 | Deep masterclass | Monday 10:00-12:00 | Use for Week 4 impact or keynote-style sessions |
-| M-PM-90 | US-based guests joining remotely | Monday 16:00-17:30 | Keeps Monday masterclass energy but friendlier for US time zones |
-| W-PM-90 | US-based specialist clinic | Wednesday 17:00-18:30 | Best for Week 3 cybersecurity/risk |
-| F-PM-60 | Review-lens guest | Friday 13:30-14:30 | Shorter, tied to demo gate |
-
-## Current Guest Calendar Recommendation
-
-| Featured speaker | Best week | Primary slot | Backup slot | Session |
+| Build stage | Product/development | UI/UX/brand | Marketing | Business/operations |
 |---|---|---|---|---|
-| David Oke Opeyemi | Week 1 | Monday 09:30-10:15 | Friday 15:00-15:45 | Origin40 Legacy Charge |
-| Samuel Afolabi | Week 1 | M-AM-90 | F-PM-60 | Building From Local Pain |
-| Moh Sheriff | Week 1 | Thursday 17:00-18:00 | Friday 15:00-16:00 | Overconfidence 101 For Founders |
-| Gbemi Adunbarin | Week 2 | M-PM-90 | W-PM-90 | Commerce, AI, and Trust |
-| Dr. Abiola Olamoyegun | Week 3 | W-PM-90 | M-PM-90 | Minimum Viable Security |
-| Bukola Aladesulu | Week 3 | Thursday 16:00-17:00 | W-PM-90 | Opportunity Readiness |
-| Prof. Carlos Azevedo | Week 4 | M-AM-120 | M-AM-90 | Impact That Strengthens The Venture Story |
-| Victory Ashaka | Week 4 | Tuesday 16:00-17:30 | Thursday rehearsal block | Telling The Founder Story |
+| Week 1 — Foundation | Product concept and technical assumptions | Initial visual direction | Audience and customer-message hypothesis | Problem evidence, stakeholder map, consent and risk notes |
+| Week 2 — Build | Working MVP/prototype v1 | Core user flow, wireframe, usable interface, Brand Starter Kit | Core message and first landing/campaign asset | Technical decision note, operating workflow, readiness checklist |
+| Week 3 — Prepare | Tested and improved product | Applied brand system and showcase consistency | Go-to-Market Action Sheet, founder one-pager, media messages | Validation evidence, legal checklist, Launch Readiness Board |
+| August 3 — Showcase | Stable demonstration | Coherent visual presentation | Clear product conversation and media assets | Connections log, opportunities, 30-day roadmap |
 
-## What I Still Need To Date This Calendar
+### Build-Lab Method
 
-Send the confirmed program start date, and this can become a fully dated calendar:
+1. Founders enter each lab with a visible artifact, not only an idea.
+2. The programme lead triages the founder into the right specialist breakout.
+3. Specialists work directly on the artifact with the founder.
+4. The founder records the decision and updates the Build Log before leaving.
+5. Unresolved blockers receive a named owner and deadline in the support desk.
 
-- Week 1 Monday date
-- Demo Day date, if different from Week 4 Friday
-- Preferred live platform: Zoom, Google Meet, Discord Stage, or another tool
-- Any platform/access constraints for founders or guests
+## Standard Class-Day Protocol
+
+| Control point | Standard |
+|---|---|
+| Join time | Online room opens 15 minutes before the first session |
+| Attendance | Captured at opening and after the midday break |
+| Session opening | Objective, founder output, and timing stated within the first 5 minutes |
+| Teaching block | Maximum 90 minutes before a break or applied exercise |
+| Applied work | Every session ends with an artifact, decision, or logged next action |
+| Breaks | At least 15 minutes between major blocks; lunch protected before afternoon studio |
+| Closeout | Output submitted, blockers logged, and next deadline confirmed |
+| Recording | Only with prior notice and participant/media consent |
+| Support | Every founder blocker is assigned to a named owner through the support desk |
+
+## Attendance and Completion Standard
+
+- Founders must attend at least 70% of scheduled programme sessions.
+- Founders must achieve at least 75% overall progress.
+- Each weekly build milestone remains compulsory.
+- Tuesday and Thursday work is evidenced through the Build Log, Customer Evidence Log, Decision
+  Log, and current product/demo link.
+- Missing a live session does not remove the output requirement; catch-up work must be agreed with
+  the programme team.
+
+## August 3 Event Standard
+
+The Lagos closing event is a **Founder Showcase, Networking & Media Day**, not a pitch competition.
+There is no judging panel and founders are not ranked through formal pitches. The event exists to:
+
+1. Let guests experience products through open demonstrations and founder conversations.
+2. Create useful introductions among founders, mentors, partners, media, and ecosystem guests.
+3. Capture professional founder portraits, interviews, product footage, and programme stories.
+4. Celebrate David Oke Opeyemi’s birthday and the Origin40 legacy.
+5. Recognise founders, announce opportunities, begin alumni support, and close the programme.
+
+## Four-Week Arc
+
+| Week | Dates | Theme | Primary output |
+|---|---|---|---|
+| 1 | July 13, 15, 17 | Validate the Problem | Problem-Validation Brief |
+| 2 | July 20, 22, 24 | Design and Build the MVP | MVP/Prototype v1 |
+| 3 | July 27, 29, 31 | Test, Tell and Prepare | Validation evidence, founder story, media profile, and showcase readiness |
+| 4 | August 3 | Founder Showcase, Networking & Media Day in Lagos | Product visibility, media assets, connections, birthday celebration, and programme close |
+
+The timestamped operating schedule is maintained in
+`program-management/origin40-final-online-schedule.md` and in the cPanel Calendar. The cPanel is
+the source for downloadable CSV and ICS calendar exports.
+
+## Items Still Requiring Operational Confirmation
+
+| Item | Current state | Owner deadline |
+|---|---|---|
+| Lagos venue name and full address | TBC | Confirm before public event invitation |
+| Online meeting link and host account | TBC | Confirm before founder calendar invitation |
+| Media team and interview lead | TBC | Confirm before July 31 media rehearsal |
+| Event guest list and capacity | TBC | Confirm before final venue and catering count |
+| Catering, power, internet, branding, photography, and product-display requirements | TBC | Confirm through the event production checklist |
+| Emergency contact and safeguarding lead | TBC | Confirm before the first programme day |

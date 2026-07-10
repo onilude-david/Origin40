@@ -35,7 +35,7 @@ const DOC_SECTIONS = [
   { id: 'impact', label: 'Impact & Alumni', dir: 'impact', icon: 'ti-chart-arcs', desc: 'Follow-up, alumni tracking, funding outcomes, impact dashboard, and reporting system.' }
 ];
 
-const PROGRAM_SCHEDULE = [
+const LEGACY_PROGRAM_SCHEDULE = [
   {
     week: 1,
     label: 'Week 1',
@@ -79,7 +79,7 @@ const PROGRAM_SCHEDULE = [
           ['09:00-09:15', 'Async check-in', 'Daily Discord standup', 'Origin40 Core Team', 'Daily commitments posted'],
           ['10:00-15:00', 'Build sprint', 'Validation brief polish and customer proof packaging', 'Founders', 'Draft Week 1 submission'],
           ['16:00-17:00', 'Review', 'Async facilitator review window', 'David Onilude, Kazeem Quadri', 'Feedback comments returned'],
-          ['17:00-18:00', 'Founder mentor', 'Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up', 'Moh Sheriff', 'Founder confidence and public-facing courage strengthened', true]
+          ['17:00-18:00', 'Founder mentor', 'Founder Confidence, Mindset, and Showing Up', 'Confidence/mindset mentor needed', 'Founder confidence and public-facing courage strengthened', true]
         ]
       },
       {
@@ -266,10 +266,110 @@ const PROGRAM_SCHEDULE = [
   }
 ];
 
+const PROGRAM_SCHEDULE = [
+  {
+    week: 1,
+    label: 'Week 1',
+    theme: 'Validate The Problem',
+    outcome: 'A clear problem statement, customer evidence, and a validated founder focus.',
+    days: [
+      { day: 'Monday', programDay: 1, slots: [
+        ['09:00-09:40', 'Kickoff', 'Cohort onboarding, programme standard, and sprint alignment', 'David Onilude, Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Founder commitment and weekly focus locked', true],
+        ['10:00-11:00', 'Guest keynote', 'Origin40 Legacy Charge: Building With Standard, Courage, and Service', 'David Oke Opeyemi', 'Founder legacy pledge', true],
+        ['11:15-12:45', 'Workshop', 'Problem selection and founder-market fit', 'David Onilude, Kazeem Quadri', 'Problem statement v1'],
+        ['14:00-16:00', 'Build studio', 'Customer segment, interview plan, and evidence tracker', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Customer discovery plan']
+      ]},
+      { day: 'Wednesday', programDay: 2, slots: [
+        ['09:00-09:30', 'Standup', 'Evidence check and blockers', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Blockers assigned'],
+        ['10:00-11:15', 'Mentor clinic', 'Ethical discovery, consent, data, and early legal foundations', 'Damilola Obaro', 'Legal and consent checklist', true],
+        ['11:30-12:45', 'Mentor clinic', 'Evidence, stakeholder mapping, and execution for impact ventures', 'Erioluwa Adeyinka', 'Stakeholder and evidence map', true],
+        ['14:00-16:00', 'Foundation Build Lab', 'Parallel support: product concept, customer/audience, brand direction, legal risks, and operating model', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Founder Build Blueprint and Problem-Validation Brief draft']
+      ]},
+      { day: 'Friday', programDay: 3, slots: [
+        ['09:00-09:30', 'Standup', 'Submission and demo readiness', 'David Onilude', 'Demo focus set'],
+        ['10:00-12:00', 'Guided Build Lab', 'Problem brief, product concept, customer message, and founder build-plan finalization', 'Kazeem Quadri, Segun Ajanaku, Bukola Aladesulu, Origin40 programme leads', 'Problem-Validation Brief and Build Plan ready'],
+        ['13:30-15:00', 'Demo gate', 'Problem, customer, and evidence review', 'David Onilude, Damilola Obaro, Erioluwa Adeyinka', 'Week 1 score and actions', true],
+        ['15:15-16:00', 'Closeout', 'Feedback, risk flags, and Week 2 handoff', 'Origin40 programme leads', 'Support actions assigned']
+      ]}
+    ]
+  },
+  {
+    week: 2,
+    label: 'Week 2',
+    theme: 'Design And Build The MVP',
+    outcome: 'A usable core flow, testable prototype, and practical technical build plan.',
+    days: [
+      { day: 'Monday', programDay: 4, slots: [
+        ['09:00-09:30', 'Alignment', 'MVP sprint alignment and scope lock', 'David Onilude', 'MVP boundary agreed'],
+        ['10:00-11:30', 'Mentor workshop', 'Design and Brand the Smallest Usable Product: user flow, prototype, and visual direction', 'Segun Ajanaku', 'Core user flow, wireframe, and Brand Foundation Sheet', true],
+        ['11:45-13:00', 'Workshop', 'MVP features, acceptance criteria, and build plan', 'David Onilude, Kazeem Quadri', 'MVP Scope Sheet'],
+        ['14:00-16:00', 'Design studio', 'Wireframes, clickable prototype, and basic visual identity', 'Segun Ajanaku, Origin40 programme leads', 'Testable and visually coherent prototype v1']
+      ]},
+      { day: 'Wednesday', programDay: 5, slots: [
+        ['09:00-09:30', 'Standup', 'Design and build blockers', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Blockers assigned'],
+        ['10:00-11:30', 'Mentor clinic', 'Prototype architecture, feasibility, and product wedge', 'Stanley Anigbogu', 'Technical decision note', true],
+        ['11:45-13:00', 'Usability clinic', 'Interface critique and usability test preparation', 'Segun Ajanaku', 'Usability test script'],
+        ['14:00-16:30', 'Cross-functional Build Lab', 'Parallel development, UI/UX, branding, marketing, and business-readiness support', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Working MVP, Brand Starter Kit, marketing message, and readiness checklist']
+      ]},
+      { day: 'Friday', programDay: 6, slots: [
+        ['09:00-09:30', 'Standup', 'MVP demo readiness', 'David Onilude', 'Demo focus set'],
+        ['10:00-12:00', 'Guided Build Lab', 'MVP repairs, usability improvements, brand consistency, landing-page message, and operating checks', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Erioluwa Adeyinka', 'MVP/Prototype v1 and Market Asset Pack ready'],
+        ['13:30-15:00', 'Demo gate', 'Core flow, usability, and technical feasibility review', 'David Onilude, Segun Ajanaku, Stanley Anigbogu', 'Week 2 score and actions', true],
+        ['15:15-16:00', 'Closeout', 'Feedback, risk flags, and testing handoff', 'Origin40 programme leads', 'Week 3 test priorities']
+      ]}
+    ]
+  },
+  {
+    week: 3,
+    label: 'Week 3',
+    theme: 'Test, Tell And Prepare',
+    outcome: 'Real user evidence, a refined product, a clear founder story, and media/networking readiness.',
+    days: [
+      { day: 'Monday', programDay: 7, slots: [
+        ['09:00-09:30', 'Alignment', 'Final testing sprint and Showcase Day countdown', 'David Onilude', 'Final-week targets locked'],
+        ['10:00-11:15', 'Marketing workshop', 'Marketing and Opportunity Readiness: audience, messaging, positioning, and founder communication', 'Bukola Aladesulu', 'Audience Profile, Core Message, and Go-to-Market Action Sheet', true],
+        ['11:30-12:45', 'Readiness clinic', 'Structure, IP, data, contracts, and funding readiness', 'Damilola Obaro', 'Founder Legal Readiness Checklist', true],
+        ['14:00-16:00', 'Launch Build Lab', 'Product fixes, campaign assets, brand application, legal/operating checks, and showcase planning', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Launch Readiness Board and validation evidence locked']
+      ]},
+      { day: 'Wednesday', programDay: 8, slots: [
+        ['09:00-09:30', 'Standup', 'Product, story, media, and Showcase Day blockers', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Blockers assigned'],
+        ['10:00-11:15', 'Mentor clinic', 'Founder hot seats and decision review', 'Gift Best', 'Founder decisions and next actions', true],
+        ['11:30-13:00', 'Cross-functional Build Lab', 'Turn feedback into final product, UX, brand, marketing, and operating decisions', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Erioluwa Adeyinka', 'Final product and market iteration list'],
+        ['14:00-15:30', 'Production sprint', 'Product polish, marketing assets, founder one-pager, and showcase materials', 'Kazeem Quadri, Segun Ajanaku, Bukola Aladesulu, Origin40 programme leads', 'Showcase Asset Pack'],
+        ['16:30-18:00', 'Guest masterclass', 'Building Investable Climate and Impact Ventures', 'Marcene Mitchell', 'Climate and Impact Opportunity Map plus Finance-and-Scale Note', true]
+      ]},
+      { day: 'Friday', programDay: 9, slots: [
+        ['09:00-09:30', 'Standup', 'Final founder-story and showcase readiness', 'David Onilude', 'Showcase running order draft'],
+        ['10:00-11:30', 'Mentor workshop', 'Telling the Founder Story: presence, conviction, and media delivery', 'Victory Ashaka', 'Founder story and interview talking points', true],
+        ['11:45-13:00', 'Brand, marketing and media studio', 'Brand consistency, marketing message, product explanation, founder bio, key messages, and interview practice', 'Segun Ajanaku, David Onilude, Bukola Aladesulu, Victory Ashaka', 'Brand-checked marketing message and media-ready founder profile'],
+        ['14:00-16:00', 'Showcase rehearsal', 'Product demonstration, media interview, and networking practice', 'David Onilude, Kazeem Quadri, Victory Ashaka, Origin40 programme leads', 'Showcase and media readiness', true]
+      ]}
+    ]
+  },
+  {
+    week: 4,
+    label: 'Week 4',
+    theme: 'Founder Showcase, Networking And Media Day',
+    outcome: 'An in-person founder showcase, relationship-building, media visibility, birthday celebration, and programme close.',
+    days: [
+      { day: 'Monday', programDay: 10, mode: 'In person', location: 'Lagos, Nigeria — venue to be confirmed', slots: [
+        ['09:00-10:00', 'Arrival', 'Founder registration, showcase setup, media setup, and guest reception', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah, Kazeem Quadri', 'Showcase and media stations ready'],
+        ['10:00-10:30', 'Opening', 'Welcome, the Origin40 journey, and the purpose of the gathering', 'David Onilude, David Oke Opeyemi', 'Guests and founders welcomed', true],
+        ['10:30-12:00', 'Founder showcase', 'Open product demonstrations and founder conversations', 'Founders, supported by Origin40 programme leads', 'Products experienced and founder stories shared', true],
+        ['12:00-13:00', 'Media hour', 'Founder interviews, portraits, product footage, and press conversations', 'Origin40 programme leads and media team', 'Founder media assets captured', true],
+        ['13:00-14:30', 'Networking', 'Lunch, mentor conversations, partner introductions, and opportunity connections', 'Origin40 programme leads and confirmed mentors', 'Founder connections logged', true],
+        ['14:30-15:30', 'Celebration', 'David Oke Opeyemi birthday celebration and Origin40 legacy moment', 'David Onilude and Origin40 programme leads', 'Birthday and legacy celebrated', true],
+        ['15:30-16:15', 'Recognition', 'Founder recognition, partner appreciation, and opportunity announcements', 'David Oke Opeyemi, David Onilude', 'Recognition and opportunities announced', true],
+        ['16:15-17:00', 'Cohort close', 'Thirty-day roadmap, alumni onboarding, group photographs, and official close', 'Origin40 programme leads', 'Cohort formally closed', true]
+      ]}
+    ]
+  }
+];
+
 const ENTITIES = {
-  applicants: 'O40', founders: 'F', mentors: 'M', 'guest-mentors': 'GM', facilitators: 'FAC', partners: 'P'
+  applicants: 'O40', onboarding: 'ONB', founders: 'F', mentors: 'M', 'guest-mentors': 'GM', facilitators: 'FAC', partners: 'P'
 };
-const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
 
 function send(res, code, body, type) {
   res.writeHead(code, { 'Content-Type': type || 'application/json' });
@@ -348,11 +448,12 @@ function docsIndex() {
 }
 
 function programSchedule() {
-  const start = new Date(Date.UTC(2026, 6, 6));
+  const start = new Date(Date.UTC(2026, 6, 13));
   const isoForProgramDay = function (programDay) {
-    const week = Math.floor((programDay - 1) / 5);
-    const day = (programDay - 1) % 5;
-    const d = new Date(start.getTime() + ((week * 7) + day) * 24 * 60 * 60 * 1000);
+    const week = Math.floor((programDay - 1) / 3);
+    const day = (programDay - 1) % 3;
+    const dayOffsets = [0, 2, 4];
+    const d = new Date(start.getTime() + ((week * 7) + dayOffsets[day]) * 24 * 60 * 60 * 1000);
     return d.toISOString().slice(0, 10);
   };
   const dateForProgramDay = function (programDay) {
@@ -363,7 +464,8 @@ function programSchedule() {
     return Object.assign({}, week, {
       days: week.days.map(function (day) {
         return Object.assign({}, day, {
-          mode: /Monday|Friday/.test(day.day) ? 'Live online' : 'Remote/build',
+          mode: day.mode || 'Live online + guided build',
+          location: day.location || 'Online / Discord',
           dateIso: isoForProgramDay(day.programDay),
           date: dateForProgramDay(day.programDay),
           slots: day.slots.map(function (slot) {
@@ -391,6 +493,7 @@ function programSchedule() {
           day: day.day,
           programDay: day.programDay,
           mode: day.mode,
+          location: day.location,
           dateIso: day.dateIso,
           date: day.date
         }, slot));
@@ -398,14 +501,14 @@ function programSchedule() {
     });
   });
   return {
-    title: 'Origin40 Final Online Schedule',
+    title: 'Origin40 Official Programme Calendar 2026',
     timezone: 'WAT (UTC+1, Lagos)',
-    delivery: '100% online',
-    dateStatus: 'Locked: Monday, July 6, 2026 to Friday, July 31, 2026',
-    startDate: '2026-07-06',
-    endDate: '2026-07-31',
-    exactDateRule: 'Week 1 Monday is July 6, 2026. Week 4 Friday is July 31, 2026.',
-    defaultLivePlatform: 'Zoom / Google Meet for live rooms; Discord for daily operations and async check-ins',
+    delivery: 'Online founder-build programme with an in-person closing event in Lagos',
+    dateStatus: 'Locked: online classes from Monday, July 13 to Friday, July 31, 2026 · in-person Founder Showcase, Networking & Media Day, birthday celebration, and programme close on Monday, August 3 in Lagos',
+    startDate: '2026-07-13',
+    endDate: '2026-08-03',
+    exactDateRule: 'Online classes run Monday, Wednesday, and Friday for three weeks. Founder Showcase, Networking & Media Day and David Oke Opeyemi birthday celebration are Monday, August 3 in Lagos.',
+    defaultLivePlatform: 'Zoom / Google Meet for live rooms; Discord for between-class operations and async check-ins',
     totals: {
       weeks: weeks.length,
       operatingDays: weeks.reduce(function (sum, week) { return sum + week.days.length; }, 0),
@@ -435,7 +538,7 @@ function scheduleCsv() {
       slot.dateIso,
       times[1] || '',
       slot.week + ' · ' + slot.theme + '\nOwner: ' + slot.owner + '\nOutput: ' + slot.output,
-      'Online / Discord'
+      slot.location
     ]);
   });
   return rows.map(function (row) { return row.map(csvCell).join(','); }).join('\r\n');
@@ -477,7 +580,7 @@ function scheduleIcs() {
       'DTEND:' + icsDateTime(slot.dateIso, times[1] || times[0]),
       'SUMMARY:' + icsText('Origin40: ' + slot.title),
       'DESCRIPTION:' + icsText(slot.week + ' · ' + slot.theme + '\nOwner: ' + slot.owner + '\nOutput: ' + slot.output),
-      'LOCATION:' + icsText('Online / Discord'),
+      'LOCATION:' + icsText(slot.location),
       'END:VEVENT'
     );
   });
@@ -718,6 +821,16 @@ function dashboard() {
   const partners = db.list('partners');
   const cStatus = function (st) { return apps.filter(function (a) { return a.status === st; }).length; };
   const selected = cStatus('Selected');
+  const selectionEmailsSent = apps.filter(function (a) {
+    return a.selectionEmail && a.selectionEmail.status === 'Sent';
+  }).length;
+  const conditionalEmailsSent = apps.filter(function (a) {
+    return a.conditionalEmail && a.conditionalEmail.status === 'Sent';
+  }).length;
+  const waitlistEmailsSent = apps.filter(function (a) {
+    return a.waitlistEmail && a.waitlistEmail.status === 'Sent';
+  }).length;
+  const admissionEmailsSent = selectionEmailsSent + conditionalEmailsSent + waitlistEmailsSent;
   const mentorsConfirmed = mentors.filter(function (m) { return ['Confirmed', 'Onboarded', 'Active'].indexOf(m.status) > -1; }).length;
   const facilReady = facils.filter(function (f) { return ['Confirmed', 'Scheduled', 'Delivered'].indexOf(f.status) > -1; }).length;
   const committed = partners.filter(function (p) { return p.stage === 'Committed'; });
@@ -734,6 +847,7 @@ function dashboard() {
     kpis: [
       { label: 'Applications received', value: apps.length, ctx: 'of 300 target · ' + Math.round((apps.length / 300) * 100) + '% reached' },
       { label: 'Founders selected', value: selected, ctx: 'of 40 seats · ' + Math.round((selected / 40) * 100) + '% filled' },
+      { label: 'Admission emails sent', value: admissionEmailsSent, ctx: selectionEmailsSent + ' selected · ' + conditionalEmailsSent + ' conditional · ' + waitlistEmailsSent + ' waitlist' },
       { label: 'Avg attendance', value: Math.round(avgAttend * 100) + '%', ctx: 'cohort average · target 70%' },
       { label: 'Completion rate', value: (selected ? Math.round((completed / selected) * 100) : 0) + '%', ctx: 'completers of selected' },
       { label: 'Founder mentors', value: mentorsConfirmed, ctx: 'regular founder support' },
@@ -756,6 +870,9 @@ function dashboard() {
       { label: 'Applicants pending review', n: pending },
       { label: 'At-risk founders', n: atRisk },
       { label: 'Seats remaining (of 40)', n: Math.max(0, 40 - selected) },
+      { label: 'Selected founders not emailed', n: Math.max(0, selected - selectionEmailsSent) },
+      { label: 'Conditional emails sent', n: conditionalEmailsSent },
+      { label: 'Waitlist emails sent', n: waitlistEmailsSent },
       { label: 'Sponsors not yet committed', n: partners.filter(function (p) { return p.stage !== 'Committed' && p.stage !== 'Declined'; }).length },
       { label: 'Ready to move forward', n: readyToMove },
       { label: 'Reject/fix recommended', n: rejectRecommended }
@@ -839,6 +956,42 @@ async function handleApi(req, res, fullUrl) {
     const r = addApplicant(rec);
     db.logEvent('intake.webhook', { email: rec.email, result: r });
     return send(res, 200, { ok: true, result: r });
+  }
+
+  /* selected founder onboarding */
+  if (a === 'onboarding' && req.method === 'POST' && !b) {
+    const body = await readBody(req);
+    const required = ['name', 'email', 'venture', 'ventureSummary', 'discord', 'headshot'];
+    const missing = required.filter(function (key) { return !String(body[key] || '').trim(); });
+    if (body.availability !== true && body.availability !== 'yes') missing.push('availability');
+    if (body.mediaConsent !== true && body.mediaConsent !== 'yes') missing.push('mediaConsent');
+    if (missing.length) return send(res, 400, { error: 'Please complete all required fields.', fields: missing });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) return send(res, 400, { error: 'Please enter a valid email address.', fields: ['email'] });
+    if (!/^data:image\/(jpeg|png|webp);base64,/i.test(body.headshot)) return send(res, 400, { error: 'Headshot must be a JPG, PNG, or WebP image.', fields: ['headshot'] });
+    if (body.headshot.length > 2800000) return send(res, 400, { error: 'Headshot must be smaller than 2 MB.', fields: ['headshot'] });
+    const duplicate = db.list('onboarding').find(function (record) {
+      return String(record.email || '').toLowerCase() === String(body.email).toLowerCase();
+    });
+    if (duplicate) return send(res, 409, { error: 'An onboarding response has already been received for this email address.' });
+    const record = {
+      id: db.nextId('onboarding', 'ONB'),
+      name: String(body.name).trim(),
+      preferredName: String(body.preferredName || '').trim(),
+      email: String(body.email).trim().toLowerCase(),
+      phone: String(body.phone || '').trim(),
+      venture: String(body.venture).trim(),
+      ventureSummary: String(body.ventureSummary).trim(),
+      discord: String(body.discord).trim(),
+      availability: body.availability === true || body.availability === 'yes' ? 'Confirmed' : String(body.availability),
+      mediaConsent: body.mediaConsent === true || body.mediaConsent === 'yes' ? 'Granted' : String(body.mediaConsent),
+      headshot: body.headshot,
+      status: 'Received',
+      submittedAt: new Date().toISOString()
+    };
+    db.put('onboarding', record);
+    db.logEvent('onboarding.submit', { id: record.id, email: record.email, venture: record.venture });
+    discord.notify(db.getSetting('discord', {}), 'submissions', 'Selected founder onboarding received: ' + record.name + ' — ' + record.venture);
+    return send(res, 201, { ok: true, id: record.id, name: record.preferredName || record.name });
   }
 
   /* intake: pull from WordPress */
