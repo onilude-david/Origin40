@@ -55,7 +55,6 @@ Leads, Founder Mentors, or Featured Speakers.
 
 | Person | Needed |
 |---|---|
-| Moh Sheriff | Preferred public links for Amor Fati, Overconfidence 101, and Crazy Enough with Sheriff Muhammad |
 | Gift Best | Short bio, current role/org, strongest support area, preferred public link |
 | Segun Ajanaku | Short bio, current role/org, portfolio or preferred public profile |
 | Samuel Afolabi | Confirmation of exact intended public profile and preferred bio |

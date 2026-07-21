@@ -237,12 +237,15 @@ function viewCalendar() {
     window.__schedule = s;
     window.__scheduleWeek = window.__scheduleWeek || 0;
     var current = s.weeks[window.__scheduleWeek] || s.weeks[0];
+    var googleUrl = 'https://calendar.google.com/calendar/u/0/r/settings/export';
     var html =
       '<div class="calendar-hero">' +
         '<div><div class="eyebrow">Official programme calendar</div><h2 class="page">' + esc(s.title) + '</h2>' +
         '<p class="sub">' + esc(s.dateStatus) + ' · ' + esc(s.delivery) + ' · ' + esc(s.timezone) + '</p>' +
         '<div class="calendar-actions"><a class="button-link primary" href="/api/schedule/ics"><i class="ti ti-calendar-plus"></i> Download ICS</a>' +
-        '<a class="button-link" href="/api/schedule/csv"><i class="ti ti-table-export"></i> Download CSV</a></div></div>' +
+        '<a class="button-link" href="/api/schedule/csv"><i class="ti ti-table-export"></i> Download CSV</a>' +
+        '<a class="button-link" href="/api/schedule/google"><i class="ti ti-brand-google"></i> Google JSON</a>' +
+        '<a class="button-link" href="' + googleUrl + '" target="_blank"><i class="ti ti-calendar-share"></i> Open Google Calendar</a></div></div>' +
         '<div class="calendar-datebox"><span>Start</span><b>Jul 13</b><em>Monday, 2026</em></div>' +
         '<div class="calendar-datebox"><span>Showcase Day</span><b>Aug 3</b><em>Monday · Lagos</em></div>' +
       '</div>' +
@@ -252,13 +255,19 @@ function viewCalendar() {
         '<div><b>' + s.totals.slots + '</b><span>timed blocks</span></div>' +
         '<div><b>' + s.totals.demoGates + '</b><span>demo gates</span></div>' +
       '</div>' +
+      '<div class="calendar-sync-panel">' +
+        '<div><i class="ti ti-brand-google"></i><span><b>Google Calendar sync package ready</b><small>Use ICS for a participant-safe import today. The Google JSON endpoint is prepared for direct API sync once Calendar access is available.</small></span></div>' +
+        '<div class="calendar-sync-actions"><a class="button-link primary" href="/api/schedule/ics"><i class="ti ti-download"></i> Import file</a><button onclick="copyCalendarLink()"><i class="ti ti-copy"></i> Copy ICS link</button></div>' +
+      '</div>' +
       '<div class="calendar-tabs">' + s.weeks.map(function (week, idx) {
         return '<button class="' + (idx === window.__scheduleWeek ? 'active' : '') + '" onclick="setScheduleWeek(' + idx + ')"><span>' + esc(week.label) + '</span><b>' + esc(week.theme) + '</b></button>';
       }).join('') + '</div>' +
       '<section class="calendar-week">' +
         '<div class="calendar-week-head"><div><h3>' + esc(current.label) + ': ' + esc(current.theme) + '</h3><p>' + esc(current.outcome) + '</p></div><span class="status-chip ok">Dates locked</span></div>' +
         '<div class="calendar-days">' + current.days.map(renderCalendarDay).join('') + '</div>' +
-      '</section>';
+      '</section>' +
+      '<section class="calendar-agenda"><div class="calendar-week-head"><div><h3>Full Participant Agenda</h3><p>All timed blocks in chronological order for review before sharing.</p></div><span class="status-chip ok">' + s.totals.slots + ' events</span></div>' +
+        '<div class="agenda-list">' + s.slots.map(renderAgendaSlot).join('') + '</div></section>';
     app.innerHTML = html;
   });
 }
@@ -272,12 +281,29 @@ function renderCalendarDay(day) {
   return '<article class="calendar-day">' +
     '<div class="calendar-day-head"><span>Day ' + esc(day.programDay) + '</span><h4>' + esc(day.date) + '</h4><em>' + esc(day.mode) + '</em></div>' +
     '<div class="calendar-slots">' + day.slots.map(function (slot) {
-      return '<div class="calendar-slot">' +
+      return '<div class="calendar-slot' + (slot.anchor ? ' anchor' : '') + '">' +
         '<time>' + esc(slot.time) + '</time>' +
-        '<div><b>' + esc(slot.title) + '</b><span>' + esc(slot.type) + ' · ' + esc(slot.owner) + '</span><small>' + esc(slot.output) + '</small></div>' +
+        '<div><b>' + esc(slot.title) + '</b><span>' + esc(slot.type) + ' · ' + esc(slot.owner) + '</span><small>' + esc(slot.output) + '</small>' + (slot.anchor ? '<em>Anchor session</em>' : '') + '</div>' +
       '</div>';
     }).join('') + '</div>' +
   '</article>';
+}
+
+function renderAgendaSlot(slot) {
+  return '<article class="agenda-slot' + (slot.anchor ? ' anchor' : '') + '">' +
+    '<div class="agenda-date"><b>' + esc(slot.date) + '</b><span>' + esc(slot.time) + '</span></div>' +
+    '<div class="agenda-main"><h4>' + esc(slot.title) + '</h4><p>' + esc(slot.week) + ' · ' + esc(slot.theme) + ' · ' + esc(slot.type) + '</p><small>' + esc(slot.owner) + '</small></div>' +
+    '<div class="agenda-output"><span>' + esc(slot.output) + '</span><em>' + esc(slot.location) + '</em></div>' +
+  '</article>';
+}
+
+function copyCalendarLink() {
+  var url = location.origin + '/api/schedule/ics';
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(function () { toast('ICS link copied'); });
+  } else {
+    toast(url);
+  }
 }
 
 function renderDashboardDocs() {
@@ -775,6 +801,13 @@ function viewSettings() {
       '<button onclick="discordInvite()"><i class="ti ti-robot"></i> Get bot invite link</button>' +
       '<button onclick="provisionDiscord()"><i class="ti ti-wand"></i> Provision server</button></div>';
     html += '<div id="discProvision"></div>';
+    var botStatus = st.discord && st.discord.interactiveBot || {};
+    html += '<div class="field" style="margin-top:14px"><label>Interactive responder ' + dot(botStatus.running) + '</label></div>';
+    html += '<div class="note-info" style="margin:0 0 12px"><b>Origin40 comms assistant:</b> replies inside approved channels with schedule, meeting link, portal, submission, MVP, attendance, founder-group, and programme-structure guidance. Requires a valid bot token and Message Content Intent enabled in Discord Developer Portal.</div>';
+    html += '<div class="import-report" id="discordBotStatus"><div class="mini-list"><b>Status:</b> ' + esc(botStatus.running ? 'Running as ' + (botStatus.username || 'Origin40 bot') : (botStatus.starting ? 'Starting…' : 'Stopped')) + (botStatus.lastError ? ' · ' + esc(botStatus.lastError) : '') + '</div></div>';
+    html += '<div class="row"><button onclick="startDiscordBot()" class="primary"><i class="ti ti-message-bot"></i> Start responder</button>' +
+      '<button onclick="stopDiscordBot()"><i class="ti ti-player-stop"></i> Stop responder</button>' +
+      '<button onclick="refreshDiscordBotStatus()"><i class="ti ti-refresh"></i> Refresh status</button></div>';
     html += '<div class="field" style="margin-top:14px"><label>Or wire it manually — links + webhooks</label></div>';
     html += twoCol(field('Server / invite URL', '<input data-s="discord.inviteUrl" value="' + esc(di.inviteUrl || '') + '" placeholder="https://discord.gg/...">'),
       field('Server URL', '<input data-s="discord.serverUrl" value="' + esc(di.serverUrl || '') + '" placeholder="https://discord.com/channels/...">'));
@@ -934,6 +967,37 @@ function provisionDiscord() {
       toast(r.ok ? 'Server provisioned — webhooks saved' : 'Provision had issues: ' + (r.error || 'see report'), r.ok);
       if (Object.keys(hooks).length) setTimeout(viewSettings, 1200);
     });
+  });
+}
+function renderDiscordBotStatus(r) {
+  var target = document.getElementById('discordBotStatus');
+  var s = (r && r.status) || {};
+  var html = '<div class="mini-list"><b>Status:</b> ' + esc(s.running ? 'Running as ' + (s.username || 'Origin40 bot') : (s.starting ? 'Starting…' : 'Stopped'));
+  if (s.startedAt) html += ' · since ' + esc(s.startedAt);
+  if (s.allowedChannels) html += ' · ' + s.allowedChannels.length + ' channel(s)';
+  if (s.replies != null) html += ' · ' + s.replies + ' replies';
+  if (s.lastError) html += ' · ' + esc(s.lastError);
+  html += '</div>';
+  if (target) target.innerHTML = html;
+}
+function startDiscordBot() {
+  saveSettings().then(function () {
+    api('POST', 'actions/discord/bot/start', {}).then(function (r) {
+      renderDiscordBotStatus(r);
+      toast(r.ok ? 'Discord responder started' : 'Responder failed: ' + (r.error || 'check bot token/intents'), r.ok);
+    });
+  });
+}
+function stopDiscordBot() {
+  api('POST', 'actions/discord/bot/stop', {}).then(function (r) {
+    renderDiscordBotStatus(r);
+    toast('Discord responder stopped');
+  });
+}
+function refreshDiscordBotStatus() {
+  getJSON('actions/discord/bot/status').then(function (r) {
+    renderDiscordBotStatus(r);
+    toast('Responder status refreshed');
   });
 }
 

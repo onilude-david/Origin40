@@ -14,7 +14,6 @@ founder output clear before the session.
 |---|---|---:|---|---|
 | David Oke Opeyemi | Monday, July 6, 2026 | 09:30-10:15 | Origin40 Legacy Charge: Building With Standard, Courage, and Service | Founder legacy pledge and cohort standard |
 | Samuel Afolabi | Monday, July 6, 2026 | 10:30-12:00 | Building From Local Pain / Founder-Market Fit | Problem lens and market pain mapped |
-| Moh Sheriff | Thursday, July 9, 2026 | 17:00-18:00 | Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up | Founder confidence and public-facing courage strengthened |
 | Gbemi Adunbarin | Monday, July 13, 2026 | 16:00-17:30 | Commerce, AI, Trust, and Product Credibility | MVP Trust Checklist |
 | Dr. Abiola Olamoyegun | Wednesday, July 22, 2026 | 17:00-18:30 | Minimum Viable Security, Risk, and Credibility | Product Risk Map + Security Checklist |
 | Bukola Aladesulu | Thursday, July 23, 2026 | 16:00-17:00 | Opportunity Readiness: Founder Communication, Confidence, and Positioning | Founder positioning and communication improved |
@@ -78,20 +77,6 @@ We would like to confirm your Origin40 guest session for **Monday, July 6, 2026,
 
 The goal is to help founders sharpen the real problem, customer, and market pain before they start
 building.
-
-### Moh Sheriff
-
-Subject: `Origin40 guest faculty confirmation - July 9`
-
-Hi Sheriff,
-
-We would like to confirm your Origin40 guest session for **Thursday, July 9, 2026, 17:00-18:00 WAT**.
-
-**Session:** Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up  
-**Founder output:** founder confidence and public-facing courage strengthened.
-
-This session comes early in Week 1 so founders can show up with courage for customer conversations,
-public validation, and the first demo gate.
 
 ### Gbemi Adunbarin
 

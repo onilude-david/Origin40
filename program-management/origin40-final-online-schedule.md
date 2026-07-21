@@ -15,7 +15,7 @@
 | Date | Core programme | Confirmed people | Founder output |
 |---|---|---|---|
 | Mon, Jul 13 | Onboarding, Origin40 Legacy Charge, problem selection, customer plan | David Onilude, David Oke Opeyemi, Kazeem Quadri, Dotonu Wonder, Avoseh Yohan, Moses Deborah | Founder pledge, problem statement, discovery plan |
-| Wed, Jul 15 | Ethical discovery, evidence mapping, and Foundation Build Lab across product, brand, marketing, legal and operations | Damilola Obaro, Erioluwa Adeyinka, Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu | Founder Build Blueprint and validation brief draft |
+| Wed, Jul 15 | Ethical discovery, evidence mapping, Bukola Aladesulu's 2pm founder positioning session, and Foundation Build Lab across product, brand, marketing, legal and operations | Damilola Obaro, Erioluwa Adeyinka, Bukola Aladesulu, Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku | Founder Build Blueprint, founder positioning statement, and validation brief draft |
 | Fri, Jul 17 | Guided Build Lab and problem/evidence milestone gate | David Onilude, Kazeem Quadri, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka | Problem-Validation Brief and Build Plan |
 
 ## Week 2 — Design and Build the MVP

@@ -2,8 +2,8 @@
 
 This document maps the first confirmed/proposed special guest masterclass faculty and scheduled
 founder-mentor sessions into the 4-week Origin40 build curriculum. Some people are one-off guest
-faculty; Bukola Aladesulu, Victory Ashaka, and Moh Sheriff now sit in the Founder Mentors pool while
-still holding scheduled class blocks.
+faculty; Bukola Aladesulu and Victory Ashaka now sit in the Founder Mentors pool while still
+holding scheduled class blocks.
 
 **Operating rule:** guest masterclass faculty have `capacity = 0` in the cPanel because they are not
 assigned to founders after the class. Founder mentors have active capacity and may be matched for
@@ -15,7 +15,6 @@ office hours, review, or follow-up.
 |---|---:|---|---|
 | David Oke Opeyemi | Nigeria | Legacy keynote / founder standard | Confirmed guest mentor and the honoree/celebrant behind the Origin40 legacy. Best used at kickoff to set the standard, mission, discipline, and service lens for the cohort. |
 | Samuel Afolabi | Nigeria | Founder execution / local market building | Strong fit for early founders building in Nigeria, especially around local pain, resilience, product focus, and market execution. Confirm exact public profile before publishing bio. |
-| Moh Sheriff | Nigeria | Confidence, mindset, personal growth, entrepreneurship | Confirmed founder mentor. Best used early to help founders build confidence before customer conversations, public validation, and founder storytelling. |
 | Gbemi Adunbarin | United States | E-commerce, AI commerce, product trust | Public references connect him with Vegeel, Baltimore, and an E-Commerce AI Summit panel; useful for commerce founders, digital products, and diaspora market thinking. |
 | Dr. Abiola Olamoyegun | United States | Cybersecurity, governance, risk, enterprise readiness | Public profiles identify her as VP, Information Technology IA at PHEAA, with cybersecurity, internal audit, and risk leadership. Strong fit for founder security basics and credibility. |
 | Bukola Aladesulu | Nigeria | Opportunity readiness, communication, career systems | Confirmed founder mentor. Best used to sharpen founder positioning, confidence, communication, and opportunity readiness. |
@@ -28,7 +27,6 @@ office hours, review, or follow-up.
 |---|---|---|---|---:|---|
 | Week 1 | Kickoff | David Oke Opeyemi | Origin40 Legacy Charge: Building With Standard, Courage, and Service | 45 min | Founder legacy pledge, cohort standard, and personal commitment |
 | Week 1 | Validate the Problem | Samuel Afolabi | Building From Local Pain: Turning Broken Markets Into Products | 90 min | Founder-market fit note, sharper problem statement, and 5 real customer discovery targets |
-| Week 1 | Validate the Problem | Moh Sheriff | Overconfidence 101 For Founders: Confidence, Mindset, and Showing Up | 60 min | Founder confidence pledge and public validation courage |
 | Week 2 | Design & Build the MVP | Gbemi Adunbarin | Commerce, AI, and Trust: Designing Products People Can Actually Use and Buy | 90 min | MVP trust checklist, core transaction/workflow map, and one AI-enabled workflow decision |
 | Week 3 | Test & Validate | Dr. Abiola Olamoyegun | Security, Risk, and Credibility for Early Products | 90 min | Founder security checklist, data/privacy risk map, and enterprise-readiness actions |
 | Week 3 | Test & Validate | Bukola Aladesulu | Opportunity Readiness: Founder Communication, Confidence, and Positioning | 60 min | Founder positioning statement and opportunity-readiness checklist |
@@ -73,29 +71,6 @@ without getting lost in noise, market frustration, or overbuilding.
 
 **Publishing caution:** confirm whether the intended Samuel Afolabi is the MyAgent founder or the
 cybersecurity speaker/profile before publishing a public bio.
-
-### Moh Sheriff - Confidence, Mindset, Content, Entrepreneurship
-
-**Best week:** Week 1, Thursday live online.
-
-**Class promise:** founders learn confidence as a practical skill they can use when talking to
-customers, pitching their idea, creating public proof, and showing up before everything feels ready.
-
-**Short bio:** Moh Sheriff, born Sheriff Muhammad, is a Nigerian keynote speaker, content creator,
-and entrepreneur based in Lagos. He is the founder of Amor Fati and is known for empowering content
-and personal-growth programs, especially his **Overconfidence 101** series. He is a Business
-Management student at the University of Lagos, previously served as a Lagos Youth Ambassador, hosts
-the podcast **Crazy Enough with Sheriff Muhammad**, and founded the apparel brand Hoodies'n'Stuffs.
-
-**Suggested agenda:**
-
-1. Confidence as a learnable founder skill.
-2. Killing mediocrity: why showing up matters before perfection.
-3. Public-facing founder mindset for customer conversations.
-4. Live founder work block: personal confidence statement.
-5. Founder challenge: one uncomfortable public action before the next demo gate.
-
-**Founder artifact:** Founder confidence pledge + one public validation action.
 
 ### Gbemi Adunbarin - E-commerce, AI Commerce, Product Trust
 

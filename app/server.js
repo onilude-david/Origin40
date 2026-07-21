@@ -16,6 +16,7 @@ const whatsapp = require('./src/integrations/whatsapp');
 const google = require('./src/integrations/google');
 const discord = require('./src/integrations/discord');
 const discordBot = require('./src/integrations/discord-bot');
+const discordInteractiveBot = require('./src/integrations/discord-interactive-bot');
 
 const PORT = process.env.PORT || 3000;
 const PUBLIC = path.join(__dirname, 'public');
@@ -283,7 +284,8 @@ const PROGRAM_SCHEDULE = [
         ['09:00-09:30', 'Standup', 'Evidence check and blockers', 'Dotonu Wonder, Avoseh Yohan, Moses Deborah', 'Blockers assigned'],
         ['10:00-11:15', 'Mentor clinic', 'Ethical discovery, consent, data, and early legal foundations', 'Damilola Obaro', 'Legal and consent checklist', true],
         ['11:30-12:45', 'Mentor clinic', 'Evidence, stakeholder mapping, and execution for impact ventures', 'Erioluwa Adeyinka', 'Stakeholder and evidence map', true],
-        ['14:00-16:00', 'Foundation Build Lab', 'Parallel support: product concept, customer/audience, brand direction, legal risks, and operating model', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Founder Build Blueprint and Problem-Validation Brief draft']
+        ['14:00-15:00', 'Founder mentor session', 'Audience Clarity and Founder Positioning: communicating the problem, customer, and opportunity with confidence', 'Bukola Aladesulu', 'Founder positioning statement and customer-message hypothesis', true],
+        ['15:00-16:00', 'Foundation Build Lab', 'Parallel support: product concept, customer/audience, brand direction, legal risks, and operating model', 'Kazeem Quadri, Stanley Anigbogu, Segun Ajanaku, Bukola Aladesulu, Damilola Obaro, Erioluwa Adeyinka', 'Founder Build Blueprint and Problem-Validation Brief draft']
       ]},
       { day: 'Friday', programDay: 3, slots: [
         ['09:00-09:30', 'Standup', 'Submission and demo readiness', 'David Onilude', 'Demo focus set'],
@@ -542,6 +544,57 @@ function scheduleCsv() {
     ]);
   });
   return rows.map(function (row) { return row.map(csvCell).join(','); }).join('\r\n');
+}
+
+function googleCalendarEvents() {
+  const s = programSchedule();
+  return {
+    calendar: {
+      summary: 'Origin40 Founder Build Incubator 2026',
+      description: s.dateStatus + '\n\n' + s.exactDateRule,
+      timeZone: 'Africa/Lagos',
+      location: 'Online / Lagos'
+    },
+    source: {
+      title: s.title,
+      startDate: s.startDate,
+      endDate: s.endDate,
+      timezone: 'Africa/Lagos',
+      generatedAt: new Date().toISOString()
+    },
+    events: s.slots.map(function (slot, idx) {
+      const times = String(slot.time || '09:00-10:00').split('-');
+      const startTime = times[0] || '09:00';
+      const endTime = times[1] || startTime;
+      return {
+        id: 'origin40-' + slot.dateIso + '-' + String(idx + 1).padStart(2, '0'),
+        summary: 'Origin40: ' + slot.title,
+        description: [
+          slot.week + ' - ' + slot.theme,
+          'Type: ' + slot.type,
+          'Lead: ' + slot.owner,
+          'Founder output: ' + slot.output,
+          'Mode: ' + slot.mode
+        ].join('\n'),
+        location: slot.location,
+        start: { dateTime: slot.dateIso + 'T' + startTime + ':00+01:00', timeZone: 'Africa/Lagos' },
+        end: { dateTime: slot.dateIso + 'T' + endTime + ':00+01:00', timeZone: 'Africa/Lagos' },
+        transparency: 'opaque',
+        visibility: 'default',
+        colorId: slot.anchor ? '10' : '7',
+        extendedProperties: {
+          private: {
+            origin40Week: slot.week,
+            origin40Theme: slot.theme,
+            origin40Type: slot.type,
+            origin40Owner: slot.owner,
+            origin40Output: slot.output,
+            origin40Anchor: String(!!slot.anchor)
+          }
+        }
+      };
+    })
+  };
 }
 
 function icsDateTime(dateIso, time) {
@@ -891,6 +944,7 @@ function integrationsStatus() {
     discord: {
       configured: !!(s.discord && (s.discord.inviteUrl || s.discord.serverUrl || s.discord.webhookAnnouncements || s.discord.webhookLog)),
       webhook: !!(s.discord && (s.discord.webhookAnnouncements || s.discord.webhookLog || s.discord.webhookSubmissions)),
+      interactiveBot: discordInteractiveBot.status(),
       cfg: s.discord || {}
     },
     resources: { configured: !!(s.resources && s.resources.websiteUrl), cfg: s.resources || {} },
@@ -899,17 +953,126 @@ function integrationsStatus() {
   };
 }
 
+function botRawValue(applicant, pattern) {
+  const raw = applicant.raw || {};
+  const key = Object.keys(raw).find(function (k) { return pattern.test(k); });
+  return key ? String(raw[key] || '').trim() : '';
+}
+
+function founderBotGroups() {
+  const selected = db.list('applicants').filter(function (a) { return a.status === 'Selected'; });
+  const directBuildSupportIds = {
+    'O40-004': true, 'O40-006': true, 'O40-007': true, 'O40-011': true, 'O40-013': true,
+    'O40-014': true, 'O40-015': true, 'O40-016': true, 'O40-017': true, 'O40-026': true
+  };
+  const brief = function (a) {
+    return {
+      id: a.id,
+      name: a.name,
+      startup: a.startup,
+      stage: botRawValue(a, /current stage/i),
+      buildOwner: botRawValue(a, /who will build/i)
+    };
+  };
+  const mvpSupport = selected.filter(function (a) { return directBuildSupportIds[a.id]; }).map(brief);
+  const hasMvp = selected.filter(function (a) { return !directBuildSupportIds[a.id]; }).map(brief);
+  return {
+    selectedCount: selected.length,
+    mvpSupport: mvpSupport,
+    hasMvp: hasMvp
+  };
+}
+
+function botKnowledge(resources, founders) {
+  const schedule = programSchedule();
+  const portal = resources.lmsUrl || 'https://beeresoftwares.com/origin40/dashboard/';
+  const meeting = resources.meetingUrl || 'https://meet.google.com/txs-wfib-grs';
+  const entries = [
+    {
+      title: 'Origin40 Programme Structure',
+      tags: ['structure', 'programme', 'program', 'how it works', 'origin40'],
+      summary: 'Origin40 is a founder build programme with live sessions, independent build days, Build Labs, weekly submissions, attendance tracking, and Demo Day preparation.',
+      answer: 'Origin40 runs through live teaching/review sessions, independent build days, Build Labs, weekly portal submissions, attendance tracking, and Demo Day preparation. The goal is to move founders from idea or early product into a clearer MVP, evidence, and demo-ready progress.'
+    },
+    {
+      title: 'Founder Portal / LMS',
+      tags: ['portal', 'lms', 'dashboard', 'login', 'assignment', 'course'],
+      summary: 'Founder portal is used for lessons, weekly assignments, MVP/prototype links, grades, feedback, and completion progress.',
+      answer: 'Founder portal / LMS: ' + portal + '\nUse it for lessons, weekly assignments, MVP/prototype links, feedback, and progress tracking.'
+    },
+    {
+      title: 'Origin40 Meeting Link',
+      tags: ['meeting', 'meet', 'google meet', 'class link', 'session link'],
+      summary: 'The shared Origin40 live-session link is ' + meeting,
+      answer: 'Meeting link: ' + meeting + '\nPlease join a few minutes before the session starts.'
+    },
+    {
+      title: 'Attendance Rule',
+      tags: ['attendance', 'completion', 'present', 'late'],
+      summary: 'Attendance counts toward Origin40 progress and completion. Founders are expected to show up, stay through sessions, and participate.',
+      answer: 'Attendance counts toward Origin40 progress and completion. Founders should join on time, stay through the session, and participate properly. Attendance is not just appearing online.'
+    },
+    {
+      title: 'MVP Build Support Group',
+      tags: ['mvp support', 'build support', 'needs mvp', 'who needs mvp'],
+      summary: founders.mvpSupport.map(function (f) { return f.name + ' - ' + f.startup; }).join('; '),
+      answer: 'Founders marked for direct MVP build support:\n' + founders.mvpSupport.map(function (f) { return '- ' + f.name + ' - ' + f.startup; }).join('\n')
+    },
+    {
+      title: 'Founders With MVP / Product / Prototype',
+      tags: ['has mvp', 'prototype', 'live product', 'who has product'],
+      summary: founders.hasMvp.map(function (f) { return f.name + ' - ' + f.startup; }).join('; '),
+      answer: 'Founders marked as having an MVP, product, or prototype:\n' + founders.hasMvp.map(function (f) { return '- ' + f.name + ' - ' + f.startup; }).join('\n')
+    },
+    {
+      title: 'Programme Calendar',
+      tags: ['calendar', 'schedule', 'sessions', 'classes'],
+      summary: schedule.dateStatus + ' ' + schedule.exactDateRule,
+      answer: schedule.dateStatus + '\n' + schedule.exactDateRule
+    },
+    {
+      title: 'Selected Cohort',
+      tags: ['cohort', 'selected founders', 'how many founders'],
+      summary: founders.selectedCount + ' selected founders are currently tracked in the cPanel.',
+      answer: founders.selectedCount + ' selected founders are currently tracked in the cPanel.'
+    }
+  ];
+  docsIndex().sections.forEach(function (section) {
+    section.docs.slice(0, 8).forEach(function (doc) {
+      entries.push({
+        title: doc.title,
+        path: doc.path,
+        tags: [section.label, doc.title],
+        summary: doc.summary
+      });
+    });
+  });
+  return entries;
+}
+
+function discordBotContext() {
+  const resources = Object.assign({ meetingUrl: 'https://meet.google.com/txs-wfib-grs' }, db.getSetting('resources', {}));
+  const founders = founderBotGroups();
+  return {
+    schedule: programSchedule(),
+    resources: resources,
+    founders: founders,
+    knowledge: botKnowledge(resources, founders)
+  };
+}
+
 async function handleApi(req, res, fullUrl) {
   ensureBootstrapped();
   const pathname = fullUrl.split('?')[0];
   const parts = pathname.split('/').filter(Boolean); // ['api', a, b, c?]
-  const a = parts[1], b = parts[2], c = parts[3];
+  const a = parts[1], b = parts[2], c = parts[3], d = parts[4];
 
   if (a === 'meta') return send(res, 200, meta());
   if (a === 'dashboard') return send(res, 200, dashboard());
   if (a === 'schedule') {
     if (b === 'ics') return sendDownload(res, 'origin40-program-calendar.ics', scheduleIcs(), 'text/calendar; charset=utf-8');
     if (b === 'csv') return sendDownload(res, 'origin40-program-calendar.csv', scheduleCsv(), 'text/csv; charset=utf-8');
+    if (b === 'google') return sendDownload(res, 'origin40-google-calendar-events.json', JSON.stringify(googleCalendarEvents(), null, 2), 'application/json; charset=utf-8');
     return send(res, 200, programSchedule());
   }
   if (a === 'events') return send(res, 200, db.recentEvents(50));
@@ -1055,6 +1218,29 @@ async function handleApi(req, res, fullUrl) {
   if (a === 'actions' && b === 'discord' && c === 'invite' && req.method === 'GET') {
     const cfg = db.getSetting('discord', {});
     return send(res, 200, { url: discordBot.buildInviteUrl(cfg.appId || ''), permissions: discordBot.INVITE_PERMS });
+  }
+  /* actions: interactive discord responder */
+  if (a === 'actions' && b === 'discord' && c === 'bot') {
+    if (d === 'status' && req.method === 'GET') return send(res, 200, { ok: true, status: discordInteractiveBot.status() });
+    if (d === 'stop' && req.method === 'POST') {
+      const r = discordInteractiveBot.stop();
+      db.logEvent('discord.bot.stop_requested', { ok: r.ok });
+      return send(res, 200, r);
+    }
+    if (d === 'start' && req.method === 'POST') {
+      const cfg = db.getSetting('discord', {});
+      const botCfg = cfg.interactiveBot || {};
+      const r = await discordInteractiveBot.start({
+        token: cfg.botToken,
+        guildId: cfg.guildId,
+        channelIds: botCfg.channelIds || cfg.responderChannelIds || [],
+        contextProvider: discordBotContext,
+        logEvent: function (kind, detail) { db.logEvent(kind, detail); }
+      });
+      db.logEvent('discord.bot.start_requested', { ok: r.ok, error: r.error, status: r.status });
+      return send(res, r.ok ? 200 : 400, r);
+    }
+    return send(res, 404, { error: 'Unknown Discord bot action.' });
   }
   /* actions: send discord (webhook) */
   if (a === 'actions' && b === 'discord' && req.method === 'POST') {
